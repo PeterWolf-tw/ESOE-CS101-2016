@@ -10,8 +10,15 @@
  |
  +-----------------------------------------------------------------------------
  |
- |  Description:  DESCRIBE THE PROBLEM THAT THIS PROGRAM WAS WRITTEN TO
- |      SOLVE.
+ |  Description:  
+ |				1-1: ( 完成者,本次作業分數 75 起計 )
+ |				將 sample.txt 的內容長度超過 5 的詞彙加入一個名為
+ |				 讀取同目錄下名為 "sample.txt" 的純文字檔案。
+ |				sampleWordList 的列表中並顯示出來。 
+ |
+ |				1-2:(完成者,本次作業分數 80 起計)
+ |				做完以上動作以後,再加一個 while... 迴圈,讓使用者輸入任何五個 
+ |				字母以上的英文字,然後告訴使用者剛才輸入的字,是否在 sampleWordList 裡!
  |
  |        Input:  sample.txt, key words
  |
