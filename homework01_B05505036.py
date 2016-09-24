@@ -1,4 +1,4 @@
-FiL= open("C:\Users\賴春美\Desktop\sample.txt","r")                                    #作業1-1部分
+FiL= open("C:\User\BiaHD\sample.txt","r")                                    #作業1-1部分
 FiT= Fil.read()
 FiL.close()
 sampleWordList = []
