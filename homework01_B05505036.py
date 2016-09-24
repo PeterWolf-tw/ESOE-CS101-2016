@@ -1,5 +1,5 @@
 FiL= open("C:\User\BiaHD\sample.txt","r")                                    #作業1-1部分
-FiT= Fil.read()
+FiT= FiL.read()
 FiL.close()
 sampleWordList = []
 
@@ -7,8 +7,8 @@ move = ["!","-",":","'",";","?",",",".","．．．","<",">","[","]","(",")","/",
 
 for pun in move:
     FiT=FiT.replace(pun," ")
-    F.Li=FiT.split(" ")
-for word in F.Li:
+    Flist=FiT.split(" ")
+for word in Flist:
     if len(word) > 5;
        sampleWordList.append(word)
 
