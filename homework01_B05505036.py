@@ -20,7 +20,7 @@ print (''' ''')
 
 end = False                                                                           #作業1-2部分
 N = 0
-Your importation = raw_input ("請隨意輸入任何-超過-五個英文字母以上的單字")
+Your importation = input("請隨意輸入任何-超過-五個英文字母以上的單字")
 while N < len(sampleWordList):
     if sampleWordList[N] == Your importation:
         end == True
