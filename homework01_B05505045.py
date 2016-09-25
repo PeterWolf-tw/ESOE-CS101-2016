@@ -1,3 +1,4 @@
+1-1
 ff=open("C:\sample.txt",'r')
 f1=ff.read()
 ff.close()
@@ -21,3 +22,12 @@ for F in fff:
         
 print(sampleWordList)
 
+1-2
+
+while True:
+    F=input('please input a word > 5 letters:')
+    if F in sampleWordList:
+        print('Victory!')
+    eles:
+        print('Nothing but error')
+        
