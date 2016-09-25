@@ -17,3 +17,14 @@ for h in WordList:
         None
 print(sampleWordList)
 
+#1-2
+X=input("Please enter a word over five letters:")
+Y=0
+while Y<len(sampleWordList):
+    if X==sampleWordList[Y]:
+        print(X,"is in sampleWordList!")
+        break
+    elif X!=sampleWordList[Y]:
+        Y=Y+1
+else:
+    print(X,"is not in sampleWordList!")
