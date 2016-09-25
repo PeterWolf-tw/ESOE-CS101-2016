@@ -2,8 +2,7 @@
 file=open(".\sample.txt")
 rf=file.read()
 
-mL=['?',',','.','-','\n','?']
-
+mL=['?',',','.','-','\n','\n\n']
 for mark in mL:
     rf2=rf.replace(mark," ")
     
