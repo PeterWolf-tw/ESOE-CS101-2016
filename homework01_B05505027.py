@@ -40,12 +40,12 @@ print(sampleWordList)
 
 while:
 word=input("please type a word with more than 5 letters.")#輸入詞彙
-if len(word)<5:#判定詞彙是否超過五個字
+	if len(word)<5:#判定詞彙是否超過五個字
         print("lease type a word with more than 5 letters again.")
-else
-        if word in  sampleWordList:#判定詞彙是否存在列表裡
+	else
+        	if word in  sampleWordList:#判定詞彙是否存在列表裡
                 print("this word exist in the list!")
-        else:
+        	else:
                 print("this word doesn't exist in the list!")
 
 
