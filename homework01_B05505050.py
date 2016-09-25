@@ -16,7 +16,7 @@ for word in textlist:
 print(sampleWordList)
 
 count=0
-test=input("Please enter a word more than 5 letters:"\n)
+test=input("Please enter a word more than 5 letters:")
 while count<10000:
     if len(test)>5:
         if test in sampleWordList
