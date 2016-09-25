@@ -1,6 +1,6 @@
 
 
-file = open("C:\.minecraft\Amis.txt","r")
+file = open("sample.txt","r")
 text = file.read()
 file.close()
 
