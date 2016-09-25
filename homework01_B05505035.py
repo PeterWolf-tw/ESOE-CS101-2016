@@ -23,13 +23,14 @@ print(sampleWordList)
 k = input("Guess a word more than five letters: ")
 l = 0
 
-while l < 1 :
-    if k in sampleWordList:
+while l < 1 :  
+    if sampleWordList[0] == k:
         print("You got it!")
+        sampleWordList.pop(0)
         l = l + 1
     else:
         print("No!")
-        
+        l = l + 1
 
 
 
