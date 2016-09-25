@@ -21,7 +21,7 @@ print (sampleWordList)
 print ("================================================")
 
 while True:
-	userWord=raw_input("Please input a word > 5 letters:")
+	userWord=input("Please input a word > 5 letters:")
 	if len(userWord)>5:
 		break
 	print("INPUT A WORD > 5 LETTERS!!!")
