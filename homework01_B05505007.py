@@ -1,27 +1,46 @@
-#Part1-1
-import string                                 
+#1-1
+# -*- coding: utf-8 -*-
+#studentID:B05505007
+import string                                                  #引入模組
 
-spfile=open("./sample.txt","r")
-sptext=spfile.read()
+spfile = open("./sample.txt","r")
+sptext = spfile.read()
 spfile.close()
                        
-intab='0123456789][]}{\n?".!,:;()'           #delete numbers and all kinds of punctuations
-outtab='                         '           #空格要和intab元素一樣多(一一對應)         
-trantab=str.maketrans(intab,outtab)        
-sptext=sptext.translate(trantab)
+transform= str.maketrans(string.digits,"          ",string.punctuation)
+sptext= sptext.translate(transform)
 
+splist = sptext.split(" ")
 
-splist=sptext.split(" ")
+sampleWordList = []
 
-
-sampleWordList=[]
 for word in splist: 
     if len(word)>5:
-    	sampleWordList.insert(-1,word)
+    	sampleWordList.insert(-1,word)                         #note:.insert(-1,word)==.append(word)
 
+print("There are words more tha five letters.")
 print(sampleWordList)
+print("===============================")
 
-#Part1-2 
+#1-2
 
+answer=True
+while answer==True:
+    userinput=input("input a word more than 5 letters : ")
+    if userinput.lower() in sampleWordList or userinput.title() in sampleWordList:
+        print("it is in the article^.^") 
+    else:
+        if len(userinput)<6:
+            print("You idiot lol")
+        else:
+            print("Sorry it is not found.QQ")
+        
+ 
+
+
+        
+        	
+
+    
 
 
