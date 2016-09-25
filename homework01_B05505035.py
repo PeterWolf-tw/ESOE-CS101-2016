@@ -1,18 +1,36 @@
 a = open("D:/shan/sample.txt","r")
 b = a.read()
-print(b)
+a.close()
 
 c = b.replace("\n"," ")
-x = ['.','?','"']
-for n in x:
-    d=c.replace(n,"")
+d = c.replace('?','')
+e = d.replace('"','')
+f = e.replace('.','')
+g = f.replace(',','')
+h = g.replace('-','')
 
-e = d.split(" ")
+i = h.split(" ")
 
 
 sampleWordList = [ ]
-for f in e:
-    if len(f)>5:
-        sampleWordList.append(f)
+for j in i:
+    if len(j)>5:
+        sampleWordList.append(j)
         
 print(sampleWordList)
+
+
+k = input("Guess a word more than five letters: ")
+l = 0
+
+while l < 1 :
+    if k in sampleWordList:
+        print("You got it!")
+        l = l + 1
+    else:
+        print("No!")
+        
+
+
+
+
