@@ -1,4 +1,4 @@
-file = open("C:/users/asus/desktop/sample.txt", encoding='utf-8-sig')
+file = open("ESOE-CS101-2016/sample.txt", encoding='utf-8-sig')
 replace = file.read().replace("\n"," ").replace("?","").replace(".","")
 sample = replace.split(" ")
 sampleWordList = []
