@@ -14,7 +14,7 @@ for h in WordList:
     if len(h)>5:
         sampleWordList.append(h)
     else:
-        None
+        pass
 print(sampleWordList)
 
 #1-2
