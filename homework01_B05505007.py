@@ -7,10 +7,8 @@ spfile = open("./sample.txt","r")
 sptext = spfile.read()
 spfile.close()
                        
-numandpunc  = '0123456789][]}{\n"?.!,:;()'                     #數字和所有英文標點符號
-replacement = '                         '                      #note:元素個數需和numandpunc一樣("\n"為一個元素)  
-transform   = str.maketrans(numandpunc,replacement)        
-sptext      = sptext.translate(transform)
+transform= str.maketrans(string.digits,"          ",string.punctuation)
+sptext= sptext.translate(transform)
 
 splist = sptext.split(" ")
 
