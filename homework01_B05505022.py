@@ -19,12 +19,12 @@ print(sampleWordList)
 
 #homework1-2
 while True:
-    A=input("請輸入大於5個字母的詞彙 :")
+    A=input("Please enter a word more than 5 letters :")
     
     if len(A) <= 5:
-        print("請輸入大於5個字母的詞彙\n")
+        print("Please enter a word more than 5 letters\n")
         continue
     if A in sampleWordList:
-        print("此詞彙在sampleWordList內\n")
+        print("The word is in sampleWordList\n")
     else:
-        print("此詞彙不在sampleWordList內\n")
+        print("The word is in sampleWordList\n")
