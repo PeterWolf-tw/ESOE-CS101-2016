@@ -3,7 +3,7 @@ hwfile = open (E:\ sample.txt","r")
 hwile = hwfile.read()
 hwfile.close
 
-//打开与关闭
+// just try
 
 
 hwfile = hwfile.read
@@ -39,7 +39,7 @@ while P < len(sampleWordList):
 	
 
 	
-
+//hw1-2
 
 
 
