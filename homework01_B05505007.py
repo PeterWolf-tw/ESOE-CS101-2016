@@ -9,16 +9,14 @@ spfile.close()
                        
 transform= str.maketrans('0123456789\n',"           ",string.punctuation)
 sptext= sptext.translate(transform)
-
 splist = sptext.split(" ")
 
 sampleWordList = []
-
 for word in splist: 
     if len(word)>5:
     	sampleWordList.insert(-1,word)                         #note:.insert(-1,word)==.append(word)
 
-print("There are words more tha five letters.")
+print("There are words more than five letters.")
 print(sampleWordList)
 print("===============================")
 
