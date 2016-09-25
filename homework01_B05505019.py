@@ -17,7 +17,7 @@ for word1 in textList:
 	if len(word1)>5:
 		sampleWordList.append(word1)
 print ("================sampleWordList==================")
-print sampleWordList
+print (sampleWordList)
 print ("================================================")
 
 while True:
