@@ -1,10 +1,14 @@
 #read the file from the sample.txt
 wordfile=open("C:\\Users\翁震軒\Desktop\sample.txt","r", encoding="utf8")
 wordtext=wordfile.read()
+#killing the marks
+wordtext1=wordtext.replace("."," ")
+wordtext2=wordtext1.replace("?"," ")
+wordtext3=wordtext2.replace('"'," ")
 #define an empty list
 sampleWordList=[""]
-#change the string into list
-sampleWord=wordtext.split()
+#change the string into a list
+sampleWord=wordtext3.split()
 #HW1-1
 for sampleWordList1 in sampleWord:
     if len(sampleWordList1)>5:
@@ -19,12 +23,15 @@ while whilecount:
     ans=input("input= ")
 #if the the word is lesser than five LETTERS
     if len(ans)<5:
-        print("Error lesser that 5 letters")
+        print("Please enter more that 5 letters")
         whilecount=whilecount+1
-#if the word is'nt on the list
+#if the user got it
     elif ans in sampleWordList:
         print( "you keyed in "+ans)
         whilecount=whilecount+1
-#if the user got it
+#if the word isnt on the list
     else:
         print("sorry not found")
+        whilecount=whilecount+1
+#change log
+         # added the "kill mark" code
