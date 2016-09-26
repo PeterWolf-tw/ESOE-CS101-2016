@@ -16,8 +16,8 @@ wordsnletters=text.split()
 
 sampleWordList=[]
 for letters in wordsnletters:
-   if len(letters)>4:
-      sampleWordList.append(letters)
+    if len(letters)>4:
+        sampleWordList.append(letters)
       
 Sentences=context.split('\n')
 
@@ -26,7 +26,7 @@ print(sampleWordList)
 while True:
     answer=input('See if a word is in the passage!\n')
     if len(answer)<5:
-        print('Please enter a word with more than five letters!\n')
+        print('Please enter a word with five letters or more!\n')
     else:
         if answer in sampleWordList:
             print('The word '+'"'+answer+'"'+' is in the passage.')
