@@ -6,4 +6,9 @@ for m in k:
     sampleText=sampleText.replace(m," ")
     
 sampleText_list=sampleText.split(" ")
-print(sampleText_list)
+for v in sampleText:
+    if len(v)>5:
+        sampleWordList.append(v)
+print(sampleWordList)
+    
+    
