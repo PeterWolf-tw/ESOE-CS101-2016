@@ -7,18 +7,11 @@ samplefile=open("./sample.txt","r")
 
 sample=samplefile.read()
 
-sample=re.sub("\d"," ",sample)
-sample=re.sub("\s"," ",sample)
-deletion = [".",",","-","!","?","\"","\n"]
-
-for d in deletion:
-    sample = sample.replace(d, " ")
-
-sample=sample.split()
+samplepure=re.findall("[a-zA-Z]+",sample)   #找出英文字
 
 sampleWordList=[]
 
-for s in sample:
+for s in samplepure:                        #刪除字數<5的英文字
     if len(s)>5:
         sampleWordList.append(s)
 
