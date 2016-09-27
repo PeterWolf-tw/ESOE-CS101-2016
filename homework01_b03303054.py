@@ -10,7 +10,7 @@ for mark in marklist:
 t=t.split(" ")
 for A in t:
     if len(A)>5:
-        sampleWorkList.append(A)
+        sampleWordList.append(A)
 
 print(sampleWordList)
 
