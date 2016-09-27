@@ -12,3 +12,15 @@ for h in text:
         sampleWordList.append(h)
     else:
         pass
+    
+       
+=============================
+    
+while True:
+    a=input("input the word:")
+    if len(a)<5:
+        print("the word is less than five letter.")
+    elif a in sampleWordList:
+        print("there is the word")
+    else:
+        print("nonono")
