@@ -23,6 +23,3 @@ while True:
         print('you have to enter "more than five" letters!!!')
     else:
         print("sorry, not in samplewordlist.")
-
-
-

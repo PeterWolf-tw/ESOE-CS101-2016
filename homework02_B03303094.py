@@ -17,3 +17,5 @@ def bin2int(n):
             break
     print("{0} 的十進位表示為 {1}.".format(n,ans))
     return None
+
+        
