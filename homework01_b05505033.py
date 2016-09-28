@@ -35,3 +35,4 @@ while whilecount:
         whilecount=whilecount+1
 #change log
          # added the "kill mark" code
+         #I can use this!
