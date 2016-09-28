@@ -1,6 +1,7 @@
 #part1.1
-file = open("ESOE-CS101-2016/sample.txt", encoding='utf-8-sig')
+file = open("sample.txt", encoding='utf-8-sig')
 replace = file.read().replace("\n"," ").replace("?","").replace(".","").replace("-","")
+file.close()
 sample = replace.split(" ")
 sampleWordList = []
 for n in range(0,len(sample)):
