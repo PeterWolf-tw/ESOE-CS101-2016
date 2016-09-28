@@ -8,7 +8,7 @@ text=text.replace("\"","")
 text=text.replace("-","") 
 text=text.replace("\n"," ") 
 text=text.replace(",","") 
-text=text.replace("2000th","2,000th") 
+text=text.replace("2000th","") 
 textlist=text.split(" ")
 for word in textlist:
     if len(word)>=5:
