@@ -1,9 +1,5 @@
-Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 26 2016, 10:47:25) 
-[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
-Type "copyright", "credits" or "license()" for more information.
->>> 
->>> 
 #Homework1-1-------------------------------------------------------
+
 
 #讀取檔案並轉為可讀文字
 f1=open("sample.txt","r")
@@ -27,7 +23,7 @@ sampleWordList=[]
 
 end=len(f4)
 n=0
-while n<=end:
+while n<=end-1:
 	if len(f4[n])>5:
 		sampleWordList.append(f4[n])
 		n+=1
@@ -35,19 +31,20 @@ while n<=end:
 		n+=1
 #產出列表     
 print(sampleWordList)
+print("\n")
 
 #Homework1-2-------------------------------------------------------
 
-while:
-word=input("please type a word with more than 5 letters.")#輸入詞彙
-	if len(word)<5:#判定詞彙是否超過五個字
-        print("lease type a word with more than 5 letters again.")
-	else
-        	if word in  sampleWordList:#判定詞彙是否存在列表裡
-                print("this word exist in the list!")
-        	else:
-                print("this word doesn't exist in the list!")
-
-
+x=0
+while x<1:
+    word=input("please type a word with more than 5 letters.\n")#輸入詞彙
+    if len(word)<5:#判定詞彙是否超過五個字
+                print("the word is not long enough!")
+    else:
+                if word in  sampleWordList:#判定詞彙是否存在列表裡
+                    print("this word exist in the list!"+"\ntry again?")
+                else:
+                    print("this word doesn't exist in the list!"+"\ntry again?")
+                  
 
 
