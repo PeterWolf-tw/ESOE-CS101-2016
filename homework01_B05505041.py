@@ -2,10 +2,10 @@
 
 sampleFile = open("./sample.txt", "r")
 sampleRead = sampleFile.read()
-m = ['?','\n', ',','-','""','.','!','0','1','2','3','4','5','6','7','8','9']
+m = ['?','\n', ',','-','"','.','!','0','1','2','3','4','5','6','7','8','9']
 #for element in m:
 #     wordList = sampleRead.replace("m"," ")
-print sampleRead
+print(sampleRead)
 
 for x in m:
     sampleRead = sampleRead.replace(x, " ")
@@ -17,12 +17,12 @@ for w in wordList:
         wordSampleList.append(w)
 
 for w in wordSampleList:
-    print w
+    print(w)
 
 print("Please input a word with more than 5 digits.")
 
 while True:
-    userword = raw_input("> ")
+    userword = input("> ")
     if len(userword) > 5:
         if userword in wordSampleList:
             print("Nice job! This word is on the list.")
