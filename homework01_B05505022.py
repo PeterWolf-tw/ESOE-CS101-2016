@@ -1,9 +1,8 @@
 #homework1-1
-file=open("C:\\Users\mark1\Desktop\sample.txt")
+file=open(".\sample.txt")
 rf=file.read()
 
-mL=['?',',','.','-','\n']
-
+mL=['?',',','.','-','\n','\n\n']
 for mark in mL:
     rf2=rf.replace(mark," ")
     
@@ -19,7 +18,7 @@ print(sampleWordList)
 
 #homework1-2
 while True:
-    A=input("Please enter a word more than 5 letters :")
+    A=input("Please enter a word more than 5 letters or enter[shut down] to depart:")
     
     if len(A) <= 5:
         print("Please enter a word more than 5 letters\n")
@@ -27,4 +26,7 @@ while True:
     if A in sampleWordList:
         print("The word is in sampleWordList\n")
     else:
-        print("The word is in sampleWordList\n")
+        print("The word is not in sampleWordList\n")
+    if A =="shut down":
+        break
+    
