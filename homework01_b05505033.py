@@ -1,5 +1,5 @@
 #read the file from the sample.txt
-wordfile=open("C:\\Users\翁震軒\Desktop\sample.txt","r", encoding="utf8")
+wordfile=open("C:\\Users\�ξ_�a\Desktop\sample.txt","r", encoding="utf8")
 wordtext=wordfile.read()
 #killing the marks
 wordtext1=wordtext.replace("."," ")
@@ -20,7 +20,7 @@ for sampleWordList1 in sampleWord:
 whilecount=1
 while whilecount:
 #user type in the word 
-    ans=input("input= ")
+    ans=input("please enter your answer= ")
 #if the the word is lesser than five LETTERS
     if len(ans)<5:
         print("Please enter more that 5 letters")
@@ -31,8 +31,9 @@ while whilecount:
         whilecount=whilecount+1
 #if the word isnt on the list
     else:
-        print("sorry not found")
+        print("sorry not found, try again")
         whilecount=whilecount+1
 #change log
          # added the "kill mark" code
          #I can use this!
+         #I consider 2,000th as a letter this change is to clairfy that.
