@@ -1,5 +1,5 @@
 #read the file from the sample.txt
-wordfile=open("C:\\Users\¯Î¾_°a\Desktop\sample.txt","r", encoding="utf8")
+wordfile=open("sample.txt","r", encoding="utf8")
 wordtext=wordfile.read()
 #killing the marks
 wordtext1=wordtext.replace("."," ")
