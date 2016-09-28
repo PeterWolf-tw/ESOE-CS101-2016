@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 s=open("C:/Users/user/Desktop/sample.txt","r")
 sample=s.read()
 s.close()
