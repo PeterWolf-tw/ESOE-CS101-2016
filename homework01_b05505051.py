@@ -20,3 +20,11 @@ sfile.close()
 
 
 -1-2
+while true:
+    word=input("輸入一個大於五個字的單字")
+    if word in swordlist:
+        print("這個字在swordlist裡面")
+    elif len(word)<=5:
+        print("這個單字少於五個字")
+    else:
+        print("這個字不在swordlist裡面")

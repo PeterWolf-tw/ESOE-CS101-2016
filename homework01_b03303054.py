@@ -10,17 +10,18 @@ for mark in marklist:
 t=t.split(" ")
 for A in t:
     if len(A)>5:
-        sampleWorkList.append(A)
+        sampleWordList.append(A)
 
 print(sampleWordList)
 
-
 while True:
-    enter=input("請打超過5個字的英文單字:")
+    enter=input("輸入5個字母以上的單字")
     if len(enter)<5:
-        print("請打超過5的字母的單字!")
+        print("單字必須大於5個字母!")
         
     elif enter in sampleWordList:
-        print(enter,"在sampleWordList裡面!"
+        print(enter,"在sampleWordList裡面!")
+        
     else:
-              print(enter,"不在sampleWordList裡面")
+        print("不在sampleWordList裡面喔!")
+
