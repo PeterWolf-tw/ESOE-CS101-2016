@@ -59,17 +59,12 @@ def bin2int(N):
 
     '''
     a=N
-    tempNumList=[]
-    while True :
-        tempNumList.append(N%10)
-        if N==1:
-            break
-        N=N//10
     result=0
     i=0
-    while i<len(tempNumList):
-        result=result+tempNumList[i]*(2**i)
-        i=i+1 
+    while N>0:
+        result += (N%10)*(2**i)
+        N=N//10
+        i+=1
 
     print("{0} 的十進位表示為 {1}.".format(a, result)) 
 
