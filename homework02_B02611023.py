@@ -24,6 +24,7 @@
 
 #</教學>
 # #####################################################################################
+from math import pow
 
 number = 100  #設定 number 這個變數的值為 2
 print("number 的二進位表示法為：{0}".format(bin(number))) #將 2 餵入 bin(n) 函式中，並把 bin(n) 回傳的結果，接著餵給 print() 輸出在螢幕畫面上。
@@ -37,10 +38,11 @@ def int2bin(N):
     本函式將 int 整數轉為 bin 二進位制表示。作用等同於 bin(N)
     '''
     tmpLIST = []
-    while N > 0:
-        remainder = int(N % 2)
+    temp = N
+    while temp > 0:
+        remainder = int(temp % 2)
         tmpLIST.append(remainder)
-        N = (N - remainder) / 2
+        temp = (temp - remainder) / 2
     tmpLIST.append(0)
 
     ans = ""
@@ -55,23 +57,37 @@ def int2bin(N):
 def bin2int(N):
     '''
     本函式將 bin 二進位制表示數轉為 int 整數
-                    '''
-    N=int(input("請輸入："))
-    times=0
-    result=0
-    while N>0:
-        remainder = int(N % 10)
-        result+=(2**times)*remainder
-        N=(N - remainder) /10
-        times+=1
-        
-    print(result)
-        
-     
+    '''
+    temp = N
+    digit = 0
+    sum = 0
+    while temp > 0:
+        remainder = int(temp % 10)
+        sum = sum + remainder * pow(2,digit)
+        digit = digit + 1 
+        temp = (temp - remainder) / 10
+
+    ans = ""
+    ans = ans + str(sum)
+    print("{0} 的十進位表示為 {1}.".format(N, ans))
     return None
-
-
-bin2int("")
+    
+def intto256(N):
+    N = N.split(".")
+    for num in N:
+        num = int(num)
+        b = bin(num)[2:]
+        length = 8 - len(b)
+        for i in range(length):
+            print("0",end='')
+        print(b,end=' ')
+    return None
+    
+def ninecomp(N):
+    num = pow(10,len(str(N))) - 1
+    ans = num - N
+    print(ans)    
+    return None
 
 class HW02:
     def ch2(self):
@@ -88,8 +104,8 @@ class HW02:
         #作業 2. 課本 Ch2. P2.19
         self.Ch2P2_19a = "10"
         self.Ch2P2_19b = "17"
-        self.Ch2P2_19c = "6"
-        self.Ch2P2_19d = "8"
+        self.Ch2P2_19c = "7"
+        self.Ch2P2_19d = "9"
 
         #作業 3. 課本 Ch2. P2.20
         self.Ch2P2_20a = "14"
@@ -116,22 +132,22 @@ class HW02:
         "xxx" ： 你要填入你的答地方。
         '''
         #作業 5. 課本 Ch3. P3.28
-        self.Ch3P3_28a = "234"
-        self.Ch3P3_28b = "overflow"
-        self.Ch3P3_28c = "874"
-        self.Ch3P3_28d = "888"
+        self.Ch3P3_28a = "765"
+        self.Ch3P3_28b = "439"
+        self.Ch3P3_28c = "xxx"
+        self.Ch3P3_28d = "xxx"
 
         #作業 6. 課本 Ch3. P3.30
-        self.Ch3P3_30a = "234"
-        self.Ch3P3_30b = "overflow"
-        self.Ch3P3_30c = "875"
-        self.Ch3P3_30d = "889"
+        self.Ch3P3_30a = "766"
+        self.Ch3P3_30b = "440"
+        self.Ch3P3_30c = "xxx"
+        self.Ch3P3_30d = "xxx"
 
 
 if __name__ == '__main__': #程式進入點，程式由此行開始執行。以下示範助教的批改程式。
     checkHW02 = HW02()
     checkHW02.ch2()
-    if checkHW02.Ch2P2_19a == str(10): #10 是這題的正解。此行檢查這題的答案。
+    if checkHW02.Ch2P2_19a == 10: #10 是這題的正解。此行檢查這題的答案。
         print("Ch2P2_19a:{0}".format("Correct!"))
     else:
         print("Ch2P2_19a:{0}".format("Incorrect!"))

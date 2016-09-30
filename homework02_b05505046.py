@@ -25,6 +25,7 @@
 #</教學>
 # #####################################################################################
 
+
 number = 100  #設定 number 這個變數的值為 2
 print("number 的二進位表示法為：{0}".format(bin(number))) #將 2 餵入 bin(n) 函式中，並把 bin(n) 回傳的結果，接著餵給 print() 輸出在螢幕畫面上。
 
@@ -55,23 +56,21 @@ def int2bin(N):
 def bin2int(N):
     '''
     本函式將 bin 二進位制表示數轉為 int 整數
-                    '''
-    N=int(input("請輸入："))
-    times=0
-    result=0
-    while N>0:
-        remainder = int(N % 10)
-        result+=(2**times)*remainder
-        N=(N - remainder) /10
-        times+=1
-        
-    print(result)
-        
-     
+    '''
+    x=int(N)
+    c = 0
+    List=[]
+    while x>0:
+        for s in range(0,len(N)):
+           c += (x%10)*2**s
+           x=x//10
+           
+            
+        print("{0} 的十進位表示法為：{1}".format(N,c))     
+       
     return None
 
 
-bin2int("")
 
 class HW02:
     def ch2(self):
@@ -86,7 +85,7 @@ class HW02:
         "xxx" ： 你要填入你的答地方。
         '''
         #作業 2. 課本 Ch2. P2.19
-        self.Ch2P2_19a = "10"
+        self.Ch2P2_19a = "6"
         self.Ch2P2_19b = "17"
         self.Ch2P2_19c = "6"
         self.Ch2P2_19d = "8"
@@ -99,8 +98,8 @@ class HW02:
 
         #作業 4. 課本 Ch2. P2.22
         self.Ch2P2_22a = "00010001 11101010 00100010 00001110"
-        self.Ch2P2_22b = "00001110 00111000 11101010 00111000"
-        self.Ch2P2_22c = "01101110 00001110 00111000 01001110"
+        self.Ch2P2_22b = "01101110 00001110 00111000 01001110"
+        self.Ch2P2_22c = "00001110 00111000 11101010 00111000"
         self.Ch2P2_22d = "00011000 00111000 00001101 00001011"
 
 
@@ -116,22 +115,22 @@ class HW02:
         "xxx" ： 你要填入你的答地方。
         '''
         #作業 5. 課本 Ch3. P3.28
-        self.Ch3P3_28a = "234"
-        self.Ch3P3_28b = "overflow"
-        self.Ch3P3_28c = "874"
-        self.Ch3P3_28d = "888"
+        self.Ch3P3_28a = "765"
+        self.Ch3P3_28b = "439"
+        self.Ch3P3_28c = " "
+        self.Ch3P3_28d = "xxx"
 
         #作業 6. 課本 Ch3. P3.30
-        self.Ch3P3_30a = "234"
-        self.Ch3P3_30b = "overflow"
-        self.Ch3P3_30c = "875"
-        self.Ch3P3_30d = "889"
+        self.Ch3P3_30a = "xxx"
+        self.Ch3P3_30b = "xxx"
+        self.Ch3P3_30c = "xxx"
+        self.Ch3P3_30d = "xxx"
 
 
 if __name__ == '__main__': #程式進入點，程式由此行開始執行。以下示範助教的批改程式。
     checkHW02 = HW02()
     checkHW02.ch2()
-    if checkHW02.Ch2P2_19a == str(10): #10 是這題的正解。此行檢查這題的答案。
+    if checkHW02.Ch2P2_19a == 10: #10 是這題的正解。此行檢查這題的答案。
         print("Ch2P2_19a:{0}".format("Correct!"))
     else:
         print("Ch2P2_19a:{0}".format("Incorrect!"))
