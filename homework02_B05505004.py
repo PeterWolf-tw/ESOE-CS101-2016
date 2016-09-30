@@ -25,7 +25,6 @@
 #</教學>
 # #####################################################################################
 
-
 number = 100  #設定 number 這個變數的值為 2
 print("number 的二進位表示法為：{0}".format(bin(number))) #將 2 餵入 bin(n) 函式中，並把 bin(n) 回傳的結果，接著餵給 print() 輸出在螢幕畫面上。
 
@@ -72,7 +71,7 @@ def bin2int(N):
     return None
 
 
-print(bin2int(""))
+bin2int("")
 
 class HW02:
     def ch2(self):
@@ -87,22 +86,22 @@ class HW02:
         "xxx" ： 你要填入你的答地方。
         '''
         #作業 2. 課本 Ch2. P2.19
-        self.Ch2P2_19a = "xxx"
-        self.Ch2P2_19b = "xxx"
-        self.Ch2P2_19c = "xxx"
-        self.Ch2P2_19d = "xxx"
+        self.Ch2P2_19a = "10"
+        self.Ch2P2_19b = "17"
+        self.Ch2P2_19c = "6"
+        self.Ch2P2_19d = "8"
 
         #作業 3. 課本 Ch2. P2.20
-        self.Ch2P2_20a = "xxx"
-        self.Ch2P2_20b = "xxx"
-        self.Ch2P2_20c = "xxx"
-        self.Ch2P2_20d = "xxx"
+        self.Ch2P2_20a = "14"
+        self.Ch2P2_20b = "8"
+        self.Ch2P2_20c = "13"
+        self.Ch2P2_20d = "4"
 
         #作業 4. 課本 Ch2. P2.22
-        self.Ch2P2_22a = "xxx"
-        self.Ch2P2_22b = "xxx"
-        self.Ch2P2_22c = "xxx"
-        self.Ch2P2_22d = "xxx"
+        self.Ch2P2_22a = "00010001 11101010 00100010 00001110"
+        self.Ch2P2_22b = "01101110 00001110 00111000 01001110"
+        self.Ch2P2_22c = "00001110 00111000 11101010 00111000"
+        self.Ch2P2_22d = "00011000 00111000 00001101 00001011"
 
 
     def ch3(self):
