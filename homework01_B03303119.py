@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Created on Sat Sep 24 01:55:12 2016
