@@ -37,7 +37,7 @@ while i < len(samplewordlist) :
     if len(userword)<=5:
         x= 2
         break
-    elif userword == newwordlist[i]:
+    elif userword == newwordlist1[i]:
         x = 1
         break
     i = i+1

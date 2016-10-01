@@ -2,7 +2,7 @@
 """
 Created on Tue Sep 20 22:32:09 2016
 
-@author: user
+@author: steveyeh987
 """
 
 sampleWordList = []
@@ -39,3 +39,4 @@ else:
         print "您輸入的字在sampleWordList裡!"
     else:
         print "您輸入的字不在sampleWordList裡!"
+

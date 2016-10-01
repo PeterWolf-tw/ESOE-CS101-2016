@@ -9,7 +9,7 @@ Week01 (Due Date: 2016.09.26)
 Overdue is allowed.
 
 Week02 (Due Date: 2016.10.03)
-TBD
+0. 詳情請見 homework02.py
 
 Week03 (Due Date: 2016.10.10)
 TBD
