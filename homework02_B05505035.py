@@ -60,7 +60,7 @@ def bin2int(N):
     for c in a[:: -1]:    
         e = 2**d*int(c)
         ans = ans + e
-        d = d +1
+        d = d +1 
     print("{0}的十進位表示為{1}".format(N, ans))
     return None
 
