@@ -31,9 +31,12 @@ i=0
 keyin=input("Please key in a word:")
 
 while i<1000:
-    if keyin in samplewordlist:
-        print ("The word exists in the list!")
+    if len(keyin)<5:
+        print ("Please key in a word more than five letters.")
         i=i+1
+        break
+    elif keyin in samplewordlist:
+        print ("The word exists in the list!")
         break
     else:
         print ("The word doesn't exist in the list.")

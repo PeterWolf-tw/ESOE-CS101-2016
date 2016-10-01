@@ -1,49 +1,56 @@
+import re
 #student ID: B05505040
+#This version:python 3.5.2
+#old version:python 2.7.12
 #part 1-1
-print "\n\n"
-sample = open("./sample.txt", "r")
-sample_read = sample.read()
+sampleFile = open("./sample.txt", "r")
+sampleRead = sampleFile.read()
 
+letterString = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+letterList = []
 
-sample_read_nonewline = sample_read.replace("\n"," ") #replace newline with spaces
+for i in range(len(letterString)):
+    letterList += letterString[i]
 
-alphabet = set('abcdefghijklmnopqrstuvwxy ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+sampleAlpha = ""
+for y in sampleRead:
+    if y in letterList:
+        sampleAlpha += y
+    elif y == "\n":
+        sampleAlpha += " "
 
-sample_read_alpha = ''.join(filter(alphabet.__contains__,
-sample_read_nonewline)) #this will filter out every character that is not of the alphabet
-
-sample_words = sample_read_alpha.split(" ") #this will make a list consisting
-# of words in the sample
-
+sampleWords = sampleAlpha.split(" ")
+for y in sampleWords:
+    if re.match("^[ ]*$", y):
+        sampleWords.remove(y)
 
 sampleWordList = []
-for x in range(0, len(sample_words)):
-    if len(sample_words[x]) > 5:
-        sampleWordList.append(sample_words[x])
-        x = x + 1
-    else:
-        x = x + 1
+for y in sampleWords:
+    if len(y) > 5:
+        sampleWordList.append(y)
 
-y = 0
-print "the list 'sampleWordList' has the following words:\n "
-for y in range(y, len(sampleWordList)):
-    print sampleWordList[y]
-    y = y + 1
+
+for y in sampleWordList:
+    print(y)
 
 #part 1-2
-
-print "\n\n"
-print "This script sees if the word you type is on the list 'sampleWordList'."
-print "Type a word bigger than 5 letters: "
-n = 0
+print("Please type a word bigger than 5 letters")
+print("To exit the program type'I want to exit'.")
 while True:
-    userword = raw_input("> ")
-    if len(userword) > 5:
-        if userword not in sampleWordList: #this checks if the word is not on the list
-            print "The word you entered is not on the list, please try again."
-        else: #the only other possible case, is if the word is on the list
-            print "The word you entered is on the list."
-            print "program exiting"
-            break
+    userword = str(input())
+    if userword == "I want to exit":
+        print("Script closing...")
+        break
+    if not re.match("^[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxy]*$", userword):
+#this won't allow any input that is not from the alphabet.
+        print("Error! Special characters and spaces are not allowed.")
+        print("Please try again:")
+    elif len(userword) > 5:
+        if userword in sampleWordList:
+            print("The word '" + userword + "' is on the list.")
+        else:
+            print("The word '" + userword + "' is not on the list,")
+            print("please try again:")
     else:
-        print "The word you entered is smaller or equal to 5 letters, please try again."
+        print("The word '" + userword + "' is smaller or equal to 5 letters,")
+        print("please try again:")

@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Created on Sat Sep 24 01:55:12 2016
@@ -34,4 +35,4 @@ while True:
     else:
         print (enter ," does not exist in sampleWordList. ")   #作業1-2
     
-    
+   
