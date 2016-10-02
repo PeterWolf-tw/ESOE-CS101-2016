@@ -1,3 +1,4 @@
+#HW 1 the function
 def bin2int(N):
     keyed=N
     power=0
@@ -11,7 +12,7 @@ def bin2int(N):
         #print("{0} int {1}.".format(keyed,results)) 測試
     #print("{0} abc {1}.".format(N,results))  測試
     return results
-
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def int2bin(N):
     tmpLIST = []
     while N > 0:
@@ -24,23 +25,20 @@ def int2bin(N):
         ans = ans + str(j)
         ans1=int(ans)
     return ans1
-
-N=1
-while N>0:
-    binder=input("key in=")
-    binder1=int(binder)
-    S=bin2int(binder1)
-    print(S)
-    N=N+1
-
-
+#-------------------------------------------------------------------------------
+#this little program was for finishing the HW with convinence.
+#N=1
+#while N>0:
+ #   binder=input("key in=")
+  #  binder1=int(binder)
+   # S=bin2int(binder1)
+    #print(S)
+    #N=N+1
     
-    
-    
-
+ #---------------------------------------------------------------------------------------------   
 #作業 2. 課本 Ch2. P2.19
 self.Ch2P2_19a = "10"
-self.Ch2P2_19b = "20"
+self.Ch2P2_19b = "17"
 self.Ch2P2_19c = "6"
 self.Ch2P2_19d = "8"
 
@@ -57,13 +55,13 @@ self.Ch2P2_22c = "01101110.00001110.00111000.01001110"
 self.Ch2P2_22d = "00011000.00111000.00001101.00001011"    
 
 #作業 5. 課本 Ch3. P3.28
-self.Ch3P3_28a = "xxx"
-self.Ch3P3_28b = "xxx"
-self.Ch3P3_28c = "xxx"
-self.Ch3P3_28d = "xxx"
+self.Ch3P3_28a = "234"
+self.Ch3P3_28b = "overflow"
+self.Ch3P3_28c = "874"
+self.Ch3P3_28d = "888"
 
 #作業 6. 課本 Ch3. P3.30
-self.Ch3P3_30a = "xxx"
-self.Ch3P3_30b = "xxx"
-self.Ch3P3_30c = "xxx"
-self.Ch3P3_30d = "xxx"
+self.Ch3P3_30a = "235"
+self.Ch3P3_30b = "overflow"
+self.Ch3P3_30c = "875"
+self.Ch3P3_30d = "889"
