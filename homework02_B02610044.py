@@ -54,9 +54,24 @@ def int2bin(N):
 #作業 1.
 # 請參考上例，自己寫一個將二進位表示數轉為十進位制的函式供稍後的作業使用：
 def bin2int(N):
-    '''
-    本函式將 bin 二進位制表示數轉為 int 整數
-    '''
+    #'''
+    #本函式將 bin 二進位制表示數轉為 int 整數
+    #'''
+    
+    #result代表「各位數轉化值」
+    result = 0
+    #reverse代表用以計算「各位數轉化值」之次方數
+    reverse = 0
+    #remainder代表餘數
+    remainder = 0
+    while N >= 0 :                                                                 
+        remainder = N%10                     #%為求「餘數」之運算元
+        result += remainder*(2**reverse)     #**代表「次方數」；累加「各位數轉化值」以得「最終結果」
+        reverse += 1                         #2進位轉10進位的算法(進位與次方數)                                       
+        N = N//10                            #//為求「商」運算元；迴圈條件 
+ 
+
+    print("{0} 的十進位表示法為：{1}".format(N,result))         
 
     return None
 
