@@ -1,13 +1,11 @@
-samplefile=open(r'C:\Users\user\Desktop\sample.txt')
-sampletext=samplefile.read()
-samplefile.close()
+f=open(r'C:\Users\user\Desktop\sample.txt')
+sample=f.read()
+f.close()
 
-unwanted=['"','.',',','?','\n','-']
-for e in unwanted:
-    newsampletext=sampletext.replace(e,"")
-textlist=newsampletext.split(" ")
+sampletext=sample.replace(',','').replace('"','').replace('.','').replace('?','').replace(' - ','').replace('\n\n',' ')
+textlist=sampletext.split(" ")
 
-samplewWordList=[]
+sampleWordList=[]
 for word in textlist:
     if len(word)>5:
         sampleWordList.append(word)
@@ -15,22 +13,12 @@ for word in textlist:
         Pass
 print(sampleWordList)
 
-count=0
-test=input("Please enter a word more than 5 letters:")
-while count<10000:
-    if len(test)>5:
-        if test in sampleWordList
-            print("The word is in sampleWordList."):
-            count=count+1
-        else:
-            print("The word is not in sampleWordList.")
-            count=count+1
-    else:
-        print("The word is too short!")
-        count=count+1
 
-
-        
-
-
+test=input("Please enter a word more than 5 letters")
+while true:
+    if len(test)<5:
+        print("Read the instruction carefully and try again.")
+    elif test in sampleWordList:
+        print(test" is in sampleWordList")
+    else print(test" is not in sampleWordList")
 
