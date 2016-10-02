@@ -63,12 +63,11 @@ def bin2int(N):
     anser=0
     while n>0:
         remainder=int(n%10)
-        result=reminder*(2**i)
-        n=(n-reminder)/10
-        i=i+1
-        ans=result
-    print("{0} 的十進位表示為 {1}.".format(N,ans))    
-        
+        result=remainder*(2**i)
+        n= int(n-remainder)/10
+        i +=1
+        ans +=result
+    print("{0} 的十進位表示為 {1}.".format(N,ans))        
     return None
 
 class HW02:
