@@ -57,15 +57,15 @@ def bin2int(N):
     '''
     本函式將 bin 二進位制表示數轉為 int 整數
     '''
-    ans=0
-    k=0
-    n=N
-    while n>0:
-        remainder=int(n%10)
-        ans=ans+remainder*2**k
-        n=(n-remainder)/10
-        k=k+1
-    print("{0} 的十進位表示為 {1}.".format(N,ans))
+    ans = 0
+    k = 0
+    n = N
+    while n > 0:
+        remainder = int(n % 10)
+        ans = ans + remainder * 2**k
+        n = ( n - remainder ) / 10
+        k = k + 1
+    print("{0} 的十進位表示為 {1}.".format(N, ans))
     return None
 
 class HW02:
