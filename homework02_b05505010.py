@@ -59,8 +59,8 @@ def bin2int(N):
     '''
     本函式將 bin 二進位制表示數轉為 int 整數
     '''
-    # N's type is string
-    S = N[::-1]
+    # N's type is not sure!!!
+    S = str(N)[::-1]
     ans = 0
     val = 1
     for idx in range(0, len(S)):
@@ -112,16 +112,16 @@ class HW02:
         "xxx" ： 你要填入你的答地方。
         '''
         #作業 5. 課本 Ch3. P3.28
-        self.Ch3P3_28a = "xxx"
-        self.Ch3P3_28b = "xxx"
-        self.Ch3P3_28c = "xxx"
-        self.Ch3P3_28d = "xxx"
+        self.Ch3P3_28a = "234"
+        self.Ch3P3_28b = "overflow"
+        self.Ch3P3_28c = "874"
+        self.Ch3P3_28d = "888"
 
         #作業 6. 課本 Ch3. P3.30
-        self.Ch3P3_30a = "xxx"
-        self.Ch3P3_30b = "xxx"
-        self.Ch3P3_30c = "xxx"
-        self.Ch3P3_30d = "xxx"
+        self.Ch3P3_30a = "234"
+        self.Ch3P3_30b = "overflow"
+        self.Ch3P3_30c = "875"
+        self.Ch3P3_30d = "889"
         
 '''
 
