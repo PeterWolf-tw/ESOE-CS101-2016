@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+
 wilson=open("C:\sample.txt",encoding="utf8")
 sampleText=wilson.read()
 sampleWordList=[]
@@ -14,8 +17,8 @@ input(sampleWordList)
 for x in sampleWordList:
     i=0
     while len(x)>5:
-        print("¦¹¦r¦b¨ä¤¤")
+        print("æ­¤å­—åœ¨å…¶ä¸­")
     else:
-        print("¦¹¦r¤£¦b¨ä¤¤")
+        print("æ­¤å­—ä¸åœ¨å…¶ä¸­")
     
     
