@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+
+
 sampleFile=open("/Users/Tingting/Desktop/sample.txt","r")
 sampleText=sampleFile.read()
 sampleFile.close()
