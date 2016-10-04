@@ -2,22 +2,19 @@ samplefile = open("./sample.txt","r")
 sampletext = samplefile.read()
 
 
-print (str(sampletext) )
-
-samplefile.close()
 
 
-mark = ["!","?",".",",","'","{","}","[","]","..."]
-
+mark = [".","?"]
 
 for n in mark:
-    turestory = sampletext.replace(n," ")
+    story1 = sampletext.replace(n," ")
+    
+#story2 = story1.split(" ")
 
 
-print (turestory)
+print (story1)
 
     
 
 
-
-
+samplefile.close()
