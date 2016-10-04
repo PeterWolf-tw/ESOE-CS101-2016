@@ -1,13 +1,10 @@
 #B05505024
 file=open('/Users/Raymond/Documents/sample.txt')
-text=file.read()
-file.close
-file=open('/Users/Raymond/Documents/sample.txt')
 context=file.read()
 file.close
 
 SymbolList=[',','.','!','?','#','$','%','&','-','"','\n','0','1','2','3','4','5','6','7','8','9']
-text=text.lower()
+text=context.lower()
 
 for sym in SymbolList:
     text=text.replace(sym,' ')
