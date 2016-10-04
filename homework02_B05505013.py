@@ -35,7 +35,7 @@ print("number 的二進位表示法為：{0}".format(bin(number))) #將 2 餵入
 
 def int2bin(N):
     '''
-    本函式將 int 整數轉為 bin 二進位制表示。作用等同於 bin(N)
+    本函式將 iint2bin(N)nt 整數轉為 bin 二進位制表示。作用等同於 bin(N)
     '''
     tmpLIST = []
     while N > 0:
@@ -58,10 +58,14 @@ def bin2int(N):
     本函式將 bin 二進位制表示數轉為 int 整數
     '''
     ans = 0
-    for index in range(len(str(N))):
-        ans += (int(str(N)[index])) * (2 ** (len(str(N))-index-1))
-    print("{0} 的二進位表示為 {1}.".format(N, ans))
-
+    k = 0
+    n = N
+    while n > 0:
+        remainder = int(n % 10)
+        ans = ans + remainder * 2**k
+        n = ( n - remainder ) / 10
+        k = k + 1
+    print("{0} 的十進位表示為 {1}.".format(N, ans))
     return None
 
 class HW02:
@@ -108,13 +112,13 @@ class HW02:
         '''
         #作業 5. 課本 Ch3. P3.28
         self.Ch3P3_28a = "234"
-        self.Ch3P3_28b = "560"
+        self.Ch3P3_28b = "Overflow"
         self.Ch3P3_28c = "874"
         self.Ch3P3_28d = "888"
 
         #作業 6. 課本 Ch3. P3.30
         self.Ch3P3_30a = "234"
-        self.Ch3P3_30b = "560"
+        self.Ch3P3_30b = "Overflow"
         self.Ch3P3_30c = "875"
         self.Ch3P3_30d = "889"
 

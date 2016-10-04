@@ -53,26 +53,22 @@ def int2bin(N):
 
 #作業 1.
 # 請參考上例，自己寫一個將二進位表示數轉為十進位制的函式供稍後的作業使用：
+
+    
 def bin2int(N):
-    '''
-    本函式將 bin 二進位制表示數轉為 int 整數
-    '''
-    list=[]
-    m=n
-    while int(m)>0:
-        x=int(m)%10
-        list.append(x)
-        m=int(m)//10
-    ans=0
-    while True:
-        try:
-            ans=ans+list[0]
-            del list[0]
-            list=[i*2 for i in list]
-        except:
-            break
-    print("{0} 的十進位表示為 {1}.".format(n,ans))
-    return None
+#我不太明白爲何要加def bin2int(N): ,不過以下程式衹要不加那個和.format(N,ans)就可以跑了，
+   N=input("Input your binary number here: ")
+   N=int(N)
+   i=0
+   m=0
+   result=0
+   while N>0:
+        m=(N%10)*int(2**i)
+        i=i+1
+        N=(N-(N%10))/10
+        result=int(result)+int(m)
+   print("{0}的十進位表示爲{1}"+str(result))
+ 
 
 class HW02:
     def ch2(self):
@@ -97,10 +93,10 @@ class HW02:
         self.Ch2P2_20d = "4"
 
         #作業 4. 課本 Ch2. P2.22
-        self.Ch2P2_22a = "00010001 11101010 00100010 00001110"
-        self.Ch2P2_22b = "00001110 00111000 11101010 00111000"
-        self.Ch2P2_22c = "01101110 00001110 00111000 01001110"
-        self.Ch2P2_22d = "00011000 00111000 00001101 00001011"
+        self.Ch2P2_22a = "00010001 11101100 00100010 00001110"
+        self.Ch2P2_22b = "01101110 00001110 00111000 01001110"
+        self.Ch2P2_22c = "00001110 00111000 11101100 00111000"
+        self.Ch2P2_22d = "00011000 00111000 00011001 00001011"
 
 
     def ch3(self):
@@ -114,13 +110,13 @@ class HW02:
         '''
         #作業 5. 課本 Ch3. P3.28
         self.Ch3P3_28a = "234"
-        self.Ch3P3_28b = "overflow"
+        self.Ch3P3_28b = "560"
         self.Ch3P3_28c = "874"
         self.Ch3P3_28d = "888"
 
         #作業 6. 課本 Ch3. P3.30
-        self.Ch3P3_30a = "235"
-        self.Ch3P3_30b = "overflow"
+        self.Ch3P3_30a = "234"
+        self.Ch3P3_30b = "560"
         self.Ch3P3_30c = "875"
         self.Ch3P3_30d = "889"
 
@@ -132,3 +128,7 @@ if __name__ == '__main__': #程式進入點，程式由此行開始執行。以�
         print("Ch2P2_19a:{0}".format("Correct!"))
     else:
         print("Ch2P2_19a:{0}".format("Incorrect!"))
+
+    
+ 
+ 

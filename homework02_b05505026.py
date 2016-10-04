@@ -53,24 +53,37 @@ def int2bin(N):
 
 #作業 1.
 # 請參考上例，自己寫一個將二進位表示數轉為十進位制的函式供稍後的作業使用：
-def bin2int(N):
-    '''
-    本函式將 bin 二進位制表示數轉為 int 整數
-    '''
-    ans = 0
-    for index in range(len(str(N))):
-        ans += (int(str(N)[index])) * (2 ** (len(str(N))-index-1))
-    print("{0} 的二進位表示為 {1}.".format(N, ans))
 
-    return None
+
+#=====================================================
+
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+
+def dec(n):
+    n=str(n)
+    lin=list(n)
+    reverse=""
+    listn2=[]
+    
+    for j in lin[::-1]: 
+        listn2.append(j)
+    
+    ans=0
+    for i in range(0,len(lin)):
+      ans+=(2**(i))*int(listn2[i])
+    return ans
+
+n=input("Please enter a number in binary.")
+print("The number {0} in decimal is {1}".format(n,dec(n)))
+    
+
 
 class HW02:
     def ch2(self):
         '''
         請將你計算出來的答案填入以下變數，助教會寫程式自動批改。
-
         Ch2P2_19a = "xxx"
-
         意思是
         Ch2   : 第二章
         P2_19a: 第二章結尾處的 PRACTICE SET 段落處的 Problems 第 P2-19 題的 a 小題
@@ -98,9 +111,7 @@ class HW02:
     def ch3(self):
         '''
         請將你計算出來的答案填入以下變數，助教會寫程式自動批改。
-
         Ch3P3_28a = "xxx"
-
         意思是
         Ch3   : 第三章
         P3_28a: 第三章結尾處的 PRACTICE SET 段落處的 Problems 第 P3-28 題的 a 小題
@@ -108,13 +119,13 @@ class HW02:
         '''
         #作業 5. 課本 Ch3. P3.28
         self.Ch3P3_28a = "234"
-        self.Ch3P3_28b = "560"
+        self.Ch3P3_28b = "overflow"
         self.Ch3P3_28c = "874"
         self.Ch3P3_28d = "888"
 
         #作業 6. 課本 Ch3. P3.30
-        self.Ch3P3_30a = "234"
-        self.Ch3P3_30b = "560"
+        self.Ch3P3_30a = "235"
+        self.Ch3P3_30b = "overflow"
         self.Ch3P3_30c = "875"
         self.Ch3P3_30d = "889"
 
@@ -126,3 +137,8 @@ if __name__ == '__main__': #程式進入點，程式由此行開始執行。以�
         print("Ch2P2_19a:{0}".format("Correct!"))
     else:
         print("Ch2P2_19a:{0}".format("Incorrect!"))
+
+
+    
+    
+    

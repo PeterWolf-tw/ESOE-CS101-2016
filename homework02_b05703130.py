@@ -57,12 +57,13 @@ def bin2int(N):
     '''
     本函式將 bin 二進位制表示數轉為 int 整數
     '''
-    ans = 0
-    for index in range(len(str(N))):
-        ans += (int(str(N)[index])) * (2 ** (len(str(N))-index-1))
-    print("{0} 的二進位表示為 {1}.".format(N, ans))
-
-    return None
+    while b > 0:
+        b = input('Please input a binary number:')
+        counter = 0
+        ans = int(b, 2)
+        counter += 1
+        print('{0} 的十進位表示為 {1}.', ans)
+    return answer
 
 class HW02:
     def ch2(self):
@@ -79,8 +80,8 @@ class HW02:
         #作業 2. 課本 Ch2. P2.19
         self.Ch2P2_19a = "10"
         self.Ch2P2_19b = "17"
-        self.Ch2P2_19c = "6"
-        self.Ch2P2_19d = "8"
+        self.Ch2P2_19c = "7"
+        self.Ch2P2_19d = "9"
 
         #作業 3. 課本 Ch2. P2.20
         self.Ch2P2_20a = "14"
@@ -107,14 +108,14 @@ class HW02:
         "xxx" ： 你要填入你的答地方。
         '''
         #作業 5. 課本 Ch3. P3.28
-        self.Ch3P3_28a = "234"
-        self.Ch3P3_28b = "560"
+        self.Ch3P3_28a = "765"
+        self.Ch3P3_28b = "439"
         self.Ch3P3_28c = "874"
         self.Ch3P3_28d = "888"
 
         #作業 6. 課本 Ch3. P3.30
-        self.Ch3P3_30a = "234"
-        self.Ch3P3_30b = "560"
+        self.Ch3P3_30a = "766"
+        self.Ch3P3_30b = "440"
         self.Ch3P3_30c = "875"
         self.Ch3P3_30d = "889"
 

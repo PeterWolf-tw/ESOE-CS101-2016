@@ -12,7 +12,7 @@
 #def sayHi():
     #'''
     #這裡定義了一個函式，名叫 sayHi
-    #'''
+    #''' 
     # #這支函式唯一的功能就是印出下面這一句話…
     #print("Hi！這是一支只會說 Hi 的函式。")
 
@@ -26,7 +26,7 @@
 # #####################################################################################
 
 
-number = 100  #設定 number 這個變數的值為 2
+number = 11 #設定 number 這個變數的值為 2
 print("number 的二進位表示法為：{0}".format(bin(number))) #將 2 餵入 bin(n) 函式中，並把 bin(n) 回傳的結果，接著餵給 print() 輸出在螢幕畫面上。
 
 # 你可以試著把 number 的值改為其它的數字，觀察看看。
@@ -48,29 +48,36 @@ def int2bin(N):
     for j in tmpLIST[::-1]: #將 tmpLIST 中的數字從尾至頭傳入 j
         ans = ans + str(j)
     print("{0} 的二進位表示為 {1}.".format(N, ans))
-    return None
+    
 
 
 #作業 1.
 # 請參考上例，自己寫一個將二進位表示數轉為十進位制的函式供稍後的作業使用：
+
 def bin2int(N):
     '''
     本函式將 bin 二進位制表示數轉為 int 整數
     '''
+    i=0
+    tmpLIST = []
+    X=N
+    while (N > 0 ):
+        remainder = (N % 10)
+        tmpLIST.append(remainder)
+        N = (N - remainder) / 10
+        i=i+1
+    k=0
     ans = 0
-    for index in range(len(str(N))):
-        ans += (int(str(N)[index])) * (2 ** (len(str(N))-index-1))
-    print("{0} 的二進位表示為 {1}.".format(N, ans))
-
-    return None
-
+    for j in tmpLIST:
+        ans = ans + tmpLIST[k]* (2**k)
+        k = k+1
+    print("{0} 的十進位表示為 {1}.".format(X, ans))
 class HW02:
+    print("number 的二進位表示法為：{0}".format(bin2int(number)))
     def ch2(self):
         '''
         請將你計算出來的答案填入以下變數，助教會寫程式自動批改。
-
         Ch2P2_19a = "xxx"
-
         意思是
         Ch2   : 第二章
         P2_19a: 第二章結尾處的 PRACTICE SET 段落處的 Problems 第 P2-19 題的 a 小題
@@ -82,7 +89,7 @@ class HW02:
         self.Ch2P2_19c = "6"
         self.Ch2P2_19d = "8"
 
-        #作業 3. 課本 Ch2. P2.20
+        #作業 3. 課本 Ch2. P2.20 
         self.Ch2P2_20a = "14"
         self.Ch2P2_20b = "8"
         self.Ch2P2_20c = "13"
@@ -98,24 +105,22 @@ class HW02:
     def ch3(self):
         '''
         請將你計算出來的答案填入以下變數，助教會寫程式自動批改。
-
         Ch3P3_28a = "xxx"
-
         意思是
         Ch3   : 第三章
         P3_28a: 第三章結尾處的 PRACTICE SET 段落處的 Problems 第 P3-28 題的 a 小題
         "xxx" ： 你要填入你的答地方。
         '''
         #作業 5. 課本 Ch3. P3.28
-        self.Ch3P3_28a = "234"
-        self.Ch3P3_28b = "560"
-        self.Ch3P3_28c = "874"
+        self.Ch3P3_28a = "765"
+        self.Ch3P3_28b = "439"
+        self.Ch3P3_28c = "874" 
         self.Ch3P3_28d = "888"
 
         #作業 6. 課本 Ch3. P3.30
         self.Ch3P3_30a = "234"
-        self.Ch3P3_30b = "560"
-        self.Ch3P3_30c = "875"
+        self.Ch3P3_30b = "875"
+        self.Ch3P3_30c = "overflow"
         self.Ch3P3_30d = "889"
 
 

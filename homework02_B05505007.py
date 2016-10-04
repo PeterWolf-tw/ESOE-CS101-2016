@@ -33,7 +33,7 @@ print("number 的二進位表示法為：{0}".format(bin(number))) #將 2 餵入
 
 # bin(n) 的原理大致如下：
 
-def int2bin(N):
+def int2bin(N) :
     '''
     本函式將 int 整數轉為 bin 二進位制表示。作用等同於 bin(N)
     '''
@@ -57,11 +57,15 @@ def bin2int(N):
     '''
     本函式將 bin 二進位制表示數轉為 int 整數
     '''
-    ans = 0
-    for index in range(len(str(N))):
-        ans += (int(str(N)[index])) * (2 ** (len(str(N))-index-1))
-    print("{0} 的二進位表示為 {1}.".format(N, ans))
-
+    i=0
+    answer=0
+    n=N
+    while n > 0:
+        remainder=(int(n%10)*(2**i))
+        n=(n-int(n%10))/10
+        i=i+1
+        answer=answer+remainder
+    print("{0} 的十進位表示為 {1}.".format(N,str(answer)))
     return None
 
 class HW02:
@@ -77,16 +81,16 @@ class HW02:
         "xxx" ： 你要填入你的答地方。
         '''
         #作業 2. 課本 Ch2. P2.19
-        self.Ch2P2_19a = "10"
-        self.Ch2P2_19b = "17"
-        self.Ch2P2_19c = "6"
-        self.Ch2P2_19d = "8"
+        self.Ch2P2_19a = 10
+        self.Ch2P2_19b = 17
+        self.Ch2P2_19c = 6
+        self.Ch2P2_19d = 8
 
         #作業 3. 課本 Ch2. P2.20
-        self.Ch2P2_20a = "14"
-        self.Ch2P2_20b = "8"
-        self.Ch2P2_20c = "13"
-        self.Ch2P2_20d = "4"
+        self.Ch2P2_20a = 14
+        self.Ch2P2_20b = 8
+        self.Ch2P2_20c = 13
+        self.Ch2P2_20d = 4
 
         #作業 4. 課本 Ch2. P2.22
         self.Ch2P2_22a = "00010001 11101010 00100010 00001110"
@@ -115,8 +119,8 @@ class HW02:
         #作業 6. 課本 Ch3. P3.30
         self.Ch3P3_30a = "234"
         self.Ch3P3_30b = "560"
-        self.Ch3P3_30c = "875"
-        self.Ch3P3_30d = "889"
+        self.Ch3P3_30c = "874"
+        self.Ch3P3_30d = "888"
 
 
 if __name__ == '__main__': #程式進入點，程式由此行開始執行。以下示範助教的批改程式。

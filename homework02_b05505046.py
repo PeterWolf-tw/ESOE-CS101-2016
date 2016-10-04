@@ -57,12 +57,17 @@ def bin2int(N):
     '''
     本函式將 bin 二進位制表示數轉為 int 整數
     '''
-    ans = 0
-    for index in range(len(str(N))):
-        ans += (int(str(N)[index])) * (2 ** (len(str(N))-index-1))
-    print("{0} 的二進位表示為 {1}.".format(N, ans))
+    x=int(N)
+    c = 0
+    r=0
+    while x>0:
+        r+=(x%10)*2**c
+        x=x//10
+        c=c+1
+    return r
+x=input()
+print("{0} 的十進位表示法為：{1}".format(x,bin2int(x)))
 
-    return None
 
 class HW02:
     def ch2(self):
@@ -77,7 +82,7 @@ class HW02:
         "xxx" ： 你要填入你的答地方。
         '''
         #作業 2. 課本 Ch2. P2.19
-        self.Ch2P2_19a = "10"
+        self.Ch2P2_19a = "6"
         self.Ch2P2_19b = "17"
         self.Ch2P2_19c = "6"
         self.Ch2P2_19d = "8"
@@ -90,8 +95,8 @@ class HW02:
 
         #作業 4. 課本 Ch2. P2.22
         self.Ch2P2_22a = "00010001 11101010 00100010 00001110"
-        self.Ch2P2_22b = "00001110 00111000 11101010 00111000"
-        self.Ch2P2_22c = "01101110 00001110 00111000 01001110"
+        self.Ch2P2_22b = "01101110 00001110 00111000 01001110"
+        self.Ch2P2_22c = "00001110 00111000 11101010 00111000"
         self.Ch2P2_22d = "00011000 00111000 00001101 00001011"
 
 
@@ -107,14 +112,14 @@ class HW02:
         "xxx" ： 你要填入你的答地方。
         '''
         #作業 5. 課本 Ch3. P3.28
-        self.Ch3P3_28a = "234"
-        self.Ch3P3_28b = "560"
+        self.Ch3P3_28a = "765"
+        self.Ch3P3_28b = "439"
         self.Ch3P3_28c = "874"
         self.Ch3P3_28d = "888"
 
         #作業 6. 課本 Ch3. P3.30
-        self.Ch3P3_30a = "234"
-        self.Ch3P3_30b = "560"
+        self.Ch3P3_30a = "766"
+        self.Ch3P3_30b = "440"
         self.Ch3P3_30c = "875"
         self.Ch3P3_30d = "889"
 

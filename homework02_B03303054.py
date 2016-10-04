@@ -57,11 +57,17 @@ def bin2int(N):
     '''
     本函式將 bin 二進位制表示數轉為 int 整數
     '''
-    ans = 0
-    for index in range(len(str(N))):
-        ans += (int(str(N)[index])) * (2 ** (len(str(N))-index-1))
-    print("{0} 的二進位表示為 {1}.".format(N, ans))
-
+    i = 0
+    n = N
+    result=0
+    anser=0
+    while n>0:
+        remainder=int(n%10)
+        result=remainder*(2**i)
+        n= int(n-remainder)/10
+        i +=1
+        ans +=result
+    print("{0} 的十進位表示為 {1}.".format(N,ans))        
     return None
 
 class HW02:
@@ -107,16 +113,16 @@ class HW02:
         "xxx" ： 你要填入你的答地方。
         '''
         #作業 5. 課本 Ch3. P3.28
-        self.Ch3P3_28a = "234"
-        self.Ch3P3_28b = "560"
-        self.Ch3P3_28c = "874"
-        self.Ch3P3_28d = "888"
+        self.Ch3P3_28a = "xxx"
+        self.Ch3P3_28b = "xxx"
+        self.Ch3P3_28c = "xxx"
+        self.Ch3P3_28d = "xxx"
 
         #作業 6. 課本 Ch3. P3.30
-        self.Ch3P3_30a = "234"
-        self.Ch3P3_30b = "560"
-        self.Ch3P3_30c = "875"
-        self.Ch3P3_30d = "889"
+        self.Ch3P3_30a = "xxx"
+        self.Ch3P3_30b = "xxx"
+        self.Ch3P3_30c = "xxx"
+        self.Ch3P3_30d = "xxx"
 
 
 if __name__ == '__main__': #程式進入點，程式由此行開始執行。以下示範助教的批改程式。

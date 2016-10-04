@@ -10,7 +10,7 @@ Language: Python 3
 
 # 1-1
 
-file = open("sample.txt", "r")
+file = open('./sample.txt', 'r')
 text = file.read()
 file.close()
 

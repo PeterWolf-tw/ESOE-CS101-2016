@@ -57,11 +57,9 @@ def bin2int(N):
     '''
     本函式將 bin 二進位制表示數轉為 int 整數
     '''
-    ans = 0
-    for index in range(len(str(N))):
-        ans += (int(str(N)[index])) * (2 ** (len(str(N))-index-1))
-    print("{0} 的二進位表示為 {1}.".format(N, ans))
-
+    tmplist2= [ ]
+    while N>0:
+        remainder = 
     return None
 
 class HW02:
@@ -77,22 +75,22 @@ class HW02:
         "xxx" ： 你要填入你的答地方。
         '''
         #作業 2. 課本 Ch2. P2.19
-        self.Ch2P2_19a = "10"
-        self.Ch2P2_19b = "17"
-        self.Ch2P2_19c = "6"
-        self.Ch2P2_19d = "8"
+        self.Ch2P2_19a = "xxx"
+        self.Ch2P2_19b = "xxx"
+        self.Ch2P2_19c = "xxx"
+        self.Ch2P2_19d = "xxx"
 
         #作業 3. 課本 Ch2. P2.20
-        self.Ch2P2_20a = "14"
-        self.Ch2P2_20b = "8"
-        self.Ch2P2_20c = "13"
-        self.Ch2P2_20d = "4"
+        self.Ch2P2_20a = "xxx"
+        self.Ch2P2_20b = "xxx"
+        self.Ch2P2_20c = "xxx"
+        self.Ch2P2_20d = "xxx"
 
         #作業 4. 課本 Ch2. P2.22
-        self.Ch2P2_22a = "00010001 11101010 00100010 00001110"
-        self.Ch2P2_22b = "00001110 00111000 11101010 00111000"
-        self.Ch2P2_22c = "01101110 00001110 00111000 01001110"
-        self.Ch2P2_22d = "00011000 00111000 00001101 00001011"
+        self.Ch2P2_22a = "xxx"
+        self.Ch2P2_22b = "xxx"
+        self.Ch2P2_22c = "xxx"
+        self.Ch2P2_22d = "xxx"
 
 
     def ch3(self):
@@ -107,16 +105,16 @@ class HW02:
         "xxx" ： 你要填入你的答地方。
         '''
         #作業 5. 課本 Ch3. P3.28
-        self.Ch3P3_28a = "234"
-        self.Ch3P3_28b = "560"
-        self.Ch3P3_28c = "874"
-        self.Ch3P3_28d = "888"
+        self.Ch3P3_28a = "xxx"
+        self.Ch3P3_28b = "xxx"
+        self.Ch3P3_28c = "xxx"
+        self.Ch3P3_28d = "xxx"
 
         #作業 6. 課本 Ch3. P3.30
-        self.Ch3P3_30a = "234"
-        self.Ch3P3_30b = "560"
-        self.Ch3P3_30c = "875"
-        self.Ch3P3_30d = "889"
+        self.Ch3P3_30a = "xxx"
+        self.Ch3P3_30b = "xxx"
+        self.Ch3P3_30c = "xxx"
+        self.Ch3P3_30d = "xxx"
 
 
 if __name__ == '__main__': #程式進入點，程式由此行開始執行。以下示範助教的批改程式。

@@ -54,24 +54,24 @@ def int2bin(N):
 #作業 1.
 # 請參考上例，自己寫一個將二進位表示數轉為十進位制的函式供稍後的作業使用：
 def bin2int(N):
-    '''
-    本函式將 bin 二進位制表示數轉為 int 整數
-    '''
-    list=[]
-    m=n
-    while int(m)>0:
-        x=int(m)%10
-        list.append(x)
-        m=int(m)//10
-    ans=0
-    while True:
-        try:
-            ans=ans+list[0]
-            del list[0]
-            list=[i*2 for i in list]
-        except:
-            break
-    print("{0} 的十進位表示為 {1}.".format(n,ans))
+    #'''
+    #本函式將 bin 二進位制表示數轉為 int 整數
+    #'''
+    
+    #result代表「各位數轉化值」
+    result = 0
+    #reverse代表用以計算「各位數轉化值」之次方數
+    reverse = 0
+    #remainder代表餘數
+    remainder = 0
+    while N >= 0 :                                                                 
+        remainder = N%10                     #%為求「餘數」之運算元
+        result += remainder*(2**reverse)     #**代表「次方數」；累加「各位數轉化值」以得「最終結果」
+        reverse += 1                         #2進位轉10進位的算法(進位與次方數)                                       
+        N = N//10                            #//為求「商」運算元；迴圈條件 
+ 
+    print("{0} 的十進位表示法為：{1}".format(N,result))         
+
     return None
 
 class HW02:
@@ -87,20 +87,20 @@ class HW02:
         #作業 2. 課本 Ch2. P2.19
         self.Ch2P2_19a = "10"
         self.Ch2P2_19b = "17"
-        self.Ch2P2_19c = "6"
-        self.Ch2P2_19d = "8"
+        self.Ch2P2_19c = "7"
+        self.Ch2P2_19d = "9"
 
         #作業 3. 課本 Ch2. P2.20
-        self.Ch2P2_20a = "14"
-        self.Ch2P2_20b = "8"
-        self.Ch2P2_20c = "13"
-        self.Ch2P2_20d = "4"
+        self.Ch2P2_20a = "15"
+        self.Ch2P2_20b = "9"
+        self.Ch2P2_20c = "14"
+        self.Ch2P2_20d = "5"
 
         #作業 4. 課本 Ch2. P2.22
-        self.Ch2P2_22a = "00010001 11101010 00100010 00001110"
-        self.Ch2P2_22b = "00001110 00111000 11101010 00111000"
-        self.Ch2P2_22c = "01101110 00001110 00111000 01001110"
-        self.Ch2P2_22d = "00011000 00111000 00001101 00001011"
+        self.Ch2P2_22a = "00010001.11101010.00100010.00001110"
+        self.Ch2P2_22b = "01101110.00001110.00111000.01001110"
+        self.Ch2P2_22c = "00001110.00111000.11101010.00111000"
+        self.Ch2P2_22d = "00011000.00111000.00001101.00001011"
 
 
     def ch3(self):
@@ -113,14 +113,14 @@ class HW02:
         "xxx" ： 你要填入你的答地方。
         '''
         #作業 5. 課本 Ch3. P3.28
-        self.Ch3P3_28a = "234"
-        self.Ch3P3_28b = "overflow"
-        self.Ch3P3_28c = "874"
-        self.Ch3P3_28d = "888"
+        self.Ch3P3_28a = "765"
+        self.Ch3P3_28b = "439"
+        self.Ch3P3_28c = "-874"
+        self.Ch3P3_28d = "-888"
 
         #作業 6. 課本 Ch3. P3.30
-        self.Ch3P3_30a = "235"
-        self.Ch3P3_30b = "overflow"
+        self.Ch3P3_30a = "766"
+        self.Ch3P3_30b = "440"
         self.Ch3P3_30c = "875"
         self.Ch3P3_30d = "889"
 

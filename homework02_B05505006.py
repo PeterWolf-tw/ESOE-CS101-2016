@@ -2,37 +2,6 @@
 # -*- coding:utf-8 -*-
 
 
-#<教學>
-# 以 "#" 字符號開頭的內容將被 Python 視為「註解」。不會執行。
-
-# #########################################說明########################################
-# 對 Python 而言， if __name__ == "__main__" 即為程式的進入點。一個程式只能有「一個」進入點。
-# 換言之，整支程式從這一行開始執行。
-
-#def sayHi():
-    #'''
-    #這裡定義了一個函式，名叫 sayHi
-    #'''
-    # #這支函式唯一的功能就是印出下面這一句話…
-    #print("Hi！這是一支只會說 Hi 的函式。")
-
-
-
-#if __name__ == '__main__': #這裡是程式進入點。整支程式從這裡開始執行…
-    # #以下執行 sayHi() 函式
-    #sayHi()
-
-#</教學>
-# #####################################################################################
-
-
-number = 100  #設定 number 這個變數的值為 2
-print("number 的二進位表示法為：{0}".format(bin(number))) #將 2 餵入 bin(n) 函式中，並把 bin(n) 回傳的結果，接著餵給 print() 輸出在螢幕畫面上。
-
-# 你可以試著把 number 的值改為其它的數字，觀察看看。
-
-# bin(n) 的原理大致如下：
-
 def int2bin(N):
     '''
     本函式將 int 整數轉為 bin 二進位制表示。作用等同於 bin(N)
@@ -57,12 +26,14 @@ def bin2int(N):
     '''
     本函式將 bin 二進位制表示數轉為 int 整數
     '''
-    ans = 0
+    N_cal = int(N)
+    answer = 0
     for index in range(len(str(N))):
-        ans += (int(str(N)[index])) * (2 ** (len(str(N))-index-1))
-    print("{0} 的二進位表示為 {1}.".format(N, ans))
-
+        answer += (N_cal % 10) * (2 ** index)
+        N_cal = N_cal // 10
+    print("{0} 的十進位表示為 {1}.".format(N, answer))    
     return None
+
 
 class HW02:
     def ch2(self):
