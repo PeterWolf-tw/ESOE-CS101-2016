@@ -1,3 +1,30 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+
+
+#<教學>
+# 以 "#" 字符號開頭的內容將被 Python 視為「註解」。不會執行。
+
+# #########################################說明########################################
+# 對 Python 而言， if __name__ == "__main__" 即為程式的進入點。一個程式只能有「一個」進入點。
+# 換言之，整支程式從這一行開始執行。
+
+#def sayHi():
+    #'''
+    #這裡定義了一個函式，名叫 sayHi
+    #'''
+    # #這支函式唯一的功能就是印出下面這一句話…
+    #print("Hi！這是一支只會說 Hi 的函式。")
+
+
+
+#if __name__ == '__main__': #這裡是程式進入點。整支程式從這裡開始執行…
+    # #以下執行 sayHi() 函式
+    #sayHi()
+
+#</教學>
+# #####################################################################################
+
 
 number = 100  #設定 number 這個變數的值為 2
 print("number 的二進位表示法為：{0}".format(bin(number))) #將 2 餵入 bin(n) 函式中，並把 bin(n) 回傳的結果，接著餵給 print() 輸出在螢幕畫面上。
@@ -27,25 +54,32 @@ def int2bin(N):
 #作業 1.
 # 請參考上例，自己寫一個將二進位表示數轉為十進位制的函式供稍後的作業使用：
 def bin2int(N):
-    
-    x=0
-    Ans=0
-    
-    while N > 0:
-        
-        Ans+=(int(N % 10)*2**x)
-        x=x+1
-        N=N//10
-        
-        print("{0} 的十進位表示法為：{1}".format(N,Ans))
-   
+    N=int(input("輸入:"))
+    ans=0
+    b=0
+    while N>0:
+        x=N%10
+        if x==1:
+            ans+=(2**b)*x
+            N=(N-1)/10
+            b+=1
+        else:
+            ans+=(2**b)*x
+            N=N/10
+            b+=1
+
+    print(ans)    
     return None
-    
+
+bin2int("")
+
 class HW02:
     def ch2(self):
         '''
         請將你計算出來的答案填入以下變數，助教會寫程式自動批改。
+
         Ch2P2_19a = "xxx"
+
         意思是
         Ch2   : 第二章
         P2_19a: 第二章結尾處的 PRACTICE SET 段落處的 Problems 第 P2-19 題的 a 小題
@@ -73,7 +107,9 @@ class HW02:
     def ch3(self):
         '''
         請將你計算出來的答案填入以下變數，助教會寫程式自動批改。
+
         Ch3P3_28a = "xxx"
+
         意思是
         Ch3   : 第三章
         P3_28a: 第三章結尾處的 PRACTICE SET 段落處的 Problems 第 P3-28 題的 a 小題
@@ -81,13 +117,13 @@ class HW02:
         '''
         #作業 5. 課本 Ch3. P3.28
         self.Ch3P3_28a = "234"
-        self.Ch3P3_28b = "overflow"
+        self.Ch3P3_28b = "560"
         self.Ch3P3_28c = "874"
         self.Ch3P3_28d = "888"
 
         #作業 6. 課本 Ch3. P3.30
         self.Ch3P3_30a = "234"
-        self.Ch3P3_30b = "overflow"
+        self.Ch3P3_30b = "560"
         self.Ch3P3_30c = "875"
         self.Ch3P3_30d = "889"
 
@@ -99,7 +135,3 @@ if __name__ == '__main__': #程式進入點，程式由此行開始執行。以�
         print("Ch2P2_19a:{0}".format("Correct!"))
     else:
         print("Ch2P2_19a:{0}".format("Incorrect!"))
- 
-
-            
-       
