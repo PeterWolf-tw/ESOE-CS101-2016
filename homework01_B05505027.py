@@ -9,7 +9,7 @@ f1.close()
 #刪除非必要符號並分割詞彙
 f3=f2.replace("-"," ")
 f3=f3.replace("."," ")
-f3=f2.replace("?"," ")
+f3=f3.replace("?"," ")
 f3=f3.replace(","," ")
 f3=f3.replace("0"," ")
 f3=f3.replace("1"," ")

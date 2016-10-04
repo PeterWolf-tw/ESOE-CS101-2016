@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# -*- coding:utf-8 -*-
+
 
 #<教學>
 # 以 "#" 字符號開頭的內容將被 Python 視為「註解」。不會執行。
@@ -56,22 +57,26 @@ def bin2int(N):
     '''
     本函式將 bin 二進位制表示數轉為 int 整數
     '''
-    i= 0
-    ans= 0
-    x= N
-    while x > 0:
-        remainder =((int(x%10))*(2**i))
-        x= (x - int(x%10))/10
-        i += 1
-        ans += remainder
-    print("{0} 的十進位表示為 {1}.".format(N,ans))
+    i = 0
+    n = N
+    result=0
+    anser=0
+    while n>0:
+        remainder=int(n%10)
+        result=remainder*(2**i)
+        n= int(n-remainder)/10
+        i +=1
+        ans +=result
+    print("{0} 的十進位表示為 {1}.".format(N,ans))        
     return None
 
 class HW02:
     def ch2(self):
         '''
         請將你計算出來的答案填入以下變數，助教會寫程式自動批改。
+
         Ch2P2_19a = "xxx"
+
         意思是
         Ch2   : 第二章
         P2_19a: 第二章結尾處的 PRACTICE SET 段落處的 Problems 第 P2-19 題的 a 小題
@@ -99,23 +104,25 @@ class HW02:
     def ch3(self):
         '''
         請將你計算出來的答案填入以下變數，助教會寫程式自動批改。
+
         Ch3P3_28a = "xxx"
+
         意思是
         Ch3   : 第三章
         P3_28a: 第三章結尾處的 PRACTICE SET 段落處的 Problems 第 P3-28 題的 a 小題
         "xxx" ： 你要填入你的答地方。
         '''
         #作業 5. 課本 Ch3. P3.28
-        self.Ch3P3_28a = "234"
-        self.Ch3P3_28b = "overflow"
-        self.Ch3P3_28c = "874"
-        self.Ch3P3_28d = "888"
+        self.Ch3P3_28a = "xxx"
+        self.Ch3P3_28b = "xxx"
+        self.Ch3P3_28c = "xxx"
+        self.Ch3P3_28d = "xxx"
 
         #作業 6. 課本 Ch3. P3.30
-        self.Ch3P3_30a = "235"
-        self.Ch3P3_30b = "overflow"
-        self.Ch3P3_30c = "875"
-        self.Ch3P3_30d = "889"
+        self.Ch3P3_30a = "xxx"
+        self.Ch3P3_30b = "xxx"
+        self.Ch3P3_30c = "xxx"
+        self.Ch3P3_30d = "xxx"
 
 
 if __name__ == '__main__': #程式進入點，程式由此行開始執行。以下示範助教的批改程式。
