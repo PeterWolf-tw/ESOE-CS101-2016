@@ -11,7 +11,7 @@ Overdue is allowed.
 Week02 (Due Date: 2016.10.03)
 0. 詳情請見 homework02.py
 
-Week03 (Due Date: 2016.10.10)
+Week03 (Due Date: 2016.10.17)
 0. 詳情請見 homework03.py
 
 Week04 (Due Date: 2016.10.17)
