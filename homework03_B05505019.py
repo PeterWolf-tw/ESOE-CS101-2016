@@ -15,7 +15,6 @@ def charFreqLister(inputSTR):
 
     resultDict = {}
     resultList = []
-
     for alpha in inputSTR:
         resultDict[alpha]=0 #將string裡的每個字母放入dictionary並設初始值為0
     for alpha in inputSTR:
@@ -23,9 +22,17 @@ def charFreqLister(inputSTR):
     totalAlpha=len(inputSTR)
     for key in resultDict:
         resultDict[key]/=totalAlpha #將次數以機率方式取代
-
     for key in resultDict:
-        resultList.append((key,resultDict[key]))     #將dictionary內的東西放入二維陣列中    
+        resultList.append((resultDict[key],key))  
+
+    for i in range(len(resultList),0,-1):
+        print(str(i) + ":")
+        for j in range(1,i):
+            print(str(j))
+            if (resultList[j][0]>resultList[j-1][0]):   #將resultList對機率進行氣泡排序法
+                temp=resultList[j]
+                resultList[j]=resultList[j-1]
+                resultList[j-1]=temp
 
 
     return resultList
@@ -36,9 +43,40 @@ def charFreqLister(inputSTR):
 #     程式加上轉碼壓縮的功能。
 # e.g.,
 def huffmanTranslater(inputSTR):
-#resultList = [(freq, char, code), (freq, char, code), (freq, char, code),...]
 
-#return resultList
+    resultDict = {}
+    resultList = []
+    for alpha in inputSTR:
+        resultDict[alpha]=0 #將string裡的每個字母放入dictionary並設初始值為0
+    for alpha in inputSTR:
+        resultDict[alpha]+=1. #計算每個字母出現的次數
+    totalAlpha=len(inputSTR)
+    for key in resultDict:
+        resultDict[key]/=totalAlpha #將次數以機率方式取代
+    for key in resultDict:
+        resultList.append((resultDict[key],key,0))  
+
+    for i in range(len(resultList),0,-1):
+        print(str(i) + ":")
+        for j in range(1,i):
+            print(str(j))
+            if (resultList[j][0]>resultList[j-1][0]):   #將resultList對機率進行氣泡排序法
+                temp=resultList[j]
+                resultList[j]=resultList[j-1]
+                resultList[j-1]=temp
+    i=0
+    num=-1
+    for item in resultList:
+        num+=2**i
+        resultList[i]=(resultList[i][0],resultList[i][1],bin(num))    #將huffmanCode加入resultList中
+        i+=1
+    resultList[len(resultList)-1]=(resultList[len(resultList)-1][0],resultList[len(resultList)-1][1],bin(num//2))
+
+
+    return resultList
+
+
+    #return resultList
 
 # 4 請參考以下 condNOT() 的例子，設計四個 func() 依以下條件，能算出 condition02 ~ 04 的值
 
