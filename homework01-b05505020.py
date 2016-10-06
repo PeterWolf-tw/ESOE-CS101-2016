@@ -4,15 +4,15 @@ sampletext = samplefile.read()
 
 
 
-mark = [".","?"]
+mark = [".","?","(",")",",","!","\"","/",]
 
 for n in mark:
-    story1 = sampletext.replace(n," ")
+    sampletext = sampletext.replace(n," ")
     
-#story2 = story1.split(" ")
+story = sampletext.split(" ")
 
 
-print (story1)
+print (story)
 
     
 
