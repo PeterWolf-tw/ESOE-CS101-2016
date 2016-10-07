@@ -26,9 +26,7 @@ def charFreqLister(inputSTR):
         resultList.append((resultDict[key],key))  
 
     for i in range(len(resultList),0,-1):
-        print(str(i) + ":")
         for j in range(1,i):
-            print(str(j))
             if (resultList[j][0]>resultList[j-1][0]):   #將resultList對機率進行氣泡排序法
                 temp=resultList[j]
                 resultList[j]=resultList[j-1]
@@ -57,9 +55,7 @@ def huffmanTranslater(inputSTR):
         resultList.append((resultDict[key],key,0))  
 
     for i in range(len(resultList),0,-1):
-        print(str(i) + ":")
         for j in range(1,i):
-            print(str(j))
             if (resultList[j][0]>resultList[j-1][0]):   #將resultList對機率進行氣泡排序法
                 temp=resultList[j]
                 resultList[j]=resultList[j-1]
@@ -82,7 +78,7 @@ def huffmanTranslater(inputSTR):
 
 #condition00 not condition01
 def condNOT(inputSTR_X):
-    outputSTR = ""
+    outputSTR=""
     for i in inputSTR_X:
         if i == "0":
             outputSTR = outputSTR + "1"
@@ -93,16 +89,29 @@ def condNOT(inputSTR_X):
 
 #condition00 and condition02
 def condAND(inputSTR_X, inputSTR_Y):
-    return
+
+    outputSTR = ""
+    for i in range(0,len(inputSTR_X)):
+        outputSTR += str(int(inputSTR_X[int(i)])&int(inputSTR_Y[int(i)]))
+
+    return outputSTR
 
 #condition00 or condition03
 def condOR(inputSTR_X, inputSTR_Y):
-    return
+    
+    outputSTR = ""
+    for i in range(0,len(inputSTR_X)):
+        outputSTR += str(int(inputSTR_X[int(i)])|int(inputSTR_Y[int(i)]))
+
+    return outputSTR
 
 #condition00 xor condition04
-def conXOR(inputSTR_X, inputSTR_Y):
-    return
+def condXOR(inputSTR_X, inputSTR_Y):
+    outputSTR = ""
+    for i in range(0,len(inputSTR_X)):
+        outputSTR += str(int(inputSTR_X[int(i)])^int(inputSTR_Y[int(i)]))
 
+    return outputSTR
 
 if __name__== "__main__":
     condition00X = "010111001010100001100011"
@@ -110,6 +119,18 @@ if __name__== "__main__":
 
     condition01 = condNOT(condition00X)
     print(condition01)
+    #testcode
+    '''STR=input("STR=")
+    print(charFreqLister(STR))
+    print(huffmanTranslater(STR))
+    X=input("X=")
+    Y=input("Y=")
+    print("condNOT="+condNOT(X))
+    print("condAND="+condAND(X,Y))
+    print("condOR ="+condOR(X,Y))
+    print("condXOR="+condXOR(X,Y))'''
+
+    #testcode
 
     # 5 請完成以下課本習題並將答案以字串型 (str or unicode) 填入。
     print("Ans:")
