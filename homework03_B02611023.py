@@ -40,16 +40,19 @@ def condNOT(inputSTR_X):
 
 
 #condition00 and condition02
-def condAND(inputSTR_X, inputSTR_Y):
-    return
+def condAND(inputSTR_X, inputSTR_Y): 
+    l = [ bin(int(a,2) & int(b,2))[2:] for a,b in zip (inputSTR_X, inputSTR_Y) ]
+    return ''.join(l)
 
 #condition00 or condition03
 def condOR(inputSTR_X, inputSTR_Y):
-    return
+    l = [ bin(int(a,2) | int(b,2))[2:] for a,b in zip (inputSTR_X, inputSTR_Y) ]
+    return ''.join(l)
 
 #condition00 xor condition04
 def conXOR(inputSTR_X, inputSTR_Y):
-    return
+    l = [ bin(int(a,2) ^ int(b,2))[2:] for a,b in zip (inputSTR_X, inputSTR_Y) ]
+    return ''.join(l)
 
 
 if __name__== "__main__":
@@ -58,6 +61,7 @@ if __name__== "__main__":
 
     condition01 = condNOT(condition00X)
     print(condition01)
+    #print(condAND(condition00X,condition00Y))
 
     # 5 請完成以下課本習題並將答案以字串型 (str or unicode) 填入。
     print("Ans:")
