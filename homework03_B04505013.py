@@ -17,12 +17,12 @@
 #return resultLIST
 def charFreqLister(inputSTR):
     countSpace = inputSTR.count(" ")    #count the apperence of spaces
-    inputSTRsplit = inputSTR.split(" ") #split the words
-    wordList = []
-    [wordList.append(word) for word in inputSTRsplit if word not in wordList] #establish a list to store unique words
+    inputSTRchar = inputSTR.replace(" ", "") #rm the spaces
+    charList = []
+    [charList.append(char) for char in inputSTRchar if char not in charList] #establish a list to store unique words
     resultLIST = []
-    for ver in wordList:
-        resultLIST.append((inputSTR.count(ver),ver))
+    for char in charList:
+        resultLIST.append((inputSTR.count(char),char))
 
     resultLIST.append((countSpace, ' '))
     resultLIST.sort(reverse = True)
