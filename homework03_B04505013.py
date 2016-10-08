@@ -16,10 +16,10 @@
 
 #return resultLIST
 def charFreqLister(inputSTR):
-    countSpace = inputSTR.count(" ")
-    inputSTRsplit = inputSTR.split(" ")
+    countSpace = inputSTR.count(" ")    #count the apperence of spaces
+    inputSTRsplit = inputSTR.split(" ") #split the words
     wordList = []
-    [wordList.append(word) for word in inputSTRsplit if word not in wordList]
+    [wordList.append(word) for word in inputSTRsplit if word not in wordList] #establish a list to store unique words
     resultLIST = []
     for ver in wordList:
         resultLIST.append((inputSTR.count(ver),ver))
@@ -52,15 +52,33 @@ def condNOT(inputSTR_X):
 
 #condition00 and condition02
 def condAND(inputSTR_X, inputSTR_Y):
-    return
+    outputSTR = ""
+    for i in range(len(inputSTR_X)):
+        if int(inputSTR_X[i])*int(inputSTR_Y[i]) == 1:
+            outputSTR += "1"
+        else:
+            outputSTR += "0"
+    return outputSTR
 
 #condition00 or condition03
 def condOR(inputSTR_X, inputSTR_Y):
-    return
+    outputSTR = ""
+    for i in range(len(inputSTR_X)):
+        if inputSTR_X[i] == "1" or inputSTR_Y[i] == "1":
+            outputSTR += "1"
+        else:
+            outputSTR += "0"
+    return outputSTR
 
 #condition00 xor condition04
 def conXOR(inputSTR_X, inputSTR_Y):
-    return
+    outputSTR = ""
+    for i in range(len(inputSTR_X)):
+        if (inputSTR_X[i] == "1" and inputSTR_Y[i] == "0") or (inputSTR_X[i] == "0" and inputSTR_Y[i] == "1"):
+            outputSTR += "1"
+        else:
+            outputSTR += "0"
+    return outputSTR
 
 
 if __name__== "__main__":
@@ -68,7 +86,14 @@ if __name__== "__main__":
     condition00Y = "010000110001011100101001"
 
     condition01 = condNOT(condition00X)
+    condition02 = condAND(condition00X,condition00Y)
+    condition03 = condOR(condition00X,condition00Y)
+    condition04 = conXOR(condition00X,condition00Y)
+
     print(condition01)
+    print(condition02)
+    print(condition03)
+    print(condition04)
 
     # 5 請完成以下課本習題並將答案以字串型 (str or unicode) 填入。
     print("Ans:")
