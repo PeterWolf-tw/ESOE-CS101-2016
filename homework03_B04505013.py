@@ -54,7 +54,7 @@ def condNOT(inputSTR_X):
 def condAND(inputSTR_X, inputSTR_Y):
     outputSTR = ""
     for i in range(len(inputSTR_X)):
-        if int(inputSTR_X[i])*int(inputSTR_Y[i]) == 1:
+        if int(inputSTR_X[i]) & int(inputSTR_Y[i]):
             outputSTR += "1"
         else:
             outputSTR += "0"
@@ -64,7 +64,7 @@ def condAND(inputSTR_X, inputSTR_Y):
 def condOR(inputSTR_X, inputSTR_Y):
     outputSTR = ""
     for i in range(len(inputSTR_X)):
-        if inputSTR_X[i] == "1" or inputSTR_Y[i] == "1":
+        if int(inputSTR_X[i]) | int(inputSTR_Y[i]):
             outputSTR += "1"
         else:
             outputSTR += "0"
@@ -74,12 +74,12 @@ def condOR(inputSTR_X, inputSTR_Y):
 def conXOR(inputSTR_X, inputSTR_Y):
     outputSTR = ""
     for i in range(len(inputSTR_X)):
-        if (inputSTR_X[i] == "1" and inputSTR_Y[i] == "0") or (inputSTR_X[i] == "0" and inputSTR_Y[i] == "1"):
+        if int(inputSTR_X[i]) ^ int(inputSTR_Y[i]):
             outputSTR += "1"
         else:
             outputSTR += "0"
     return outputSTR
-
+    
 
 if __name__== "__main__":
     condition00X = "010111001010100001100011"
