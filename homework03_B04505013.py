@@ -15,7 +15,18 @@
 #resultLIST = [(freq, char), (freq, char), (freq, char),...]
 
 #return resultLIST
+def charFreqLister(inputSTR):
+    countSpace = inputSTR.count(" ")
+    inputSTRsplit = inputSTR.split(" ")
+    wordList = []
+    [wordList.append(word) for word in inputSTRsplit if word not in wordList]
+    resultLIST = []
+    for ver in wordList:
+        resultLIST.append((inputSTR.count(ver),ver))
 
+    resultLIST.append((countSpace, ' '))
+    resultLIST.sort(reverse = True)
+    return resultLIST
 
 # 3.1 加分題 (有做有加分，沒做不扣分)：請用課堂中提到的「霍夫曼編碼]
 #     (https://zh.wikipedia.org/wiki/霍夫曼編碼) 為你之前設計的
