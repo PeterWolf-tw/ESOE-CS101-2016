@@ -4,7 +4,7 @@
 #=======================================homework1-1
 f=open("./sample.txt","r")
 t=f.read()
-s2=t.replace("."," ") 
+s2=t.replace("."," ")
 s3=s2.replace(","," ")
 s4=s3.replace("-"," ")
 s5=s4.replace("!"," ")
@@ -22,6 +22,7 @@ print(sampleWordList)
 
 
 #=======================================homework1-2
+
 while True :
   z = input('please enter a word!')
   if z in sampleWordList:
@@ -29,8 +30,11 @@ while True :
     continue
   else:
     print('not exist')
+
     continue
 t=f.close()
    
+
+
 
 
