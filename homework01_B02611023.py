@@ -1,4 +1,7 @@
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+#前兩行請養成習慣宣告程式種類以及編碼
+
 """
 Created on Tue Sep 20 22:32:09 2016
 
@@ -9,9 +12,9 @@ sampleWordList = []
 mark_list = ['?',',','-','"','.']
 
 with open("sample.txt",'r') as f:
-        
+
     for line in f:
-        for mark in mark_list:            
+        for mark in mark_list:
             line = line.replace(mark,"")
         line = line.strip("\n").split(" ")
         for element in line:
@@ -34,7 +37,7 @@ else:
             found = True
             break
         i = i + 1
-        
+
     if found:
         print("您輸入的字在sampleWordList裡!")
     else:

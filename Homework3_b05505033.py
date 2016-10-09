@@ -7,7 +7,7 @@
 # 作業內容：
 # 1. 請閱讀 Wikipedia 維基百科 IEEE754 條目 (https://zh.wikipedia.org/wiki/IEEE_754)
 
-# 2. 請試玩 http://armorgames.com/play/17826/logical-element
+# 2. 請試玩 http://armorgames.com/play/17826/logical-element done!
 
 # 3. 請利用以下空白範本設計一支程式。程式可輸入一段字串，並自動計算出字串中包括空白字元出現的機率。
 #    並由高排到低。
@@ -15,18 +15,7 @@
 #resultLIST = [(freq, char), (freq, char), (freq, char),...]
 
 #return resultLIST
-def charFreqLister(inputSTR):
-    countSpace = inputSTR.count(" ")    #count the apperence of spaces
-    inputSTRchar = inputSTR.replace(" ", "") #rm the spaces
-    charList = []
-    [charList.append(char) for char in inputSTRchar if char not in charList] #establish a list to store unique chars
-    resultLIST = []
-    for char in charList:
-        resultLIST.append((inputSTR.count(char),char))
 
-    resultLIST.append((countSpace, ' '))
-    resultLIST.sort(reverse = True)
-    return resultLIST
 
 # 3.1 加分題 (有做有加分，沒做不扣分)：請用課堂中提到的「霍夫曼編碼]
 #     (https://zh.wikipedia.org/wiki/霍夫曼編碼) 為你之前設計的
@@ -52,48 +41,43 @@ def condNOT(inputSTR_X):
 
 #condition00 and condition02
 def condAND(inputSTR_X, inputSTR_Y):
-    outputSTR = ""
-    for i in range(len(inputSTR_X)):
-        if int(inputSTR_X[i]) & int(inputSTR_Y[i]):
-            outputSTR += "1"
+    outputLIST=[""]
+    i=0
+    while i<len(inputSTR_X):
+        z=inputSTR_X[i]
+        print(z)
+        n=inputSTR_Y[i]
+        print(n)
+        if z=="0" or n == "0":
+            a="0"
+            outputLIST.append(a)
+            #outputSTR = outputSTR + "0"
+            print(outputLIST)
+            i=i+1
         else:
-            outputSTR += "0"
-    return outputSTR
+            b="1"
+            outputLIST.append("1")
+            #outputSTR = outputSTR + "1"
+            print(outputLIST)
+            i=i+1
+            print(outputLIST) 
+    return outputLIST
 
 #condition00 or condition03
 def condOR(inputSTR_X, inputSTR_Y):
-    outputSTR = ""
-    for i in range(len(inputSTR_X)):
-        if int(inputSTR_X[i]) | int(inputSTR_Y[i]):
-            outputSTR += "1"
-        else:
-            outputSTR += "0"
-    return outputSTR
+    return
 
 #condition00 xor condition04
 def conXOR(inputSTR_X, inputSTR_Y):
-    outputSTR = ""
-    for i in range(len(inputSTR_X)):
-        if int(inputSTR_X[i]) ^ int(inputSTR_Y[i]):
-            outputSTR += "1"
-        else:
-            outputSTR += "0"
-    return outputSTR
-    
+    return
+
 
 if __name__== "__main__":
     condition00X = "010111001010100001100011"
     condition00Y = "010000110001011100101001"
 
     condition01 = condNOT(condition00X)
-    condition02 = condAND(condition00X,condition00Y)
-    condition03 = condOR(condition00X,condition00Y)
-    condition04 = conXOR(condition00X,condition00Y)
-
     print(condition01)
-    print(condition02)
-    print(condition03)
-    print(condition04)
 
     # 5 請完成以下課本習題並將答案以字串型 (str or unicode) 填入。
     print("Ans:")

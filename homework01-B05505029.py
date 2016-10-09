@@ -1,36 +1,40 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+#å‰å…©è¡Œè«‹é¤Šæˆç¿’æ…£å®£å‘Šç¨‹å¼ç¨®é¡žä»¥åŠç·¨ç¢¼
+
 #HW1-1
 
 c=open("sample.txt",encoding='utf8')
 d=c.read()
 sampleWordList = []
 
-#¬°sampleWordList«Ø¥ß¤@­Ó¶°¦X
+#ï¿½ï¿½sampleWordListï¿½Ø¥ß¤@ï¿½Ó¶ï¿½ï¿½X
 
 d=d.replace("?"," ")
 d=d.replace("-"," ")
 d=d.replace("."," ")
 d=d.replace(","," ")
-d=d.replace("\n"," ")  
+d=d.replace("\n"," ")
 
-#±N¼ÐÂI²Å¸¹²¾±¼Á×§K¨äºâ¤J¦r¼Æ¤¤
+#ï¿½Nï¿½ï¿½ï¿½Iï¿½Å¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×§Kï¿½ï¿½ï¿½Jï¿½rï¿½Æ¤ï¿½
 
 c=d.split(" ")
 
-#±N¦¹ÀÉ®×Âà¬°¦Cªí
+#ï¿½Nï¿½ï¿½ï¿½É®ï¿½ï¿½à¬°ï¿½Cï¿½ï¿½
 
 for a in c:
     if len(a) > 5:
         sampleWordList.append(a)
 
-#§â¦r¼Æ¤j©ó¤­ªº¦r¥[¤JsampleWordList
+#ï¿½ï¿½rï¿½Æ¤jï¿½ó¤­ªï¿½ï¿½rï¿½[ï¿½JsampleWordList
 
 print(sampleWordList)
 
 #HW1-2
-while True: 
-    text = input("a word more than five letters: ") 
-    
-    if text in sampleWordList: 
-        print("³o­Ó¦r¦³¦b¦Cªí¸Ì") 
-    else: 
-        print("³o­Ó¦r¨S¦b¦Cªí¸Ì")
+while True:
+    text = input("a word more than five letters: ")
+
+    if text in sampleWordList:
+        print("ï¿½oï¿½Ó¦rï¿½ï¿½ï¿½bï¿½Cï¿½ï¿½ï¿½")
+    else:
+        print("ï¿½oï¿½Ó¦rï¿½Sï¿½bï¿½Cï¿½ï¿½ï¿½")

@@ -1,4 +1,12 @@
-file = open('/Users/candy/Downloads/sample.txt', 'r')
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+#前兩行請養成習慣宣告程式種類以及編碼
+
+
+
+#file = open('/Users/candy/Downloads/sample.txt', 'r')
+file = open("./sample.txt", "r")
+#用相對路徑的適用性會更廣一些。
 samplestring = file.read()
 sampleWordList = []
 samplestring=samplestring.replace('?', ' ')

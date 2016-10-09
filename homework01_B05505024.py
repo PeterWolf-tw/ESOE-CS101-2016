@@ -1,5 +1,12 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+#前兩行請養成習慣宣告程式種類以及編碼
+
 #B05505024
-file=open('/Users/Raymond/Documents/sample.txt')
+#file=open('/Users/Raymond/Documents/sample.txt')
+file = open("./sample.txt", "r")
+#用相對路徑的適用性會更廣一些。
+
 context=file.read()
 file.close
 
@@ -8,14 +15,14 @@ text=context.lower()
 
 for sym in SymbolList:
     text=text.replace(sym,' ')
-    
+
 wordsnletters=text.split()
 
 sampleWordList=[]
 for letters in wordsnletters:
     if len(letters)>4:
         sampleWordList.append(letters)
-      
+
 Sentences=context.split('\n')
 
 print(sampleWordList)
@@ -30,6 +37,6 @@ while True:
             for S in Sentences:
                 if answer in S:
                     print('"'+S+'"''\n')
-            
+
         else:
             print('The word',answer,'is NOT in the passage.\n')

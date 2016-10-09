@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+#前兩行請養成習慣宣告程式種類以及編碼
+
+
 import re
 #student ID: B05505040
 #This version:python 3.5.2
@@ -7,6 +12,7 @@ sampleFile = open("./sample.txt", "r")
 sampleRead = sampleFile.read()
 
 letterString = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+#你既然都 import 了 re 模組了，其實可以用 [A-Za-z] 的寫法哦。查看看吧。
 letterList = []
 
 for i in range(len(letterString)):

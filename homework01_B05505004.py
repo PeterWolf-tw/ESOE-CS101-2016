@@ -1,7 +1,12 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+#前兩行請養成習慣宣告程式種類以及編碼
+
 #1-1
 #coding=utf-8
 
 import re
+#Good job
 
 samplefile=open("./sample.txt","r")
 
@@ -23,8 +28,8 @@ samplefile.close()
 
 def judge(a):                                                        #定義一個函數始得輸入錯誤可以重新輸入
     a=input("請輸入一個五個字母以上的英文字:")
-    i=0 
-    if len(a) > 5:                                                   
+    i=0
+    if len(a) > 5:
         while i< ending:                                             #一個一個嘗試
             for f in sampleWordList:
                 if f==a:
@@ -36,11 +41,11 @@ def judge(a):                                                        #定義一�
             else:
                 print("您未輸入相符的字！")
     else:
-        print("您輸入未超過字數底線!") 
+        print("您輸入未超過字數底線!")
         return judge(a)                                               #輸入字母<5可重新輸入
-    
-    
-    
-ending=(len(sampleWordList))    
+
+
+
+ending=(len(sampleWordList))
 
 judge("a")
