@@ -1,6 +1,10 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+#前兩行請養成習慣宣告程式種類以及編碼
 
-
-file = open("C:\.minecraft\Amis.txt","r")
+#file = open("C:\.minecraft\Amis.txt","r")
+file = open("./sample.txt", "r")
+#用相對路徑的適用性會更廣一些。
 text = file.read()
 file.close()
 
@@ -12,9 +16,9 @@ sampleWordList=[]
 for h in text:
     if len(h)>=5:
         sampleWordList.append(h)
-        
+
     else:
-        None 
+        None
 print(sampleWordList)
 
 

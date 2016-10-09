@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+#前兩行請養成習慣宣告程式種類以及編碼
+
 #read the file from the sample.txt
 wordfile=open("sample.txt","r", encoding="utf8")
 wordtext=wordfile.read()
@@ -19,7 +23,7 @@ for sampleWordList1 in sampleWord:
 #loop starting
 whilecount=1
 while whilecount:
-#user type in the word 
+#user type in the word
     ans=input("please enter your answer= ")
 #if the the word is lesser than five LETTERS
     if len(ans)<5:
