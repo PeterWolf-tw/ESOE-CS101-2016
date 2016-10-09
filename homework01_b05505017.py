@@ -6,7 +6,9 @@ import os
 
 #HW1-1
 
-file=open("C:\sample.txt","r")
+#file=open("C:\sample.txt","r")
+file = open("./sample.txt", "r")
+#用相對路徑的適用性會更廣一些。
 text=file.read()
 file.close()
 
@@ -47,3 +49,4 @@ while i<1000:
         break
 
 os.system("pause")
+#這行在這個程式裡沒什麼作用。
