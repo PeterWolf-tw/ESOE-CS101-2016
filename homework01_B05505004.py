@@ -1,5 +1,6 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3        #編碼宣告
 # -*- coding:utf-8 -*-
+
 
 
 import re
