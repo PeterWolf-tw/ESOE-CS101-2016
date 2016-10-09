@@ -14,9 +14,6 @@
 #def charFreqLister(inputSTR):
 #resultLIST = [(freq, char), (freq, char), (freq, char),...]
 
-input(a)
-print a
-
 #return resultLIST
 
 
