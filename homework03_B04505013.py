@@ -19,7 +19,7 @@ def charFreqLister(inputSTR):
     countSpace = inputSTR.count(" ")    #count the apperence of spaces
     inputSTRchar = inputSTR.replace(" ", "") #rm the spaces
     charList = []
-    [charList.append(char) for char in inputSTRchar if char not in charList] #establish a list to store unique words
+    [charList.append(char) for char in inputSTRchar if char not in charList] #establish a list to store unique chars
     resultLIST = []
     for char in charList:
         resultLIST.append((inputSTR.count(char),char))
