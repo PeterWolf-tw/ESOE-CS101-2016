@@ -15,7 +15,7 @@ sampleWordList = []
 marklist = [".","!","?",",","—","\"","\n","\'"]
 for mark in marklist:      #去除標點符號
     Text = Text.replace(mark," ")
-        
+
 Text = Text.split(" ")
 for A in Text:
     if len(A)>5:
@@ -28,11 +28,13 @@ while True:
     enter = input(" Please enter a word : ")
     if len(enter) < 5:
         print (" You should enter more than five characters! ")
-        
+
     elif enter.lower()  in sampleWordList:
         print (enter ," exists in sampleWordList! ")
-        
+
     else:
         print (enter ," does not exist in sampleWordList. ")   #作業1-2
-    
-   
+
+#Good job.
+
+
