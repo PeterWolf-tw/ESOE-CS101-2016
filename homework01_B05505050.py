@@ -1,10 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
-#前兩行請養成習慣宣告程式種類以及編碼
 
-#f=open(r'C:\Users\user\Desktop\sample.txt')
-f = open("./sample.txt", "r")
-#用相對路徑的適用性會更廣一些。
+f=open("./sample.txt","r")
 sample=f.read()
 f.close()
 
