@@ -1,4 +1,10 @@
-samplefile=open("C:/Users/KUO/Desktop/sample.txt","r",encoding='utf-8')
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+#前兩行請養成習慣宣告程式種類以及編碼
+
+#samplefile=open("C:/Users/KUO/Desktop/sample.txt","r",encoding='utf-8')
+samplefile = open("./sample.txt", "r")
+#用相對路徑的適用性會更廣一些。
 sampletext=samplefile.read()
 sampleworldlist=[]
 other=["0","1","2","3","4","5","6","7","8","9",".",",","?","/","!","-","\n",'"']
@@ -27,7 +33,7 @@ while n < 10:
             print("這個單字有在sampleworldlist裡！")
             print("10次挑戰結束！")
             n=n+1
-            
+
     else:
         if n < 9:
             print("這個單字沒有在sampleworldlist裡！")
@@ -39,6 +45,6 @@ while n < 10:
             print("這個單字沒有在sampleworldlist裡！")
             print("10次挑戰結束！")
             n=n+1
-        
+
 
 samplefile.close()

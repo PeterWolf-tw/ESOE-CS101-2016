@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+#前兩行請養成習慣宣告程式種類以及編碼
+
 samplefile = open("./sample.txt","r")
 sampletext = samplefile.read()
 
@@ -16,7 +20,7 @@ for n in mark:
 
 print (turestory)
 
-    
+
 
 
 

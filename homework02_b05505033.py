@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+#-*- coding:utf-8 -*-
 #HW 1 the function
 def bin2int(N):
     keyed=N
@@ -65,4 +67,3 @@ self.Ch3P3_30a = "235"
 self.Ch3P3_30b = "overflow"
 self.Ch3P3_30c = "875"
 self.Ch3P3_30d = "889"
-# testing

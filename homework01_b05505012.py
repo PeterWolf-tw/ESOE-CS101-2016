@@ -1,3 +1,6 @@
+#!/usr/local/bin/python
+# -*- coding: utf-8 -*-
+#前兩行請養成習慣宣告程式種類以及編碼
 """
 Created on Sun Sep 25 18:31:12 2016
 @author: user
@@ -8,7 +11,7 @@ HW1
 """
 import string
 
-sampleWordList = [] 
+sampleWordList = []
 a = open("./sample.txt","r")
 b = a.read()
 a.close()
@@ -25,7 +28,7 @@ for n in wordlist:
         sampleWordList.append(n)
     else:
         pass
-	
+
 
 print(sampleWordList)
 """
@@ -41,5 +44,6 @@ while True:
 		print("這個英文單字在samplewordlist裡面.\n")
 	else:
 		print("這個英文單字不在samplewordlist裡面.\n")
+#請固定使用四個空格做縮排。一個 TAB 鍵和四個空格對程式語言而言有不一樣的意義。
 
 

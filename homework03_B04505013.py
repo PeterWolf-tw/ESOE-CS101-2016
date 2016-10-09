@@ -19,7 +19,7 @@ def charFreqLister(inputSTR):
     countSpace = inputSTR.count(" ")    #count the apperence of spaces
     inputSTRchar = inputSTR.replace(" ", "") #rm the spaces
     charList = []
-    [charList.append(char) for char in inputSTRchar if char not in charList] #establish a list to store unique words
+    [charList.append(char) for char in inputSTRchar if char not in charList] #establish a list to store unique chars
     resultLIST = []
     for char in charList:
         resultLIST.append((inputSTR.count(char),char))
@@ -36,6 +36,53 @@ def charFreqLister(inputSTR):
 #resultLIST = [(freq, char, code), (freq, char, code), (freq, char, code),...]
 
 #return resultLIST
+class Node:
+    def __init__(self, char, freq):
+        self.char = char
+        self.left = None
+        self.right = None
+        self.father = None
+        self.freq = freq
+    def isLeft(self):
+        return self.father.left == self
+
+def NodeCreator(list):  
+    return [Node(list[i][0],list[i][1]) for i in range(list)]
+
+def huffmanTreeCreator(nodes):
+    queue = nodes[:]
+    while len(queue) > 1:
+        queue.sort(key=lambda item:item.freq)
+        nodeLeft = queue.pop(0)
+        nodeRight = queue.pop(0)
+        nodeFather = Node('', nodeLeft.freq + nodeRight.freq)
+        nodeFather.left =  nodeLeft
+        nodeFather.right = nodeRight
+        nodeLeft.father = nodeFather
+        nodeRight.father = nodeFather
+        queue.append(nodeFather)
+        queue[0].father = None
+        return queue[0]
+
+def huffmanEncoder(nodes,root):
+    codes = [:] * len(nodes)
+    for i in range(len(nodes)):
+        nodeTemp = nodes[i]
+        while nodeTemp != root:
+            if nodeTemp.isLeft():
+                codes[i] = '0' + codes[i]
+            else:
+                codes[i] = '1' + codes[i]
+            pass
+            nodeTemp = nodeTemp.father
+    return codes
+
+def huffmanTranslater(inputSTR):
+    freqList = charFreqLister(inputSTR)
+    nodesList = NodeCreator(freqList)
+    root = huffmanTreeCreator(nodesList)
+    codes = huffmanEncoder(nodesList,root)
+    return
 
 # 4 請參考以下 condNOT() 的例子，設計四個 func() 依以下條件，能算出 condition02 ~ 04 的值
 

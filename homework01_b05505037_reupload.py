@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+#前兩行請養成習慣宣告程式種類以及編碼
+
 # B05505037
 # HW1
 
@@ -6,6 +10,8 @@
 file = open("./sample.txt","r")
 read_file = file.read()
 read_file = file.lower()
+#請以指定檔名格式上傳，否則不予評分。
+#參考其它人的作業時，請切記要測試！
 file.close()
 
 sampleWordList = []

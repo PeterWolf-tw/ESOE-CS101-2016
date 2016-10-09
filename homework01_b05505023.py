@@ -1,7 +1,12 @@
-<<<<<<< HEAD
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+#前兩行請養成習慣宣告程式種類以及編碼
+
+#Python 利用 # 做為註解標記。你用 < 是無法讓程式執行的。請參考其它同學的寫法。
+#1===============
 f=open("./sample.txt","r")
 t=f.read()
-s2=t.replace("."," ") 
+s2=t.replace("."," ")
 s3=s2.replace(","," ")
 s4=s3.replace("-"," ")
 s5=s4.replace("!"," ")
@@ -26,15 +31,14 @@ while z<1000:
     z-=1
     print('not exist')
 
- 
-   
 
 
 
-=======
+
+#2==========HW1-1
 f=open("./sample.txt","r")
 t=f.read()
-s2=t.replace("."," ") 
+s2=t.replace("."," ")
 s3=s2.replace(","," ")
 s4=s3.replace("-"," ")
 s5=s4.replace("!"," ")
@@ -49,19 +53,18 @@ for x in t2:
     sampleWordList.append(x)
 print(sampleWordList)
 
-z=500
-while z<1000:
-  w= input('please enter a word!')
-  if w in  sampleWordList:
-    z+=1
-    print('exist')
-  else:
-    z-=1
-    print('not exist')
 
- 
-   
-
+#2==========HW1-2
+while True :
+    z = input('please enter a word!')
+    if z in sampleWordList:
+        print('exist')
+        continue
+    else:
+        print('not exist')
+        continue
+t=f.close()
 
 
->>>>>>> 115fddab22f034af8b8d5acde2e6a3ae5217ed7a
+
+
