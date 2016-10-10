@@ -11,7 +11,29 @@
 
 # 3. 請利用以下空白範本設計一支程式。程式可輸入一段字串，並自動計算出字串中包括空白字元出現的機率。
 #    並由高排到低。
-#def charFreqLister(inputSTR):
+from operator import itemgetter           #operator module
+
+def charFreqLister(string):
+
+    string=input("請輸入一個字串:")
+    resultLIST=[]
+    print("確認輸入:",string)
+    string_length=len(string)
+
+    for n in string:
+        times=string.count(n)
+        frequency=times/string_length
+        resultLIST.append((frequency,n))
+    
+    resultLIST1=set(resultLIST)
+    resultLIST=list(resultLIST1)
+    resultLIST.sort(key=itemgetter(0), reverse= True)
+    print(resultLIST)
+        
+    return None
+
+charFreqLister("")
+
 #resultLIST = [(freq, char), (freq, char), (freq, char),...]
 
 #return resultLIST
