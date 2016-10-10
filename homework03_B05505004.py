@@ -63,16 +63,46 @@ def condNOT(inputSTR_X):
 
 #condition00 and condition02
 def condAND(inputSTR_X, inputSTR_Y):
-    return
+    x=len(inputSTR_X)
+    a=0
+    outputSTR=""
+    
+    while a <= (x-1):
+        if inputSTR_X[a] =="1" and inputSTR_Y[a]=="1":
+            
+            outputSTR=outputSTR+"1"
+            
+        else:
+            outputSTR=outputSTR+"0"
+        a+=1
+        
+    return outputSTR
+
 
 #condition00 or condition03
 def condOR(inputSTR_X, inputSTR_Y):
-    return
+    outputSTR=""
+    
+    for n in range(len(inputSTR_X)):
+        if int(inputSTR_X[n])+int(inputSTR_Y[n]) >= 1:
+            outputSTR=outputSTR+"1"
+                        
+        else:
+            outputSTR=outputSTR+"0"
+    
+    return outputSTR
+
 
 #condition00 xor condition04
-def conXOR(inputSTR_X, inputSTR_Y):
-    return
 
+def conXOR(inputSTR_X, inputSTR_Y):
+    outputSTR=""
+    for i in range(len(inputSTR_X)):
+        if int(inputSTR_X[i])+int(inputSTR_Y[i])>=1:
+            outputSTR=outputSTR+"0"
+        else:
+            outputSTR=outputSTR+"1"
+    return outputSTR
 
 if __name__== "__main__":
     condition00X = "010111001010100001100011"
@@ -122,3 +152,5 @@ if __name__== "__main__":
     Ch4P4_16b = ""
     Ch4P4_16c = ""
     Ch4P4_16d = ""
+    
+
