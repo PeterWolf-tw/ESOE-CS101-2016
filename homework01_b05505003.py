@@ -1,4 +1,10 @@
-sampleFile=open("/Users/Tingting/Desktop/sample.txt","r")
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+
+
+#sampleFile=open("/Users/Tingting/Desktop/sample.txt","r")
+sampleFile = open("./sample.txt", "r")
+#用相對路徑的適用性會更廣一些。
 sampleText=sampleFile.read()
 sampleFile.close()
 elements=['.',',','\n','?','-','"','2','000']
@@ -11,9 +17,9 @@ for h in wordList:
         cloneList.remove(h)
     else:
         pass
-    
+
 print(cloneList)
-    
+
 
 
 
@@ -32,5 +38,5 @@ print(cloneList)
 endding=len(story)
 for n in range(0,endding-1):
     print(story[n])
-    
+
 

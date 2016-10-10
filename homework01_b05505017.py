@@ -1,8 +1,14 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+#前兩行請養成習慣宣告程式種類以及編碼
+
 import os
 
 #HW1-1
 
-file=open("C:\sample.txt","r")
+#file=open("C:\sample.txt","r")
+file = open("./sample.txt", "r")
+#用相對路徑的適用性會更廣一些。
 text=file.read()
 file.close()
 
@@ -21,7 +27,7 @@ samplewordlist=[ ]
 for x in wordl:
     if len(x)>5:
         samplewordlist.append(x)
-        
+
 print (samplewordlist)
 
 #HW1-2
@@ -43,3 +49,4 @@ while i<1000:
         break
 
 os.system("pause")
+#這行在這個程式裡沒什麼作用。

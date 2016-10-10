@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+#前兩行請養成習慣宣告程式種類以及編碼
+
 #Homework1-1-------------------------------------------------------
 
 
@@ -9,7 +13,7 @@ f1.close()
 #刪除非必要符號並分割詞彙
 f3=f2.replace("-"," ")
 f3=f3.replace("."," ")
-f3=f2.replace("?"," ")
+f3=f3.replace("?"," ")
 f3=f3.replace(","," ")
 f3=f3.replace("0"," ")
 f3=f3.replace("1"," ")
@@ -29,11 +33,14 @@ while n<=end-1:
 		n+=1
 	else:
 		n+=1
-#產出列表     
+#請固定使用四個空格做縮排。一個 TAB 鍵和四個空格對程式語言而言有不一樣的意義。
+
+#產出列表
 print(sampleWordList)
 print("\n")
 
 #Homework1-2-------------------------------------------------------
+#請固定使用四個空格做縮排。一個 TAB 鍵和四個空格對程式語言而言有不一樣的意義。
 
 x=0
 while x<1:
@@ -45,6 +52,6 @@ while x<1:
                     print("this word exist in the list!"+"\ntry again?")
                 else:
                     print("this word doesn't exist in the list!"+"\ntry again?")
-                  
+
 
 
