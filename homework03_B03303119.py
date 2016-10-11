@@ -14,8 +14,20 @@
 #def charFreqLister(inputSTR):
 #resultLIST = [(freq, char), (freq, char), (freq, char),...]
 #return resultLIST
-
-
+def charFreqLister(inputSTR):
+	resultLIST = []
+	empty = []
+	for x in inputSTR:
+		num = inputSTR.count(x)
+		prob = num/len(inputSTR)
+		empty.append((prob, x))
+	
+	for i in empty:
+		if i not in resultLIST:
+			resultLIST.append(i)
+		
+	resultLIST.sort(reverse= True)
+	return resultLIST
 
 # 3.1 加分題 (有做有加分，沒做不扣分)：請用課堂中提到的「霍夫曼編碼]
 #     (https://zh.wikipedia.org/wiki/霍夫曼編碼) 為你之前設計的
@@ -41,6 +53,9 @@ def condNOT(inputSTR_X):
 
 #condition00 and condition02
 def condAND(inputSTR_X, inputSTR_Y):
+	outputSTR = ""
+	
+	
     return
 
 #condition00 or condition03
