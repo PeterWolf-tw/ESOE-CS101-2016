@@ -31,7 +31,7 @@ i = h.split(" ")
 
 sampleWordList = [ ]
 for j in i:
-    if len(j)>5:
+    if len(j)>=5:
         sampleWordList.append(j)
 
 print(sampleWordList)
@@ -42,9 +42,9 @@ l = 0
 
 
 while l < 100 :
-    if sampleWordList[0] == k:
+    if k in sampleWordList:
         print("You got it!")
-        l = l+l
+        l = l + 1
         break
     else:
         print("No!")
