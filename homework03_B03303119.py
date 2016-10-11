@@ -72,14 +72,14 @@ if __name__== "__main__":
     condition00Y = "010000110001011100101001"
 
     condition01 = condNOT(condition00X)
-	condition02 = condAND(condition00X, condition00Y)
-	condition03 = condOR(condition00X, condition00Y)
-	condition04 = conXOR(condition00X, condition00Y)
+    condition02 = condAND(condition00X, condition00Y)
+    condition03 = condOR(condition00X, condition00Y)
+    condition04 = conXOR(condition00X, condition00Y)
     
-	print(condition01)
-	print(condition02)
-	print(condition03)
-	print(condition04)
+    print(condition01)
+    print(condition02)
+    print(condition03)
+    print(condition04)
 	
     # 5 請完成以下課本習題並將答案以字串型 (str or unicode) 填入。
     print("Ans:")
