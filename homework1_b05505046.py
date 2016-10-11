@@ -7,9 +7,9 @@ file=open('sample.txt','r')
 Text = file.read()
 
 print (Text)
-Text = Text.lower()
+Text = Text.lower() 
 file.close()
-list=[",","?","0","1","2","-","/","\n" ]
+list=[",","?","0","1","2","-","/",".","\n" ] #當初少移除"."
 for a in list:
     Text=Text.replace(a," ")
 Samplelist=Text.split(" ")
@@ -19,8 +19,8 @@ for b in Samplelist:
     if len(b)>5:
         sample_list.append(b)
         count = count + 1
-print(sample_list)
-
+print(sample_list)        
+    
 #1-2
 time = 0
 judge=0
@@ -33,6 +33,4 @@ while time<count:
     time=time+1
 if judge==0:
     print("you had better try it again")
-
-    #請測試一下你的程式。我輸入 month 的時候，它的 judge 是 0。但明明有 month 這個字。是否程式邏輯有誤呢？
-
+    

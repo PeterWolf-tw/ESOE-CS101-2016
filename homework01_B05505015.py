@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
+<<<<<<< HEAD
+
+file = open("C:\.minecraft\Amis.txt","r")
+=======
 #前兩行請養成習慣宣告程式種類以及編碼
 
 #file = open("C:\.minecraft\Amis.txt","r")
 file = open("./sample.txt", "r")
 #用相對路徑的適用性會更廣一些。
+>>>>>>> f2bfa8fc6fd93b7cab5d018bc2f6ba66c4820e1c
 text = file.read()
 file.close()
 
