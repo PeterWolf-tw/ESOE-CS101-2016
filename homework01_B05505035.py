@@ -24,7 +24,7 @@ i = h.split(" ")
 #b = b.replace('?','')
 #b = b.replace('"','')
 #b = b.replace('.','')
-#b = b.replace(',','')
+#b = b.replace(',','') 
 #b = b.replace('-','')
 #b = b.split(" ")
 
