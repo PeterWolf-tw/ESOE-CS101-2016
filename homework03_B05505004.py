@@ -28,25 +28,35 @@ def charFreqLister(string):
     resultLIST1=set(resultLIST)
     resultLIST=list(resultLIST1)
     resultLIST.sort(key=itemgetter(0), reverse= True)
-    print(resultLIST)
         
-    return None
+    return resultLIST
+string=""
+print(charFreqLister(string).frequency)
 
-charFreqLister("")
-
-#resultLIST = [(freq, char), (freq, char), (freq, char),...]
-
-#return resultLIST
-
-
+''''
 # 3.1 加分題 (有做有加分，沒做不扣分)：請用課堂中提到的「霍夫曼編碼]
 #     (https://zh.wikipedia.org/wiki/霍夫曼編碼) 為你之前設計的
 #     程式加上轉碼壓縮的功能。
 # e.g.,
-#def huffmanTranslater(inputSTR):
-#resultLIST = [(freq, char, code), (freq, char, code), (freq, char, code),...]
+def huffmanTranslater(string):
+    inputlist=charFreqLister(string)
+    x=0
+    a=[]
+    b=[]
+    c=[]
+    for x in (range(len(inputlist))-1):
+        while len(inputlist)>0:
+            a[x]=min(inputlist,key=itemgetter(0))
+            inputlist.remove(a[x])
+            b[x]=min(inputlist,key=itemgetter(0))
+            inputlist.remove(a[x])
+            c[x]=
+        
+    
 
-#return resultLIST
+resultLIST = [(freq, char, code), (freq, char, code), (freq, char, code),...]
+
+return resultLIST
 
 # 4 請參考以下 condNOT() 的例子，設計四個 func() 依以下條件，能算出 condition02 ~ 04 的值
 
@@ -154,3 +164,4 @@ if __name__== "__main__":
     Ch4P4_16d = ""
     
 
+'''''
