@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
-
-
-
-
 #2==========HW1-1
 f=open("./sample.txt","r")
 t=f.read()
