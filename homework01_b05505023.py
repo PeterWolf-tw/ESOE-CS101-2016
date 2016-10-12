@@ -1,7 +1,10 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 
 
 
-#=======================================homework1-1
+
+#2==========HW1-1
 f=open("./sample.txt","r")
 t=f.read()
 s2=t.replace("."," ")
@@ -12,16 +15,10 @@ s6=s5.replace("?"," ")
 s7=s6.replace("\n"," ")
 t2=s7.split(" ")
 
-sampleWordList = [ ]
-
-for x in t2:
-  if len(x) > 5:
-    sampleWordList.append(x)
-print(sampleWordList)
-
 
 
 #=======================================homework1-2
+
 
 while True :
   z = input('please enter a word!')
@@ -34,6 +31,7 @@ while True :
     continue
 t=f.close()
    
+
 
 
 
