@@ -11,25 +11,29 @@
 
 # 3. 請利用以下空白範本設計一支程式。程式可輸入一段字串，並自動計算出字串中包括空白字元出現的機率。
 #    並由高排到低。
+from operator import itemgetter           #operator module
 
-def charFreqLister(inputSTR):
-    resultLIST = [ ]
-    put=input("please enter:")
-    for n in put:
-        num=put.count(n)
-        val=num/len(put)
-        m=(val,n)
-        resultLIST.append(m)
-        
-        
+def charFreqLister(string):
+
+    string=input("請輸入一個字串:")
+    resultLIST=[]
+    print("確認輸入:",string)
+    string_length=len(string)
+
+    for n in string:
+        times=string.count(n)
+        frequency=times/string_length
+        resultLIST.append((frequency,n))
     
+    resultLIST1=set(resultLIST)
+    resultLIST=list(resultLIST1)
+    resultLIST.sort(key=itemgetter(0), reverse= True)
     print(resultLIST)
+        
     return None
-
 
 charFreqLister("")
 
-#def charFreqLister(inputSTR):
 #resultLIST = [(freq, char), (freq, char), (freq, char),...]
 
 #return resultLIST
@@ -59,40 +63,46 @@ def condNOT(inputSTR_X):
 
 #condition00 and condition02
 def condAND(inputSTR_X, inputSTR_Y):
+    x=len(inputSTR_X)
+    a=0
     outputSTR=""
-    for i , X in enumerate(inputSTR_X):
-        for j , Y in enumerate(inputSTR_Y):
-            if i==j:
-                if X=="1" and Y=="1":
-                    outputSTR+="1"
-                else:
-                    outputSTR+="0"
-    return outputSTR        
+    
+    while a <= (x-1):
+        if inputSTR_X[a] =="1" and inputSTR_Y[a]=="1":
+            
+            outputSTR=outputSTR+"1"
+            
+        else:
+            outputSTR=outputSTR+"0"
+        a+=1
+        
+    return outputSTR
+
 
 #condition00 or condition03
 def condOR(inputSTR_X, inputSTR_Y):
     outputSTR=""
-    for i , X in enumerate(inputSTR_X):
-        for j , Y in enumerate(inputSTR_Y):
-            if i==j:
-                if X=="0"and Y=="0":
-                    outputSTR+="0"
-                else:
-                    outputSTR+="1"
-    return outputSTR 
+    
+    for n in range(len(inputSTR_X)):
+        if int(inputSTR_X[n])+int(inputSTR_Y[n]) >= 1:
+            outputSTR=outputSTR+"1"
+                        
+        else:
+            outputSTR=outputSTR+"0"
+    
+    return outputSTR
+
 
 #condition00 xor condition04
-def condXOR(inputSTR_X, inputSTR_Y):
-    outputSTR=""
-    for i , X in enumerate(inputSTR_X):
-        for j , Y in enumerate(inputSTR_Y):
-            if i==j:
-                if  X=="0"and Y=="0":
-                    outputSTR+="1"
-                else:
-                    outputSTR+="0"
-    return outputSTR 
 
+def conXOR(inputSTR_X, inputSTR_Y):
+    outputSTR=""
+    for i in range(len(inputSTR_X)):
+        if int(inputSTR_X[i])+int(inputSTR_Y[i])>=1:
+            outputSTR=outputSTR+"0"
+        else:
+            outputSTR=outputSTR+"1"
+    return outputSTR
 
 if __name__== "__main__":
     condition00X = "010111001010100001100011"
@@ -100,32 +110,23 @@ if __name__== "__main__":
 
     condition01 = condNOT(condition00X)
     print(condition01)
-    
-    condition02 = condAND(condition00X,condition00Y)
-    print(condition02)
-    
-    condition03 = condOR(condition00X,condition00Y)
-    print(condition03) 
-    
-    condition04 = condXOR(condition00X,condition00Y)
-    print(condition04)    
 
     # 5 請完成以下課本習題並將答案以字串型 (str or unicode) 填入。
     print("Ans:")
-    Ch3P3_20a = ""
-    Ch3P3_20b = ""
-    Ch3P3_20c = ""
-    Ch3P3_20d = ""
+    Ch3P3_20a = "0100 0000 1110 0110 0000 0000 0000 0000"
+    Ch3P3_20b = "1100 0001 0100 1010 0100 0000 0000 0000"
+    Ch3P3_20c = "0100 0000 1100 1101 0000 0000 0000 0000"
+    Ch3P3_20d = "1011 1110 1100 0000 0000 0000 0000 0000"
     print("========")
-    Ch3P3_28a = ""
-    Ch3P3_28b = ""
-    Ch3P3_28c = ""
-    Ch3P3_28d = ""
+    Ch3P3_28a = "234"
+    Ch3P3_28b = "overflow"
+    Ch3P3_28c = "874"
+    Ch3P3_28d = "888"
     print("========")
-    Ch3P3_30a = ""
-    Ch3P3_30b = ""
-    Ch3P3_30c = ""
-    Ch3P3_30d = ""
+    Ch3P3_30a = "234"
+    Ch3P3_30b = "overflow"
+    Ch3P3_30c = "875"
+    Ch3P3_30d = "889"
     print("========")
     Ch4P4_3a = ""
     Ch4P4_3b = ""
@@ -151,3 +152,5 @@ if __name__== "__main__":
     Ch4P4_16b = ""
     Ch4P4_16c = ""
     Ch4P4_16d = ""
+    
+

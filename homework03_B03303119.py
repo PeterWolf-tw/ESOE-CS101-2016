@@ -11,29 +11,23 @@
 
 # 3. 請利用以下空白範本設計一支程式。程式可輸入一段字串，並自動計算出字串中包括空白字元出現的機率。
 #    並由高排到低。
-
-def charFreqLister(inputSTR):
-    resultLIST = [ ]
-    put=input("please enter:")
-    for n in put:
-        num=put.count(n)
-        val=num/len(put)
-        m=(val,n)
-        resultLIST.append(m)
-        
-        
-    
-    print(resultLIST)
-    return None
-
-
-charFreqLister("")
-
 #def charFreqLister(inputSTR):
 #resultLIST = [(freq, char), (freq, char), (freq, char),...]
-
 #return resultLIST
-
+def charFreqLister(inputSTR):
+	resultLIST = []
+	empty = []
+	for x in inputSTR:
+		num = inputSTR.count(x)
+		prob = num/len(inputSTR)
+		empty.append((prob, x))
+	
+	for i in empty:
+		if i not in resultLIST:
+			resultLIST.append(i)
+		
+	resultLIST.sort(reverse= True)
+	return resultLIST
 
 # 3.1 加分題 (有做有加分，沒做不扣分)：請用課堂中提到的「霍夫曼編碼]
 #     (https://zh.wikipedia.org/wiki/霍夫曼編碼) 為你之前設計的
@@ -59,39 +53,18 @@ def condNOT(inputSTR_X):
 
 #condition00 and condition02
 def condAND(inputSTR_X, inputSTR_Y):
-    outputSTR=""
-    for i , X in enumerate(inputSTR_X):
-        for j , Y in enumerate(inputSTR_Y):
-            if i==j:
-                if X=="1" and Y=="1":
-                    outputSTR+="1"
-                else:
-                    outputSTR+="0"
-    return outputSTR        
+	outputSTR = ""
+	
+	
+    return
 
 #condition00 or condition03
 def condOR(inputSTR_X, inputSTR_Y):
-    outputSTR=""
-    for i , X in enumerate(inputSTR_X):
-        for j , Y in enumerate(inputSTR_Y):
-            if i==j:
-                if X=="0"and Y=="0":
-                    outputSTR+="0"
-                else:
-                    outputSTR+="1"
-    return outputSTR 
+    return
 
 #condition00 xor condition04
-def condXOR(inputSTR_X, inputSTR_Y):
-    outputSTR=""
-    for i , X in enumerate(inputSTR_X):
-        for j , Y in enumerate(inputSTR_Y):
-            if i==j:
-                if  X=="0"and Y=="0":
-                    outputSTR+="1"
-                else:
-                    outputSTR+="0"
-    return outputSTR 
+def conXOR(inputSTR_X, inputSTR_Y):
+    return
 
 
 if __name__== "__main__":
@@ -99,17 +72,15 @@ if __name__== "__main__":
     condition00Y = "010000110001011100101001"
 
     condition01 = condNOT(condition00X)
+    condition02 = condAND(condition00X, condition00Y)
+    condition03 = condOR(condition00X, condition00Y)
+    condition04 = conXOR(condition00X, condition00Y)
+    
     print(condition01)
-    
-    condition02 = condAND(condition00X,condition00Y)
     print(condition02)
-    
-    condition03 = condOR(condition00X,condition00Y)
-    print(condition03) 
-    
-    condition04 = condXOR(condition00X,condition00Y)
-    print(condition04)    
-
+    print(condition03)
+    print(condition04)
+	
     # 5 請完成以下課本習題並將答案以字串型 (str or unicode) 填入。
     print("Ans:")
     Ch3P3_20a = ""
@@ -117,15 +88,15 @@ if __name__== "__main__":
     Ch3P3_20c = ""
     Ch3P3_20d = ""
     print("========")
-    Ch3P3_28a = ""
-    Ch3P3_28b = ""
-    Ch3P3_28c = ""
-    Ch3P3_28d = ""
+    Ch3P3_28a = "234"
+    Ch3P3_28b = "overflow"
+    Ch3P3_28c = "874"
+    Ch3P3_28d = "888"
     print("========")
-    Ch3P3_30a = ""
-    Ch3P3_30b = ""
-    Ch3P3_30c = ""
-    Ch3P3_30d = ""
+    Ch3P3_30a = "234"
+    Ch3P3_30b = "overflow"
+    Ch3P3_30c = "875"
+    Ch3P3_30d = "889"
     print("========")
     Ch4P4_3a = ""
     Ch4P4_3b = ""
