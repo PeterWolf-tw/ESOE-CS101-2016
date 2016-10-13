@@ -103,10 +103,10 @@ if __name__== "__main__":
     Ch4P4_4c = "0x11"
     Ch4P4_4d = "0xBB"
     print("========")
-    Ch4P4_13a = 
-    Ch4P4_13b = 
-    Ch4P4_13c = 
-    Ch4P4_13d = 
+    Ch4P4_13a = "1184"
+    Ch4P4_13b = "-862"
+    Ch4P4_13c = "862"
+    Ch4P4_13d = "-1184"
     print("========")
     Ch4P4_15a = "overflow"
     Ch4P4_15b = "no overflow"
