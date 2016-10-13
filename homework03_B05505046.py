@@ -47,7 +47,7 @@ def condAND(inputSTR_X, inputSTR_Y):
             outputSTR+="1"
         else:
             outputSTR+="0"
-    return outputSTR 
+   return outputSTR 
             
             
             
@@ -85,20 +85,20 @@ if __name__== "__main__":
 
     # 5 請完成以下課本習題並將答案以字串型 (str or unicode) 填入。
     print("Ans:")
-    Ch3P3_20a = ""
-    Ch3P3_20b = ""
-    Ch3P3_20c = ""
-    Ch3P3_20d = ""
+    Ch3P3_20a = "0 10000001 11001100000000000000000"
+    Ch3P3_20b = "1 10000001 10101001000000000000000"
+    Ch3P3_20c = "0 10000010 01101101000000000000000"
+    Ch3P3_20d = "1 01111101 10000000000000000000000"
     print("========")
-    Ch3P3_28a = ""
-    Ch3P3_28b = ""
-    Ch3P3_28c = ""
-    Ch3P3_28d = ""
+    Ch3P3_28a = "234"
+    Ch3P3_28b = "overfiow"
+    Ch3P3_28c = "874"
+    Ch3P3_28d = "888"
     print("========")
-    Ch3P3_30a = ""
-    Ch3P3_30b = ""
-    Ch3P3_30c = ""
-    Ch3P3_30d = ""
+    Ch3P3_30a = "234"
+    Ch3P3_30b = "overflow"
+    Ch3P3_30c = "875"
+    Ch3P3_30d = "889"
     print("========")
     Ch4P4_3a = ""
     Ch4P4_3b = ""
