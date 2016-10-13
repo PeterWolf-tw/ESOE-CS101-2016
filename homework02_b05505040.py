@@ -26,7 +26,7 @@
 # #####################################################################################
 
 
-number = 20  #設定 number 這個變數的值為 2
+number = 100  #設定 number 這個變數的值為 2
 print("number 的二進位表示法為：{0}".format(bin(number))) #將 2 餵入 bin(n) 函式中，並把 bin(n) 回傳的結果，接著餵給 print() 輸出在螢幕畫面上。
 
 # 你可以試著把 number 的值改為其它的數字，觀察看看。
@@ -57,15 +57,11 @@ def bin2int(N):
     '''
     本函式將 bin 二進位制表示數轉為 int 整數
     '''
-    x=input("Input a binary number:")
-    exp=0
-    ans=0
-    while x>0:
-        remainder=int(x%10)
-        ans+=(2**exp)*remainder
-        x=(x-remainder)/10
-        exp=exp+1
-    print(ans)
+    ans = 0
+    exp = len(N) - 1
+    for x in range(len(N)):
+        ans += int(N[x]) * (2 ** (exp - x))
+    print("%s 的十進位表示為 %i." % (N, ans))
     return None
 
 class HW02:
@@ -91,9 +87,9 @@ class HW02:
         self.Ch2P2_20d = "4"
 
         #作業 4. 課本 Ch2. P2.22
-        self.Ch2P2_22a = "00010001 11101010 00100010 00001110"
-        self.Ch2P2_22b = "00001110 00111000 11101010 00111000"
-        self.Ch2P2_22c = "01101110 00001110 00111000 01001110"
+        self.Ch2P2_22a = "00010001 11101010 00100010 00011110"
+        self.Ch2P2_22b = "00011110 00111000 11101010 00111000"
+        self.Ch2P2_22c = "01101110 00011110 00111000 01001110"
         self.Ch2P2_22d = "00011000 00111000 00001101 00001011"
 
 
@@ -107,14 +103,14 @@ class HW02:
         "xxx" ： 你要填入你的答地方。
         '''
         #作業 5. 課本 Ch3. P3.28
-        self.Ch3P3_28a = "-765"
-        self.Ch3P3_28b = "-439"
+        self.Ch3P3_28a = "234"
+        self.Ch3P3_28b = "overflow"
         self.Ch3P3_28c = "874"
         self.Ch3P3_28d = "888"
 
         #作業 6. 課本 Ch3. P3.30
-        self.Ch3P3_30a = "766"
-        self.Ch3P3_30b = "440"
+        self.Ch3P3_30a = "234"
+        self.Ch3P3_30b = "overflow"
         self.Ch3P3_30c = "875"
         self.Ch3P3_30d = "889"
 

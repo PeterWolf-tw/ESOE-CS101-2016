@@ -9,7 +9,7 @@ Text = file.read()
 print (Text)
 Text = Text.lower() 
 file.close()
-list=[",","?","0","1","2","-","/","\n" ]
+list=[",","?","0","1","2","-","/",".","\n" ] #當初少移除"."
 for a in list:
     Text=Text.replace(a," ")
 Samplelist=Text.split(" ")
