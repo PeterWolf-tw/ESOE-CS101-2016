@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
-#s=open("C:/Users/user/Desktop/sample.txt","r")
-s = open("./sample.txt", "r")
-#用相對路徑的適用性會更廣一些。
+s=open("C:/Users/user/Desktop/sample.txt","r")
 sample=s.read()
 s.close()
 a=['"','(',')','?','!',',','.','\n','[',']','{','}',';',':','-',"'"]

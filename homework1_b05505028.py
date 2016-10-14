@@ -1,8 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding:utf-8 -*-
-#前兩行請養成習慣宣告程式種類以及編碼
-
-#file.py
+﻿#file.py
 f=open("./sample.txt","r")
 b=f.read()
 f.close()
@@ -11,7 +7,7 @@ f.close()
 k=[]
 str(k)
 for i in range(0,len(b),1):
-    k.append(b[i])#將字串轉為陣列
+    k.append(b[i])#將字串轉為陣列   
     if(ord(k[i])<ord('A')or ord(k[i])>ord('z')):
         k[i]=' '#將非大小寫的符號換為空白
 m=''
@@ -23,7 +19,6 @@ for i in range(0,len(l),1):
     if len(l[i])>=5:
         sampleWordList.append(l[i])#將自述多於5的字丟入列表
 print (sampleWordList )
-#print() 不需要加空格。事實上，函式都不需要。
 """----------------------------------列表"""
 boo=False
 while(True):

@@ -1,7 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding:utf-8 -*-
-#前兩行請養成習慣宣告程式種類以及編碼
-
 file = open("./sample.txt","r")
 t = file.read()
 file.close()
@@ -35,5 +31,3 @@ while True:
 		print("The word is in the sampleWordList!\n")
 	else:
 		print("The word is NOT in the sampleWordList.\n")
-
-#請固定使用四個空格做縮排。一個 TAB 鍵和四個空格對程式語言而言有不一樣的意義。

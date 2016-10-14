@@ -1,6 +1,3 @@
-#我只接受檔名格式正確的作業。
-#請在 homework01_b05505045.py 中更新即可。不要再加上其它檔名標記。
-
 1-1
 ff=open("C:\sample.txt",'r')
 f1=ff.read()
@@ -21,8 +18,8 @@ sampleWordList=[]
 for F in fff:
     if len(F)>5:
         sampleWordList.append(F)
-
-
+        
+        
 print(sampleWordList)
 
 1-2
@@ -33,4 +30,4 @@ while True:
         print('Victory!')
     else:
         print('Nothing but error')
-
+        
