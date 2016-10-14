@@ -68,12 +68,10 @@ def bin2int(N):
             to += 1
             N = A % 10
             var += 1
-            print(ans)
         elif A == 0:
             to += 1
             N = A % 10
             var += 1
-            print(ans)
         else:
             print("這不是二進位的表示法")
             break
