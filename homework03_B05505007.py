@@ -16,7 +16,6 @@
 
 #return resultLIST
 
-
 # 3.1 加分題 (有做有加分，沒做不扣分)：請用課堂中提到的「霍夫曼編碼]
 #     (https://zh.wikipedia.org/wiki/霍夫曼編碼) 為你之前設計的
 #     程式加上轉碼壓縮的功能。
@@ -25,6 +24,41 @@
 #resultLIST = [(freq, char, code), (freq, char, code), (freq, char, code),...]
 
 #return resultLIST
+
+# 3
+import operator
+from operator import itemgetter
+def charFreqLister(inputstr):
+
+
+    searchmachine={}
+    denominator=0
+    for char in inputstr: 
+        if char in searchmachine:
+            searchmachine[char]=searchmachine[char]+1
+            denominator=denominator+1
+        else:
+            searchmachine[char]=1
+            denominator=denominator+1 
+    
+
+    unsorted_resultLIST={}
+    for char in searchmachine:
+        x=searchmachine[char]/denominator
+        unsorted_resultLIST[x]=char
+
+    sorted_resultLIST = sorted(unsorted_resultLIST.items(), key = operator.itemgetter(0) , reverse=True)
+
+    resultLIST = sorted_resultLIST
+    return resultLIST
+
+#3.1
+
+
+
+
+
+
 
 # 4 請參考以下 condNOT() 的例子，設計四個 func() 依以下條件，能算出 condition02 ~ 04 的值
 
