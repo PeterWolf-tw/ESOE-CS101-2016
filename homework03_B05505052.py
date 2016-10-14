@@ -12,12 +12,18 @@
 # 3. 請利用以下空白範本設計一支程式。程式可輸入一段字串，並自動計算出字串中包括空白字元出現的機率。
 #    並由高排到低。
 def charFreqLister(inputSTR):
-    resultLIST = [(freq, char), (freq, char), (freq, char),...]
+    resultLIST = []
+    middle = []
     for char in inputSTR:
-        s = inputSTR.count(char)
-        p = s/len(inputSTR)
-        
-
+        s = inputSTR.count(char)  #算出字數
+        freq = s/len(inputSTR)  #求機率
+        middle.append((freq,char))
+    
+    mset = set(middle)  #刪掉重複的項目
+    for ans in mset:
+        resultLIST.append(ans)
+    resultLIST.sort(reverse = True)  #排序
+    
     return resultLIST
 
 
