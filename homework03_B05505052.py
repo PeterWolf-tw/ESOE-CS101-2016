@@ -51,15 +51,33 @@ def condNOT(inputSTR_X):
 
 #condition00 and condition02
 def condAND(inputSTR_X, inputSTR_Y):
-    return
+    outputSTR = ""    
+    for x,y in zip(inputSTR_X,inputSTR_Y):
+        if x=="1" and y=="1":
+            outputSTR = outputSTR + "1"
+        else:
+            outputSTR = outputSTR + "0"
+    return outputSTR
 
 #condition00 or condition03
 def condOR(inputSTR_X, inputSTR_Y):
-    return
+    outputSTR = ""    
+    for x,y in zip(inputSTR_X,inputSTR_Y):
+        if x == "1" or y == "1":
+            outputSTR = outputSTR + "1"
+        else:
+            outputSTR = outputSTR + "0"
+    return outputSTR
 
 #condition00 xor condition04
 def conXOR(inputSTR_X, inputSTR_Y):
-    return
+    outputSTR = ""    
+    for x,y in zip(inputSTR_X,inputSTR_Y):
+        if x == "1" or y == "1":
+            outputSTR = outputSTR + "0"
+        else:
+            outputSTR = outputSTR + "1"
+    return outputSTR
 
 
 if __name__== "__main__":
@@ -68,7 +86,16 @@ if __name__== "__main__":
 
     condition01 = condNOT(condition00X)
     print(condition01)
-
+    
+    condition02 = condAND(condition00X,condition00Y)
+    print(condition02)
+    
+    condition03 = condOR(condition00X,condition00Y)
+    print(condition03) 
+    
+    condition04 = conXOR(condition00X,condition00Y)
+    print(condition04)  
+    
     # 5 請完成以下課本習題並將答案以字串型 (str or unicode) 填入。
     print("Ans:")
     Ch3P3_20a = ""
