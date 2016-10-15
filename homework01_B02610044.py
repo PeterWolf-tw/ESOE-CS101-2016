@@ -1,9 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding:utf-8 -*-
-#前兩行請養成習慣宣告程式種類以及編碼
-
-
-#你寫的方式不是一支可以執行的程式。但步驟大致上沒錯，請參考一下別的同學怎麼做。
 Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:01:18) [MSC v.1900 32 bit (Intel)] on win32
 Type "copyright", "credits" or "license()" for more information.
 >>> #撰寫作業1-1
@@ -20,7 +14,7 @@ StringNotNeed = ["?","2","0","-","'"'",".","1"]
 for Bye in StringNotNeed:
   TheOpenedTextToRead = TheOpenedTextToRead.replace(Bye,"  ")
   List = TheOpenedTextToRead.split(" ")
-
+  
 #產生sampleWorldList
 for Word in List:
   if len(Word) > 5:

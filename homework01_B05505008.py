@@ -1,11 +1,6 @@
-#!/usr/bin/env python3
-# -*- coding:utf-8 -*-
-#前兩行請養成習慣宣告程式種類以及編碼
-
+# encoding: utf-8
 # B05505008 python作業一
-#fileopen = open("/Users/wayne/Desktop/homework.py/sample.txt","r")
-fileopen = open("./sample.txt", "r")
-#用相對路徑的適用性會更廣一些。
+fileopen = open("/Users/wayne/Desktop/homework.py/sample.txt","r")
 punctuation = ["," ,".","\n","\"","?","2","0"]
 data_1 = fileopen.read()
 
@@ -22,10 +17,8 @@ for word in data_2:
 print(sampleWordList)
 fileopen.close()
 
-#print("讓輸入任何五個字母以上的英文字。")
-#key = raw_input()
-key = input("\n讓輸入任何五個字母以上的英文字。")
-#Python3 只有 input()
+print("讓輸入任何五個字母以上的英文字。")
+key = raw_input()
 a = 0
 counter = 0
 while counter < len(sampleWordList):

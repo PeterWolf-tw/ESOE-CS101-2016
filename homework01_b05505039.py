@@ -1,7 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding:utf-8 -*-
-#前兩行請養成習慣宣告程式種類以及編碼
-
 file=open("./sample.txt","r")
 text=file.read()
 file.close()
@@ -9,10 +5,10 @@ samplewordlist=[]
 text=text.replace("?","")
 text=text.replace(".","")
 text=text.replace("\"","")
-text=text.replace("-","")
-text=text.replace("\n"," ")
-text=text.replace(",","")
-text=text.replace("2000th","")
+text=text.replace("-","") 
+text=text.replace("\n"," ") 
+text=text.replace(",","") 
+text=text.replace("2000th","") 
 textlist=text.split(" ")
 for word in textlist:
     if len(word)>=5:
@@ -30,7 +26,7 @@ while i<len(samplewordlist):
         break
     else:
         i=i+1
-
+    
 if(e>0):
     print("The word does exist in the samplewordlist")
 

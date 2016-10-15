@@ -1,7 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding:utf-8 -*-
-#前兩行請養成習慣宣告程式種類以及編碼
-
 file = open("./sample.txt","r")
 text = file.read()
 file.close()
@@ -10,10 +6,10 @@ sampleWordList = []
 text = text.replace("?","")
 text = text.replace(".","")
 text = text.replace("\"","")
-text = text.replace("-","")
-text = text.replace("\n"," ")
-text = text.replace(",","")
-text = text.replace("2000th","2,000th")
+text = text.replace("-","") 
+text = text.replace("\n"," ") 
+text = text.replace(",","") 
+text = text.replace("2000th","2,000th") 
 
 textList=text.split(" ")
 
@@ -30,7 +26,6 @@ while True:
 		if len(userWord)>5:
 			break
 		print("INPUT A WORD > 5 LETTERS!!!\n")
-#請固定使用四個空格做縮排。一個 TAB 鍵和四個空格對程式語言而言有不一樣的意義。
 
 	result=False
 	i=0

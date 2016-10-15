@@ -1,6 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding:utf-8 -*-
-#homework1-1
+-homework1-1
 
 sfile=open("sample.txt","r")
 stext=sfile.read()
@@ -11,7 +9,7 @@ swordlist=[]
 for element in mark:
     stext=stext.replace(element,"")
     
-Stext=stext.split(" ")
+Stext=stext.split("")
 
 for word in Stext:
     if len(word)>5:
@@ -21,12 +19,12 @@ print(swordlist)
 sfile.close()
 
 
-#1-2
-word=input("è¼¸å…¥ä¸€å€‹å¤§æ–¼äº”å€‹å­—çš„å–®å­—")
+-1-2
 while true:
+    word=input("¿é¤J¤@­Ó¤j©ó¤­­Ó¦rªº³æ¦r")
     if word in swordlist:
-        print("é€™å€‹å­—åœ¨swordlistè£¡é¢")
+        print("³o­Ó¦r¦bswordlist¸Ì­±")
     elif len(word)<=5:
-        print("é€™å€‹å–®å­—å°‘æ–¼äº”å€‹å­—")
+        print("³o­Ó³æ¦r¤Ö©ó¤­­Ó¦r")
     else:
-        print("é€™å€‹å­—ä¸åœ¨swordlistè£¡é¢")
+        print("³o­Ó¦r¤£¦bswordlist¸Ì­±")

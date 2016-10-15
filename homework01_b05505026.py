@@ -1,6 +1,3 @@
-#!/usr/local/bin/python
-# -*- coding: utf-8 -*-
-#前兩行請養成習慣宣告程式種類以及編碼
 #=======================================homework1-1
 
 #impot sample.txt
@@ -26,9 +23,9 @@ sampleWordList=[]
 for i in FFlist:
     if len(i) >5 :
       sampleWordList+=[i]
-        #請固定使用四個空格做縮排。一個 TAB 鍵和四個空格對程式語言而言有不一樣的意義。
-#Output the list
-print("sampleWordList :")
+
+#Output the list      
+print("sampleWordList :")      
 print(sampleWordList)
 print("\n")
 
@@ -54,3 +51,4 @@ while x==1:
         else:
             print("The word isn't in the sampleWordList.")
             x=1
+            
