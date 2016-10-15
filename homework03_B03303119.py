@@ -42,40 +42,55 @@ def charFreqLister(inputSTR):
 
 #condition00 not condition01
 def condNOT(inputSTR_X):
-    outputSTR = ""
-    for i in inputSTR_X:
-        if i == "0":
-            outputSTR = outputSTR + "1"
-        else:
-            outputSTR = outputSTR + "0"
-    return outputSTR
+	outputSTR = ""
+	for i in inputSTR_X:
+		if i == "0":
+			outputSTR = outputSTR + "1"
+		else:
+			outputSTR = outputSTR + "0"
+	return outputSTR
 
 
 #condition00 and condition02
 def condAND(inputSTR_X, inputSTR_Y):
 	outputSTR = ""
-	
-	
-    return
+	for i in range(len(inputSTR_X)):
+		if int(inputSTR_X[i]) & int(inputSTR_Y[i]):
+			outputSTR += "1"
+		else:
+			outputSTR += "0"
+	return outputSTR
 
 #condition00 or condition03
 def condOR(inputSTR_X, inputSTR_Y):
-    return
+	outputSTR = ""
+	for i in range(len(inputSTR_X)):
+		if int(inputSTR_X[i]) | int(inputSTR_Y[i]):
+			outputSTR += "1"
+		else:
+			outputSTR += "0"
+	return outputSTR
 
 #condition00 xor condition04
 def conXOR(inputSTR_X, inputSTR_Y):
-    return
+	outputSTR = ""
+	for i in range(len(inputSTR_X)):
+		if int(inputSTR_X[i]) ^ int(inputSTR_Y[i]):
+			outputSTR += "1"
+		else:
+			outputSTR += "0"
+	return outputSTR
 
 
 if __name__== "__main__":
-    condition00X = "010111001010100001100011"
-    condition00Y = "010000110001011100101001"
+	condition00X = "010111001010100001100011"
+	condition00Y = "010000110001011100101001"
 
-    condition01 = condNOT(condition00X)
+	condition01 = condNOT(condition00X)
 	condition02 = condAND(condition00X, condition00Y)
 	condition03 = condOR(condition00X, condition00Y)
 	condition04 = conXOR(condition00X, condition00Y)
-    
+
 	print(condition01)
 	print(condition02)
 	print(condition03)
