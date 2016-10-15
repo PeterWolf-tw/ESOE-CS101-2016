@@ -14,7 +14,20 @@
 #def charFreqLister(inputSTR):
 #resultLIST = [(freq, char), (freq, char), (freq, char),...]
 
-#return resultLIST
+def charFreqLister(inputSTR):
+    list=[]
+    x=len(inputSTR)
+    letter_list=[]
+    for letter in inputSTR:
+        if letter in letter_list:
+            continue
+        r=(float)(inputSTR.count(letter))/(float)(x)
+        list.append((r,letter))
+        letter_list.append(letter)
+    resultlist=list
+    resultlist.sort(reverse=True,key = lambda x : x[0])
+    return resultlist
+
 
 
 # 3.1 加分題 (有做有加分，沒做不扣分)：請用課堂中提到的「霍夫曼編碼]
@@ -85,10 +98,10 @@ if __name__== "__main__":
 
     # 5 請完成以下課本習題並將答案以字串型 (str or unicode) 填入。
     print("Ans:")
-    Ch3P3_20a = "0 10000001 11001100000000000000000"
-    Ch3P3_20b = "1 10000001 10101001000000000000000"
-    Ch3P3_20c = "0 10000010 01101101000000000000000"
-    Ch3P3_20d = "1 01111101 10000000000000000000000"
+    Ch3P3_20a = "01000000111001100000000000000000"
+    Ch3P3_20b = "11000000110101001000000000000000"
+    Ch3P3_20c = "01000001001101101000000000000000"
+    Ch3P3_20d = "10111110110000000000000000000000"
     print("========")
     Ch3P3_28a = "234"
     Ch3P3_28b = "overfiow"
