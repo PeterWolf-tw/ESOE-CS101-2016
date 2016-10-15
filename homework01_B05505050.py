@@ -1,7 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding:utf-8 -*-
-
-f=open("./sample.txt","r")
+f=open(r'C:\Users\user\Desktop\sample.txt')
 sample=f.read()
 f.close()
 

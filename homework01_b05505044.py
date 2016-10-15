@@ -1,13 +1,8 @@
-#!/usr/bin/env python3
-# -*- coding:utf-8 -*-
-#前兩行請養成習慣宣告程式種類以及編碼
-
-
 # Homework1-1
 
 
 
-
+ 
 work = open("./sample.txt","r")
 watch = work.read()
 work.close()
@@ -29,3 +24,4 @@ for n in result:
 
 print(sampleWordList)
 
+ 

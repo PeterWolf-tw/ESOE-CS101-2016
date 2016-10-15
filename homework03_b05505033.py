@@ -11,10 +11,16 @@
 
 # 3. 請利用以下空白範本設計一支程式。程式可輸入一段字串，並自動計算出字串中包括空白字元出現的機率。
 #    並由高排到低。
-#def charFreqLister(inputSTR):
-#resultLIST = [(freq, char), (freq, char), (freq, char),...]
-
-#return resultLIST
+def charFreqLister(inputSTR):
+    resultLIST = []
+    charDICT = {}
+    
+    for char in inputSTR:
+        charDICT[char] = inputSTR.count(char) / len(inputSTR)# count the character numbers and divided it with the total length then put it in a dict.
+    for key in charDICT:   
+        resultLIST.append((charDICT[key], key)) #take out the char and the numbers,and add it in the {fre,char} order
+    resultLIST.sort(key=lambda x:x[0], reverse=True) # put the list in order by using the numbers calculated. 
+    return resultLIST
 
 
 # 3.1 加分題 (有做有加分，沒做不扣分)：請用課堂中提到的「霍夫曼編碼]
@@ -158,17 +164,17 @@ if __name__== "__main__":
     Ch4P4_4c = "0x11"
     Ch4P4_4d = "0xBB"
     print("========")
-    Ch4P4_13a = ""
-    Ch4P4_13b = ""
-    Ch4P4_13c = ""
-    Ch4P4_13d = ""
+    Ch4P4_13a = "1184"
+    Ch4P4_13b = "-862"
+    Ch4P4_13c = "862"
+    Ch4P4_13d = "-1184"
     print("========")
     Ch4P4_15a = "overflow"
     Ch4P4_15b = "not overflow"
     Ch4P4_15c = "not overflow"
     Ch4P4_15d = "overflow"
     print("========")
-    Ch4P4_16a = ""
-    Ch4P4_16b = ""
-    Ch4P4_16c = ""
-    Ch4P4_16d = ""
+    Ch4P4_16a = "0x0F51"
+    Ch4P4_16b = "overflow"
+    Ch4P4_16c = "0x8012"
+    Ch4P4_16d = "overflow"

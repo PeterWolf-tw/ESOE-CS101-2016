@@ -1,7 +1,5 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 1-1
-ff=open("./sample.txt",'r')
+ff=open("C:\sample.txt",'r')
 f1=ff.read()
 ff.close()
 
@@ -14,14 +12,14 @@ f6=f5.replace('\n',' ')
 f7=f6.replace('?',' ')
 
 
-fff=f7.split(' ')
+fff=ff.split(' ')
 
-sampleWordList=[]
+
 for F in fff:
     if len(F)>5:
         sampleWordList.append(F)
-
-
+        
+        
 print(sampleWordList)
 
 1-2
@@ -30,6 +28,6 @@ while True:
     F=input('please input a word > 5 letters:')
     if F in sampleWordList:
         print('Victory!')
-    else:
+    eles:
         print('Nothing but error')
-
+        

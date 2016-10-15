@@ -1,7 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding:utf-8 -*-
-#前兩行請養成習慣宣告程式種類以及編碼
-
 '''
 =========================
 
@@ -24,13 +20,13 @@ for i in symbols:
     text = text.replace(i, '')
 text = text.replace('\n', ' ')
 
-list = text.split(' ')
+list = text.split(' ')  
 sampleWordList = [] # store the words that are more than 5 characters
 
 for word in list:
     if len(word) > 5: # not sure whether >5 or >=5 !!!
         sampleWordList.append(word)
-print('Following are the words that are more than 5 characters...')
+print('Following are the words that are more than 5 characters...')        
 print(sampleWordList)
 
 
