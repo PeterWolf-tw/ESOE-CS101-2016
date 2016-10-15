@@ -36,6 +36,27 @@ def charFreqLister(inputSTR):
 # e.g.,
 #def huffmanTranslater(inputSTR):
 #resultLIST = [(freq, char, code), (freq, char, code), (freq, char, code),...]
+def huffman(inputSTR):
+   list=[]
+   x=len(inputSTR)
+   letter_list=[]
+   for letter in inputSTR:
+        if letter in letter_list:
+            continue
+        count=count+1
+        r=(float)(inputSTR.count(letter))/(float)(x)
+        list.append((r,letter))
+        letter_list.append(letter)
+   resultlist=list
+   resultlist.sort(reverse=true,key=lambda x : x[0])
+   r=resultlist[0]+resultlist[1]
+   list[a][1]
+   a=count
+   list[a].append
+   return list
+    
+    
+        
 
 #return resultLIST
 
