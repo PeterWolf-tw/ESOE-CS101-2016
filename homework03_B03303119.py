@@ -42,35 +42,61 @@ def charFreqLister(inputSTR):
 
 #condition00 not condition01
 def condNOT(inputSTR_X):
-    outputSTR = ""
-    for i in inputSTR_X:
-        if i == "0":
-            outputSTR = outputSTR + "1"
-        else:
-            outputSTR = outputSTR + "0"
-    return outputSTR
+	outputSTR = ""
+	for i in inputSTR_X:
+		if i == "0":
+			outputSTR = outputSTR + "1"
+		else:
+			outputSTR = outputSTR + "0"
+	return outputSTR
 
 
 #condition00 and condition02
 def condAND(inputSTR_X, inputSTR_Y):
 	outputSTR = ""
-	
-	
-    return
+	for i in range(len(inputSTR_X)):
+		if int(inputSTR_X[i]) & int(inputSTR_Y[i]):
+			outputSTR += "1"
+		else:
+			outputSTR += "0"
+	return outputSTR
 
 #condition00 or condition03
 def condOR(inputSTR_X, inputSTR_Y):
-    return
+	outputSTR = ""
+	for i in range(len(inputSTR_X)):
+		if int(inputSTR_X[i]) | int(inputSTR_Y[i]):
+			outputSTR += "1"
+		else:
+			outputSTR += "0"
+	return outputSTR
 
 #condition00 xor condition04
 def conXOR(inputSTR_X, inputSTR_Y):
-    return
+	outputSTR = ""
+	for i in range(len(inputSTR_X)):
+		if int(inputSTR_X[i]) ^ int(inputSTR_Y[i]):
+			outputSTR += "1"
+		else:
+			outputSTR += "0"
+	return outputSTR
 
 
 if __name__== "__main__":
-    condition00X = "010111001010100001100011"
-    condition00Y = "010000110001011100101001"
+	condition00X = "010111001010100001100011"
+	condition00Y = "010000110001011100101001"
 
+<<<<<<< HEAD
+	condition01 = condNOT(condition00X)
+	condition02 = condAND(condition00X, condition00Y)
+	condition03 = condOR(condition00X, condition00Y)
+	condition04 = conXOR(condition00X, condition00Y)
+
+	print(condition01)
+	print(condition02)
+	print(condition03)
+	print(condition04)
+=======
     condition01 = condNOT(condition00X)
     condition02 = condAND(condition00X, condition00Y)
     condition03 = condOR(condition00X, condition00Y)
@@ -80,13 +106,14 @@ if __name__== "__main__":
     print(condition02)
     print(condition03)
     print(condition04)
+>>>>>>> 200f214d3f8aa4760a13043cca3d703cef03f300
 	
     # 5 請完成以下課本習題並將答案以字串型 (str or unicode) 填入。
     print("Ans:")
-    Ch3P3_20a = ""
-    Ch3P3_20b = ""
-    Ch3P3_20c = ""
-    Ch3P3_20d = ""
+    Ch3P3_20a = "0100 0000 1110 0110 0000 0000 0000 0000"
+    Ch3P3_20b = "1100 0001 0100 1010 0100 0000 0000 0000"
+    Ch3P3_20c = "0100 0001 0011 0110 1000 0000 0000 0000"
+    Ch3P3_20d = "1011 1110 1100 0000 0000 0000 0000 0000"
     print("========")
     Ch3P3_28a = "234"
     Ch3P3_28b = "overflow"
