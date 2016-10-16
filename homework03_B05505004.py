@@ -31,9 +31,9 @@ def charFreqLister(string):
         
     return resultLIST
 string=""
-print(charFreqLister(string).frequency)
+#print(charFreqLister(string).frequency)
 
-''''
+
 # 3.1 加分題 (有做有加分，沒做不扣分)：請用課堂中提到的「霍夫曼編碼]
 #     (https://zh.wikipedia.org/wiki/霍夫曼編碼) 為你之前設計的
 #     程式加上轉碼壓縮的功能。
@@ -50,13 +50,13 @@ def huffmanTranslater(string):
             inputlist.remove(a[x])
             b[x]=min(inputlist,key=itemgetter(0))
             inputlist.remove(a[x])
-            c[x]=
+#            c[x]=
         
     
 
-resultLIST = [(freq, char, code), (freq, char, code), (freq, char, code),...]
+#resultLIST = [(freq, char, code), (freq, char, code), (freq, char, code),...]
 
-return resultLIST
+#return resultLIST
 
 # 4 請參考以下 condNOT() 的例子，設計四個 func() 依以下條件，能算出 condition02 ~ 04 的值
 
@@ -108,10 +108,10 @@ def condOR(inputSTR_X, inputSTR_Y):
 def conXOR(inputSTR_X, inputSTR_Y):
     outputSTR=""
     for i in range(len(inputSTR_X)):
-        if int(inputSTR_X[i])+int(inputSTR_Y[i])>=1:
-            outputSTR=outputSTR+"0"
-        else:
+        if int(inputSTR_X[i])!=int(inputSTR_Y[i]):
             outputSTR=outputSTR+"1"
+        else:
+            outputSTR=outputSTR+"0"
     return outputSTR
 
 if __name__== "__main__":
@@ -120,6 +120,13 @@ if __name__== "__main__":
 
     condition01 = condNOT(condition00X)
     print(condition01)
+    '''
+    inputSTR_X,inputSTR_Y="1010101","0000111"          #test
+    
+    print("and:",condAND(inputSTR_X, inputSTR_Y))
+    print("or:",condOR(inputSTR_X, inputSTR_Y))
+    print("xor:",conXOR(inputSTR_X, inputSTR_Y))
+    '''
 
     # 5 請完成以下課本習題並將答案以字串型 (str or unicode) 填入。
     print("Ans:")
@@ -138,30 +145,29 @@ if __name__== "__main__":
     Ch3P3_30c = "875"
     Ch3P3_30d = "889"
     print("========")
-    Ch4P4_3a = ""
-    Ch4P4_3b = ""
-    Ch4P4_3c = ""
-    Ch4P4_3d = ""
+    Ch4P4_3a = "0x99"
+    Ch4P4_3b = "0x99"
+    Ch4P4_3c = "0xFF"
+    Ch4P4_3d = "0xFF"
     print("========")
-    Ch4P4_4a = ""
-    Ch4P4_4b = ""
-    Ch4P4_4c = ""
-    Ch4P4_4d = ""
+    Ch4P4_4a = "0x66"
+    Ch4P4_4b = "0xFF"
+    Ch4P4_4c = "0x11"
+    Ch4P4_4d = "0xBB"
     print("========")
-    Ch4P4_13a = ""
-    Ch4P4_13b = ""
-    Ch4P4_13c = ""
-    Ch4P4_13d = ""
+    Ch4P4_13a = "1184"
+    Ch4P4_13b = "-862"
+    Ch4P4_13c = "862"
+    Ch4P4_13d = "-1184"
     print("========")
-    Ch4P4_15a = ""
-    Ch4P4_15b = ""
-    Ch4P4_15c = ""
-    Ch4P4_15d = ""
+    Ch4P4_15a = "overflow"
+    Ch4P4_15b = "not overflow"
+    Ch4P4_15c = "not overflow"
+    Ch4P4_15d = "overflow"
     print("========")
-    Ch4P4_16a = ""
-    Ch4P4_16b = ""
-    Ch4P4_16c = ""
-    Ch4P4_16d = ""
+    Ch4P4_16a = "0x0F51"
+    Ch4P4_16b = "overflow"
+    Ch4P4_16c = "0x8012"
+    Ch4P4_16d = "overflow"
     
 
-'''''
