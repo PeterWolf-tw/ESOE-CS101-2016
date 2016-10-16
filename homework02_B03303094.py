@@ -58,7 +58,7 @@ def bin2int(N):
     本函式將 bin 二進位制表示數轉為 int 整數
     '''
     list=[]
-    m=n
+    m=N
     while int(m)>0:
         x=int(m)%10
         list.append(x)
@@ -71,7 +71,7 @@ def bin2int(N):
             list=[i*2 for i in list]
         except:
             break
-    print("{0} 的十進位表示為 {1}.".format(n,ans))
+    print("{0} 的十進位表示為 {1}.".format(N,ans))
     return None
 
 class HW02:
