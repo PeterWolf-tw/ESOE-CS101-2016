@@ -11,22 +11,19 @@
 
 # 3. 請利用以下空白範本設計一支程式。程式可輸入一段字串，並自動計算出字串中包括空白字元出現的機率。
 #    並由高排到低。
-#def charFreqLister(inputSTR):
-#resultLIST = [(freq, char), (freq, char), (freq, char),...]
-
 def charFreqLister(inputSTR):
-    list=[]
-    x=len(inputSTR)
-    letter_list=[]
-    for letter in inputSTR:
-        if letter in letter_list:
-            continue
-        r=(float)(inputSTR.count(letter))/(float)(x)
-        list.append((r,letter))
-        letter_list.append(letter)
-    resultlist=list
-    resultlist.sort(reverse=True,key = lambda x : x[0])
-    return resultlist
+    resultLIST = []
+    freq = {}
+    
+    for x in inputSTR:
+        freq[x] = inputSTR.count(x) 
+        freq[x]=  freq[x]/len(inputSTR)   
+    for y in freq:
+        resultLIST.append((freq[y], y))
+    
+    resultLIST.sort(key=lambda input:input[0], reverse=True)
+    return resultLIST
+
 
 
 
@@ -54,39 +51,43 @@ def condNOT(inputSTR_X):
 
 #condition00 and condition02
 def condAND(inputSTR_X, inputSTR_Y):
-   outputSTR =" "
-   for(x,y)in zip(inputSTR_X, inputSTR_Y):
-        if x=="1"and y=="1":
-            outputSTR+="1"
-        else:
-            outputSTR+="0"
-   return outputSTR 
-            
-            
-            
+    output= ""    
+    for (x,y) in zip(inputSTR_X,inputSTR_Y):
+        if x=="1" and y =="1":
+            output = output + "1"
+        else: 
+            output = output + "0"
+        
     
+    return output
 
 #condition00 or condition03
 def condOR(inputSTR_X, inputSTR_Y):
-    outputSTR =" "
-    for(x,y)in zip(inputSTR_X, inputSTR_Y):
-        if x=="0" or y=="0":
-            outputSTR+="0"
+    output = ""
+    for (x,y) in zip(inputSTR_X,inputSTR_Y):
+        if x=="0" and y=="0":
+            output = output + "0"
         else:
-            outputSTR+="1" 
+            output = output + "1"
         
-    return outputSTR
+    
+    
+    
+    return output
 
 #condition00 xor condition04
 def conXOR(inputSTR_X, inputSTR_Y):
-    outputSTR=" "
-    for(x,y)in zip(inputSTR_X, inputSTR_Y):
-        if x==y:
-            outputSTR+="0"
-        else:
-            outputSTR+="1"
+    output = ""
+    for (x,y) in zip(inputSTR_X,inputSTR_Y):
+        if x == "0" and y =="0":
+            output = output + "0"
+        elif x == "1" and y == "1":
+            output = output + "0"
+        else: 
+            output = output + "1"
             
-    return outputSTR
+    return output
+
 
 
 if __name__== "__main__":
@@ -98,42 +99,42 @@ if __name__== "__main__":
 
     # 5 請完成以下課本習題並將答案以字串型 (str or unicode) 填入。
     print("Ans:")
-    Ch3P3_20a = "01000000111001100000000000000000"
-    Ch3P3_20b = "11000000110101001000000000000000"
-    Ch3P3_20c = "01000001001101101000000000000000"
-    Ch3P3_20d = "10111110110000000000000000000000"
+    Ch3P3_20a = "0100 0000 1110 0110 0000 0000 0000 0000"
+    Ch3P3_20b = "1100 0001 0100 1010 0100 0000 0000 0000"
+    Ch3P3_20c = "0100 0001 0011 0110 1000 0000 0000 0000"
+    Ch3P3_20d = "1011 1110 1100 0000 0000 0000 0000 0000"
     print("========")
     Ch3P3_28a = "234"
-    Ch3P3_28b = "overfiow"
+    Ch3P3_28b = "overflow"
     Ch3P3_28c = "874"
     Ch3P3_28d = "888"
     print("========")
-    Ch3P3_30a = "234"
+    Ch3P3_30a = "235"
     Ch3P3_30b = "overflow"
     Ch3P3_30c = "875"
     Ch3P3_30d = "889"
     print("========")
-    Ch4P4_3a = ""
-    Ch4P4_3b = ""
-    Ch4P4_3c = ""
-    Ch4P4_3d = ""
+    Ch4P4_3a = "0x99"
+    Ch4P4_3b = "0x99"
+    Ch4P4_3c = "0xFF"
+    Ch4P4_3d = "0xFF"
     print("========")
-    Ch4P4_4a = ""
-    Ch4P4_4b = ""
-    Ch4P4_4c = ""
-    Ch4P4_4d = ""
+    Ch4P4_4a = "0x66"
+    Ch4P4_4b = "0xFF"
+    Ch4P4_4c = "0x11"
+    Ch4P4_4d = "0xBB"
     print("========")
-    Ch4P4_13a = ""
-    Ch4P4_13b = ""
-    Ch4P4_13c = ""
-    Ch4P4_13d = ""
+    Ch4P4_13a = "1184"
+    Ch4P4_13b = "-862"
+    Ch4P4_13c = "862"
+    Ch4P4_13d = "-1184"
     print("========")
-    Ch4P4_15a = ""
-    Ch4P4_15b = ""
-    Ch4P4_15c = ""
-    Ch4P4_15d = ""
+    Ch4P4_15a = "overflow"
+    Ch4P4_15b = "not overflow"
+    Ch4P4_15c = "not overflow"
+    Ch4P4_15d = "overflow"
     print("========")
-    Ch4P4_16a = ""
-    Ch4P4_16b = ""
-    Ch4P4_16c = ""
-    Ch4P4_16d = ""
+    Ch4P4_16a = "0x1051"
+    Ch4P4_16b = "overflow"
+    Ch4P4_16c = "0x8012"
+    Ch4P4_16d = "overflow"

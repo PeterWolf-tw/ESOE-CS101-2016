@@ -3,7 +3,7 @@
 
 
  
-work = open("./sample.txt","r")
+work = open("C:/Users/user/Desktop/sample.txt","r")
 watch = work.read()
 work.close()
 
@@ -23,5 +23,14 @@ for n in result:
         sampleWordList.append(n)
 
 print(sampleWordList)
+print("=================")
+
+#HW 1-2
+while True:
+    x=input('please input a word >= 5 letters:')
+    if x in sampleWordList:
+        print('have this word')
+    else:
+        print("don't have this word")
 
  
