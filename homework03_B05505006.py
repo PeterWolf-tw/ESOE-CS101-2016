@@ -11,13 +11,18 @@
 
 # 3. 請利用以下空白範本設計一支程式。程式可輸入一段字串，並自動計算出字串中包括空白字元出現的機率。
 #    並由高排到低。
+#def charFreqLister(inputSTR):
+#resultLIST = [(freq, char), (freq, char), (freq, char),...]
+
+#return resultLIST
 
 def charFreqLister(inputSTR):
     resultLIST = []
     charDICT = {}
     
     for char in inputSTR:
-        charDICT[char] = inputSTR.count(char) / len(inputSTR)
+        if char not in charDICT:
+            charDICT[char] = inputSTR.count(char) / len(inputSTR)        
     
     for key in charDICT:
         resultLIST.append((charDICT[key], key))
@@ -34,6 +39,43 @@ def charFreqLister(inputSTR):
 #resultLIST = [(freq, char, code), (freq, char, code), (freq, char, code),...]
 
 #return resultLIST
+
+def huffmanTranslater(inputSTR):
+    resultLIST = []
+    lst = charFreqLister(inputSTR)
+    nodeList = []
+    class node:
+        
+        def __init__(self, freq, char = ''):
+            self.freq = freq
+            self.char = char
+
+        def setChild(self, lc, rc):
+            self.lChild = lc
+            self.rChild = rc
+        
+        def addCode(self, code = ''):
+            if len(self.char) == 0:
+                self.lChild.addCode(code + '0')
+                self.rChild.addCode(code + '1')
+            else:
+                resultLIST.append((self.freq, self.char, code))
+    
+    for x in lst:
+        nodeList.append(node(x[0], x[1]))
+
+    while len(nodeList) > 1:
+        nodeList.sort(key = lambda x:x.freq)
+        newNode = node(nodeList[0].freq + nodeList[1].freq)
+        newNode.setChild(nodeList[0], nodeList[1])
+        nodeList.pop(0)
+        nodeList.pop(0)
+        nodeList.append(newNode)
+
+    nodeList[0].addCode()
+    resultLIST.sort(key = lambda x:x[0], reverse=True)
+    return resultLIST
+
 
 # 4 請參考以下 condNOT() 的例子，設計四個 func() 依以下條件，能算出 condition02 ~ 04 的值
 
