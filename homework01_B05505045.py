@@ -1,5 +1,7 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 1-1
-ff=open("C:\sample.txt",'r')
+ff=open("./sample.txt",'r')
 f1=ff.read()
 ff.close()
 
@@ -12,7 +14,7 @@ f6=f5.replace('\n',' ')
 f7=f6.replace('?',' ')
 
 
-fff=ff.split(' ')
+fff=f7.split(' ')
 
 
 for F in fff:
