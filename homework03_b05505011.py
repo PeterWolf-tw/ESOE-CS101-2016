@@ -156,6 +156,7 @@ Using a bias of 127
     Ch4P4_15c = "01001001"
     Ch4P4_15d = "underflow"
     print("========")
+#Is the first character sigh?
     Ch4P4_16a = "0F51"
     Ch4P4_16b = "0F2A"
     Ch4P4_16c = "8012"
