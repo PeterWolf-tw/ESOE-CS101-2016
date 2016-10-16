@@ -86,7 +86,7 @@ if __name__== "__main__":
 	condition00X = "010111001010100001100011"
 	condition00Y = "010000110001011100101001"
 
-<<<<<<< HEAD
+
 	condition01 = condNOT(condition00X)
 	condition02 = condAND(condition00X, condition00Y)
 	condition03 = condOR(condition00X, condition00Y)
@@ -96,7 +96,7 @@ if __name__== "__main__":
 	print(condition02)
 	print(condition03)
 	print(condition04)
-=======
+
     condition01 = condNOT(condition00X)
     condition02 = condAND(condition00X, condition00Y)
     condition03 = condOR(condition00X, condition00Y)
@@ -106,7 +106,7 @@ if __name__== "__main__":
     print(condition02)
     print(condition03)
     print(condition04)
->>>>>>> 200f214d3f8aa4760a13043cca3d703cef03f300
+
 	
     # 5 請完成以下課本習題並將答案以字串型 (str or unicode) 填入。
     print("Ans:")
