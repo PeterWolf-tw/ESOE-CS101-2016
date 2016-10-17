@@ -81,4 +81,27 @@ Ch3P3_30b = "overflow"
 Ch3P3_30c = "875"
 Ch3P3_30d = "889"
 print("========")
-Ch4P4_3a ="11011101"
+Ch4P4_3a ="0x99"
+Ch4P4_3b = "0x99"
+Ch4P4_3c = "0xFF"
+Ch4P4_3d = "0xFF"
+print("========")
+Ch4P4_4a = "0x66"
+Ch4P4_4b = "0xFF"
+Ch4P4_4c = "0x11"
+Ch4P4_4d = "0xBB"
+print("========")
+Ch4P4_13a = "1184"
+Ch4P4_13b = "-862"
+Ch4P4_13c = "862"
+Ch4P4_13d = "-1184"
+print("========")
+Ch4P4_15a = "overflow"
+Ch4P4_15b = "not overflow"
+Ch4P4_15c = "not overflow"
+Ch4P4_15d = "overflow"
+print("========")
+Ch4P4_16a = "0x1051"
+Ch4P4_16b = "overflow"
+Ch4P4_16c = "0x8012"
+Ch4P4_16d = "overflow"
