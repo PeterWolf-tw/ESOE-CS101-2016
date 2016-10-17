@@ -10,10 +10,6 @@
 # 3. 請利用以下空白範本設計一支程式。程式可輸入一段字串，並自動計算出字串中包括空白字元出現的機率。
 #    並由高排到低。
 
-file=open('/Users/Raymond/Documents/sample.txt')
-context=file.read()
-file.close
-
 def charFreqLister(inputSTR):
     LIST=list(inputSTR)
     STRlen=len(inputSTR)
@@ -29,10 +25,12 @@ def charFreqLister(inputSTR):
         resultLIST.sort(reverse = True)    
     return print(resultLIST)
 
-charFreqLister(context)
-
 # 3.1 加分題：請用課堂中提到的「霍夫曼編碼]
 # (https://zh.wikipedia.org/wiki/霍夫曼編碼) 為你之前設計的程式加上轉碼壓縮的功能。
+
+def huffmanTranslater(inputSTR):
+    
+    return None
 
 # 4 請參考以下 condNOT() 的例子，設計四個 func() 依以下條件，能算出 condition02 ~ 04 的值
 
