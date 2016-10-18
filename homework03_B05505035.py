@@ -64,17 +64,35 @@ def condNOT(inputSTR_X):
     return outputSTR
 
 
+
 #condition00 and condition02
 def condAND(inputSTR_X, inputSTR_Y):
-    return
+    outputSTR = ""
+    if inputSTR_X = inputSTR_Y = 1:
+        outputSTR = outputSTR + "1"
+    else:
+        outputSTR = outputSTR + "0"
+    return outputSTR
 
 #condition00 or condition03
 def condOR(inputSTR_X, inputSTR_Y):
-    return
+    outputSTR = ""    
+    if inputSTR_X == 1:
+        outputSTR = outputSTR +"1"
+    elif inputSTR_Y == 1:
+        outputSTR = outputSTR +"1"
+    else:
+        outputSTR = outputSTR +"0"
+    return outputSTR
 
 #condition00 xor condition04
 def conXOR(inputSTR_X, inputSTR_Y):
-    return
+    outputSTR = ""
+    if inputSTR_X == inputSTR_Y:
+        outputSTR = outputSTR +"0"
+    else:
+        outputSTR = outputSTR +"1"
+    return outputSTR
 
 
 if __name__== "__main__":
