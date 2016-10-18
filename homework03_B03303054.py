@@ -17,18 +17,29 @@
 #return resultLIST
 
 def charFreqLister(inputSTR):
-    inputSTR=raw_input()
-    alphabet=inputSTR.splt()
+    alphabet=inputSTR
 
     resultLIST=[]
+    middleLIST=[]
+    
     ha=" "
     space=str(ha)
     for a in alphabet:
         times=alphabet.count(a)
         prob=times/len(alphabet)
-        resultLIST.append((prob,a))
-        resultLIST.sort(reverse= True)
+        middleLIST.append((prob,a))
+    for b in middleLIST:
+        if b not in resultLIST:
+            resultLIST.append(b)
+        
+    resultLIST.sort(reverse= True)
     return resultLIST    
+  
+    
+print (charFreqLister('happ py'))
+
+
+
 
 
 # 3.1 加分題 (有做有加分，沒做不扣分)：請用課堂中提到的「霍夫曼編碼]
