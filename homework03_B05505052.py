@@ -73,7 +73,7 @@ def condOR(inputSTR_X, inputSTR_Y):
 def conXOR(inputSTR_X, inputSTR_Y):
     outputSTR = ""    
     for x,y in zip(inputSTR_X,inputSTR_Y):
-        if x == "1" or y == "1":
+        if x == y:
             outputSTR = outputSTR + "0"
         else:
             outputSTR = outputSTR + "1"
