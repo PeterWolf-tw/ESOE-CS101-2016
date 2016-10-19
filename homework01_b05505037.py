@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
-#前兩行請養成習慣宣告程式種類以及編碼
-
-
 
 # B05505037
 # HW1
@@ -11,7 +8,7 @@
 
 file = open("./sample.txt","r")
 read_file = file.read()
-read_file = read_file.lower()
+read_file = file.lower()
 file.close()
 
 sampleWordList = []

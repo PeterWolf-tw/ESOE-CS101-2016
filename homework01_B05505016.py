@@ -1,10 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding:utf-8 -*-
-#å‰å…©è¡Œè«‹é¤Šæˆç¿’æ…£å®£å‘Šç¨‹å¼ç¨®é¡žä»¥åŠç·¨ç¢¼
-
-#file =open("D:/sample.txt","r")
-file = open("./sample.txt", "r")
-#ç”¨ç›¸å°è·¯å¾‘çš„é©ç”¨æ€§æœƒæ›´å»£ä¸€äº›ã€‚
+file =open("D:/sample.txt","r")
 a =file.read()
 file.close()
 
@@ -23,7 +17,7 @@ sampleWordList = [ ]
 for j in i:
     if len(j)>=5:
         sampleWordList.append(j)
-
+        
 print(sampleWordList)
 
 #HW1-2
@@ -31,13 +25,14 @@ print(sampleWordList)
 k =0
 
 while k<10000:
-    key =input("ï¿½ï¿½Jï¿½@ï¿½Ó¶Wï¿½L5ï¿½Ó¦rï¿½ï¿½ï¿½ï¿½ï¿½ï¿½r")
+    key =input("¿é¤J¤@­Ó¶W¹L5­Ó¦r¥Àªº³æ¦r")
     if key in sampleWordList:
-        print("ï¿½oï¿½Ó³ï¿½rï¿½ï¿½ï¿½bï¿½å³¹ï¿½Ì³ï¿½!!")
+        print("³o­Ó³æ¦r¦³¦b¤å³¹¸Ì³á!!")
         k =k+1
-
+    
     elif len(key)<5:
-        print("ï¿½Ð¿ï¿½J5ï¿½Ó³ï¿½rï¿½Hï¿½Wï¿½ï¿½ï¿½ï¿½r")
-
+        print("½Ð¿é¤J5­Ó³æ¦r¥H¤Wªº³æ¦r")
+        
     else:
-        print("ï¿½oï¿½ï¿½rï¿½Sï¿½bï¿½å³¹ï¿½ï¿½!")
+        print("³o³æ¦r¨S¦b¤å³¹¸Ì!")
+    

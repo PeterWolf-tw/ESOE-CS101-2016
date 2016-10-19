@@ -1,7 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding:utf-8 -*-
-#前兩行請養成習慣宣告程式種類以及編碼
-
 #1
 
 SampleText=open('/sample.txt',"r")
@@ -19,7 +15,7 @@ print(SampleWordList)
 
 while i < i+1 :
     word=str(input("請輸入一個五個字母以上的英文單字\n>>:"))
-    if len(word) > 5 :
+    if len(word) > 5 :  
         if word in SampleWordList:
             print("這個英文單字'有'出現在sampleWordList裡\n")
         else :

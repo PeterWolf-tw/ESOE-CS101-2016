@@ -1,13 +1,10 @@
-#!/usr/bin/env python3
-# -*- coding:utf-8 -*-
-#前兩行請養成習慣宣告程式種類以及編碼
 
 hwfile = open (E:\ sample.txt","r")
 hwile = hwfile.read()
 hwfile.close
 
 // just try
-# Python 以 # 符號做為註解標記，不是雙斜線。
+
 
 hwfile = hwfile.read
 sampleWordList = []
@@ -16,12 +13,11 @@ allkindsofmark = ["0","1","2","3","4","5","6","7","8","9",".",",","-","!","?","\
 for rm in allkindsofmark
     hwfile = hwfile.replace(rm, " ")
     hwfile_list = hwfile.split(" ")
-
+	
 
 for word in hwfile_list:
 	if len(word) > 5:
 		sampleWordList.append(word)
-#請固定使用四個空格做縮排。一個 TAB 鍵和四個空格對程式語言而言有不一樣的意義。
 print(sampleWordList)
 
 //hw1-1
@@ -38,11 +34,11 @@ while P < len(sampleWordList):
 		end == True
 		P = P+1
 		print ("Cool! Your word is in the sampleWordList")
-	else:
+	else: 
 		print("Sorry, Your word is not in the sampleWordList")
+	
 
-
-
+	
 //hw1-2
 
 

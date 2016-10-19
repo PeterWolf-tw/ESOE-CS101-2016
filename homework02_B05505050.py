@@ -54,16 +54,10 @@ def int2bin(N):
 #作業 1.
 # 請參考上例，自己寫一個將二進位表示數轉為十進位制的函式供稍後的作業使用：
 def bin2int(N):
-    i=0
-    ans=0
-    while N>0:
-        remainder=int(N%10)
-        N=(N-int(remainder))/10
-        result=remainder*(2**i)
-        i=i+1
-        ans=ans+result
-    print("{0} in decimal is {1}.".format(N, ans))
-    
+    '''
+    本函式將 bin 二進位制表示數轉為 int 整數
+    '''
+
     return None
 
 class HW02:

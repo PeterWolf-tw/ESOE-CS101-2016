@@ -1,11 +1,7 @@
-#!/usr/bin/env python3
-# -*- coding:utf-8 -*-
-#前兩行請養成習慣宣告程式種類以及編碼
-
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 1-1
-#ff=open("C:\sample.txt",'r')
-ff = open("./sample.txt", "r")
-#用相對路徑的適用性會更廣一些。
+ff=open("./sample.txt",'r')
 f1=ff.read()
 ff.close()
 
@@ -18,14 +14,14 @@ f6=f5.replace('\n',' ')
 f7=f6.replace('?',' ')
 
 
-fff=ff.split(' ')
+fff=f7.split(' ')
 
 
 for F in fff:
     if len(F)>5:
         sampleWordList.append(F)
-
-
+        
+        
 print(sampleWordList)
 
 1-2
@@ -36,4 +32,4 @@ while True:
         print('Victory!')
     eles:
         print('Nothing but error')
-
+        

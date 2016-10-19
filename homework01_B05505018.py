@@ -1,7 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding:utf-8 -*-
-#前兩行請養成習慣宣告程式種類以及編碼
-
 file = open("./sample.txt","r")
 text = file.read()
 file.close()
@@ -18,8 +14,6 @@ wordlist = text.split(" ")
 for word in wordlist:
     if len(word)>5:
      samplewordlist.append(word)
-     #請固定使用四個空格做縮排。
-
 print ("samplewordlist:")
 print (samplewordlist)
 
@@ -30,7 +24,7 @@ newwordlist = wordlist1.split(" ")
 for word in newwordlist:
     if len(word)>5:
      newwordlist1.append(word)
-     #請固定使用四個空格做縮排。
+
 
 
 userword = input("Please enter a word which contains more than five characters:").lower()
@@ -38,8 +32,8 @@ userword = input("Please enter a word which contains more than five characters:"
 i = 0
 x = 0
 while i < len(samplewordlist) :
-
-
+     
+    
     if len(userword)<=5:
         x= 2
         break
@@ -52,10 +46,10 @@ if x==2:
 
 if x==1:
     print ("The word is also in the article!")
-
+    
 if x==0:
     print ("The word is not in the article!")
+    
+   
 
-
-
-
+    
