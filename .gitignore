@@ -1,4 +1,5 @@
-
+.gitignore
 .DS_Store
 
-homework01_B05505019.py
+.wpr
+.wpu
