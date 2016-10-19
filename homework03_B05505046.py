@@ -11,19 +11,23 @@
 
 # 3. 請利用以下空白範本設計一支程式。程式可輸入一段字串，並自動計算出字串中包括空白字元出現的機率。
 #    並由高排到低。
-charcount={}
+#def charFreqLister(inputSTR):
+#resultLIST = [(freq, char), (freq, char), (freq, char),...]
 
 def charFreqLister(inputSTR):
-    for char in inputSTR:
-        if char not in charcount:
-            charcount[char] = 1
-        else:
-            charcount[char] += 1
-    total = float(sum(charcount.values()))
-    resultLIST = [(count / total, char) for char, count in charcount.items()]
-    resultLIST.sort(reverse = True)
+    list=[]
+    x=len(inputSTR)
+    letter_list=[]
+    for letter in inputSTR:
+        if letter in letter_list:
+            continue
+        r=(float)(inputSTR.count(letter))/(float)(x)
+        list.append((r,letter))
+        letter_list.append(letter)
+    resultlist=list
+    resultlist.sort(reverse=True,key = lambda x : x[0])
+    return resultlist
 
-    return resultLIST
 
 
 # 3.1 加分題 (有做有加分，沒做不扣分)：請用課堂中提到的「霍夫曼編碼]
@@ -32,6 +36,27 @@ def charFreqLister(inputSTR):
 # e.g.,
 #def huffmanTranslater(inputSTR):
 #resultLIST = [(freq, char, code), (freq, char, code), (freq, char, code),...]
+def huffman(inputSTR):
+   list=[]
+   x=len(inputSTR)
+   letter_list=[]
+   for letter in inputSTR:
+        if letter in letter_list:
+            continue
+        count=count+1
+        r=(float)(inputSTR.count(letter))/(float)(x)
+        list.append((r,letter))
+        letter_list.append(letter)
+   resultlist=list
+   resultlist.sort(reverse=true,key=lambda x : x[0])
+   r=resultlist[0]+resultlist[1]
+   list[a][1]
+   a=count
+   list[a].append
+   return list
+    
+    
+        
 
 #return resultLIST
 
@@ -49,19 +74,40 @@ def condNOT(inputSTR_X):
 
 
 #condition00 and condition02
-def condAND(inputSTR_X, inputSTR_Y): 
-    l = [ bin(int(a,2) & int(b,2))[2:] for a,b in zip (inputSTR_X, inputSTR_Y) ]
-    return ''.join(l)
+def condAND(inputSTR_X, inputSTR_Y):
+   outputSTR =" "
+   for(x,y)in zip(inputSTR_X, inputSTR_Y):
+        if x=="1"and y=="1":
+            outputSTR+="1"
+        else:
+            outputSTR+="0"
+   return outputSTR 
+            
+            
+            
+    
 
 #condition00 or condition03
 def condOR(inputSTR_X, inputSTR_Y):
-    l = [ bin(int(a,2) | int(b,2))[2:] for a,b in zip (inputSTR_X, inputSTR_Y) ]
-    return ''.join(l)
+    outputSTR =" "
+    for(x,y)in zip(inputSTR_X, inputSTR_Y):
+        if x=="0" or y=="0":
+            outputSTR+="0"
+        else:
+            outputSTR+="1" 
+        
+    return outputSTR
 
 #condition00 xor condition04
 def conXOR(inputSTR_X, inputSTR_Y):
-    l = [ bin(int(a,2) ^ int(b,2))[2:] for a,b in zip (inputSTR_X, inputSTR_Y) ]
-    return ''.join(l)
+    outputSTR=" "
+    for(x,y)in zip(inputSTR_X, inputSTR_Y):
+        if x==y:
+            outputSTR+="0"
+        else:
+            outputSTR+="1"
+            
+    return outputSTR
 
 
 if __name__== "__main__":
@@ -70,24 +116,23 @@ if __name__== "__main__":
 
     condition01 = condNOT(condition00X)
     print(condition01)
-    #print(condAND(condition00X,condition00Y))
 
     # 5 請完成以下課本習題並將答案以字串型 (str or unicode) 填入。
     print("Ans:")
-    Ch3P3_20a = ""
-    Ch3P3_20b = ""
-    Ch3P3_20c = ""
-    Ch3P3_20d = ""
+    Ch3P3_20a = "01000000111001100000000000000000"
+    Ch3P3_20b = "11000000110101001000000000000000"
+    Ch3P3_20c = "01000001001101101000000000000000"
+    Ch3P3_20d = "10111110110000000000000000000000"
     print("========")
-    Ch3P3_28a = ""
-    Ch3P3_28b = ""
-    Ch3P3_28c = ""
-    Ch3P3_28d = ""
+    Ch3P3_28a = "234"
+    Ch3P3_28b = "overfiow"
+    Ch3P3_28c = "874"
+    Ch3P3_28d = "888"
     print("========")
-    Ch3P3_30a = ""
-    Ch3P3_30b = ""
-    Ch3P3_30c = ""
-    Ch3P3_30d = ""
+    Ch3P3_30a = "234"
+    Ch3P3_30b = "overflow"
+    Ch3P3_30c = "875"
+    Ch3P3_30d = "889"
     print("========")
     Ch4P4_3a = ""
     Ch4P4_3b = ""

@@ -11,19 +11,25 @@
 
 # 3. 請利用以下空白範本設計一支程式。程式可輸入一段字串，並自動計算出字串中包括空白字元出現的機率。
 #    並由高排到低。
-charcount={}
+#def charFreqLister(inputSTR):
+#resultLIST = [(freq, char), (freq, char), (freq, char),...]
+
+#return resultLIST
 
 def charFreqLister(inputSTR):
-    for char in inputSTR:
-        if char not in charcount:
-            charcount[char] = 1
-        else:
-            charcount[char] += 1
-    total = float(sum(charcount.values()))
-    resultLIST = [(count / total, char) for char, count in charcount.items()]
-    resultLIST.sort(reverse = True)
-
+    字串 = input("請輸入一字串:")
+    resultLIST=[]
+    for char in 字串:
+        次數 = 字串.count(char)
+        freq = 次數/len(字串)
+        resultLIST.append((freq,char))
+        resultLIST=set(resultLIST)
+        resultLIST=list(resultLIST)
+        resultLIST.sort(reverse=True)
+    print(resultLIST)
     return resultLIST
+
+
 
 
 # 3.1 加分題 (有做有加分，沒做不扣分)：請用課堂中提到的「霍夫曼編碼]
@@ -48,20 +54,55 @@ def condNOT(inputSTR_X):
     return outputSTR
 
 
+#condition00 not condition01
+def condNOT(inputSTR_X):
+    outputSTR = ""
+    for i in inputSTR_X:
+        if i == "0":
+            outputSTR = outputSTR + "1"
+        else:
+            outputSTR = outputSTR + "0"
+    return outputSTR
+
 #condition00 and condition02
-def condAND(inputSTR_X, inputSTR_Y): 
-    l = [ bin(int(a,2) & int(b,2))[2:] for a,b in zip (inputSTR_X, inputSTR_Y) ]
-    return ''.join(l)
+def condAND(inputSTR_X, inputSTR_Y):
+    outputSTR = ""
+    i = 0
+    while i <= len(inputSTR_X)-1:
+        if inputSTR_X[i] == "1" and inputSTR_Y[i] == "1":
+            outputSTR = outputSTR + "1"
+        else:
+            outputSTR = outputSTR + "0"
+        i = i+1
+    return outputSTR
 
 #condition00 or condition03
 def condOR(inputSTR_X, inputSTR_Y):
-    l = [ bin(int(a,2) | int(b,2))[2:] for a,b in zip (inputSTR_X, inputSTR_Y) ]
-    return ''.join(l)
+    outputSTR = ""
+    i = 0
+    while i <= len(inputSTR_X)-1:
+        if inputSTR_X[i] == "0" and inputSTR_Y[i] == "0":
+            outputSTR = outputSTR + "0"
+        else:
+            outputSTR = outputSTR + "1"
+        i = i+1
+    return outputSTR
 
 #condition00 xor condition04
 def conXOR(inputSTR_X, inputSTR_Y):
-    l = [ bin(int(a,2) ^ int(b,2))[2:] for a,b in zip (inputSTR_X, inputSTR_Y) ]
-    return ''.join(l)
+    outputSTR = ""
+    i = 0
+    while i <= len(inputSTR_X)-1:
+        if inputSTR_X[i] == "0" and inputSTR_Y[i] == "0":
+            outputSTR = outputSTR + "0"
+        elif inputSTR_X[i] == "1" and inputSTR_Y[i] == "1":
+            outputSTR = outputSTR + "0"
+        else:
+            outputSTR = outputSTR + "1"
+        i = i+1
+    return outputSTR
+
+
 
 
 if __name__== "__main__":
@@ -70,7 +111,16 @@ if __name__== "__main__":
 
     condition01 = condNOT(condition00X)
     print(condition01)
-    #print(condAND(condition00X,condition00Y))
+
+    condition02 = condAND(condition00X,condition00Y)
+    print(condition02)
+
+    condition03 = condOR(condition00X,condition00Y)
+    print(condition03)
+
+    condition04 = conXOR(condition00X,condition00Y)
+    print(condition04)
+
 
     # 5 請完成以下課本習題並將答案以字串型 (str or unicode) 填入。
     print("Ans:")

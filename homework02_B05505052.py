@@ -57,17 +57,25 @@ def bin2int(N):
     '''
     本函式將 bin 二進位制表示數轉為 int 整數
     '''
-    i = 0
-    n = N
-    result=0
-    anser=0
-    while n>0:
-        remainder=int(n%10)
-        result=remainder*(2**i)
-        n= int(n-remainder)/10
-        i +=1
-        ans +=result
-    print("{0} 的十進位表示為 {1}.".format(N,ans))        
+    tN = str(N)
+    ans = 0
+    to = 0
+    A = N % 10
+    var = 0
+    while var < len(tN):
+        if A == 1:
+            ans += 2 ** to
+            to += 1
+            N = A % 10
+            var += 1
+        elif A == 0:
+            to += 1
+            N = A % 10
+            var += 1
+        else:
+            print("這不是二進位的表示法")
+            break
+    print(ans)        
     return None
 
 class HW02:
@@ -96,8 +104,8 @@ class HW02:
 
         #作業 4. 課本 Ch2. P2.22
         self.Ch2P2_22a = "00010001 11101010 00100010 00001110"
-        self.Ch2P2_22b = "00001110 00111000 11101010 00111000"
-        self.Ch2P2_22c = "01101110 00001110 00111000 01001110"
+        self.Ch2P2_22b = "01101110 00001110 00111000 01001110"
+        self.Ch2P2_22c = "00001110 00111000 11101010 00111000"
         self.Ch2P2_22d = "00011000 00111000 00001101 00001011"
 
 
@@ -113,16 +121,16 @@ class HW02:
         "xxx" ： 你要填入你的答地方。
         '''
         #作業 5. 課本 Ch3. P3.28
-        self.Ch3P3_28a = "234"
-        self.Ch3P3_28b = "overflow"
-        self.Ch3P3_28c = "874"
-        self.Ch3P3_28d = "888"
+        self.Ch3P3_28a = "xxx"
+        self.Ch3P3_28b = "xxx"
+        self.Ch3P3_28c = "xxx"
+        self.Ch3P3_28d = "xxx"
 
         #作業 6. 課本 Ch3. P3.30
-        self.Ch3P3_30a = "235"
-        self.Ch3P3_30b = "overflow"
-        self.Ch3P3_30c = "875"
-        self.Ch3P3_30d = "889"
+        self.Ch3P3_30a = "xxx"
+        self.Ch3P3_30b = "xxx"
+        self.Ch3P3_30c = "xxx"
+        self.Ch3P3_30d = "xxx"
 
 
 if __name__ == '__main__': #程式進入點，程式由此行開始執行。以下示範助教的批改程式。

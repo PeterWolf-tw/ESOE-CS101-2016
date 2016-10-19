@@ -57,17 +57,15 @@ def bin2int(N):
     '''
     本函式將 bin 二進位制表示數轉為 int 整數
     '''
-    i = 0
-    n = N
-    result=0
-    anser=0
-    while n>0:
-        remainder=int(n%10)
-        result=remainder*(2**i)
-        n= int(n-remainder)/10
-        i +=1
-        ans +=result
-    print("{0} 的十進位表示為 {1}.".format(N,ans))        
+    Y=0
+    cal=N
+    ans=0
+    while cal>0:
+        newNum=(cal%10)*(2**Y)
+        Y=Y+1
+        cal=cal//10
+        ans=ans+newNum
+    print("{0} 的十進位表示為 {1}.".format(N, ans))    
     return None
 
 class HW02:
@@ -84,7 +82,7 @@ class HW02:
         '''
         #作業 2. 課本 Ch2. P2.19
         self.Ch2P2_19a = "10"
-        self.Ch2P2_19b = "17"
+        self.Ch2P2_19b = "20"
         self.Ch2P2_19c = "6"
         self.Ch2P2_19d = "8"
 
@@ -119,7 +117,7 @@ class HW02:
         self.Ch3P3_28d = "888"
 
         #作業 6. 課本 Ch3. P3.30
-        self.Ch3P3_30a = "235"
+        self.Ch3P3_30a = "234"
         self.Ch3P3_30b = "overflow"
         self.Ch3P3_30c = "875"
         self.Ch3P3_30d = "889"

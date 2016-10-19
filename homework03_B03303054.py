@@ -11,19 +11,35 @@
 
 # 3. 請利用以下空白範本設計一支程式。程式可輸入一段字串，並自動計算出字串中包括空白字元出現的機率。
 #    並由高排到低。
-charcount={}
+#def charFreqLister(inputSTR):
+#resultLIST = [(freq, char), (freq, char), (freq, char),...]
+
+#return resultLIST
 
 def charFreqLister(inputSTR):
-    for char in inputSTR:
-        if char not in charcount:
-            charcount[char] = 1
-        else:
-            charcount[char] += 1
-    total = float(sum(charcount.values()))
-    resultLIST = [(count / total, char) for char, count in charcount.items()]
-    resultLIST.sort(reverse = True)
+    alphabet=inputSTR
 
-    return resultLIST
+    resultLIST=[]
+    middleLIST=[]
+    
+    ha=" "
+    space=str(ha)
+    for a in alphabet:
+        times=alphabet.count(a)
+        prob=times/len(alphabet)
+        middleLIST.append((prob,a))
+    for b in middleLIST:
+        if b not in resultLIST:
+            resultLIST.append(b)
+        
+    resultLIST.sort(reverse= True)
+    return resultLIST    
+  
+    
+print (charFreqLister('happ py'))
+
+
+
 
 
 # 3.1 加分題 (有做有加分，沒做不扣分)：請用課堂中提到的「霍夫曼編碼]
@@ -49,19 +65,16 @@ def condNOT(inputSTR_X):
 
 
 #condition00 and condition02
-def condAND(inputSTR_X, inputSTR_Y): 
-    l = [ bin(int(a,2) & int(b,2))[2:] for a,b in zip (inputSTR_X, inputSTR_Y) ]
-    return ''.join(l)
+def condAND(inputSTR_X, inputSTR_Y):
+    return
 
 #condition00 or condition03
 def condOR(inputSTR_X, inputSTR_Y):
-    l = [ bin(int(a,2) | int(b,2))[2:] for a,b in zip (inputSTR_X, inputSTR_Y) ]
-    return ''.join(l)
+    return
 
 #condition00 xor condition04
 def conXOR(inputSTR_X, inputSTR_Y):
-    l = [ bin(int(a,2) ^ int(b,2))[2:] for a,b in zip (inputSTR_X, inputSTR_Y) ]
-    return ''.join(l)
+    return
 
 
 if __name__== "__main__":
@@ -70,7 +83,6 @@ if __name__== "__main__":
 
     condition01 = condNOT(condition00X)
     print(condition01)
-    #print(condAND(condition00X,condition00Y))
 
     # 5 請完成以下課本習題並將答案以字串型 (str or unicode) 填入。
     print("Ans:")

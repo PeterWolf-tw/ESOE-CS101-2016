@@ -11,18 +11,19 @@
 
 # 3. 請利用以下空白範本設計一支程式。程式可輸入一段字串，並自動計算出字串中包括空白字元出現的機率。
 #    並由高排到低。
-charcount={}
-
 def charFreqLister(inputSTR):
+    resultLIST = []
+    middle = []
     for char in inputSTR:
-        if char not in charcount:
-            charcount[char] = 1
-        else:
-            charcount[char] += 1
-    total = float(sum(charcount.values()))
-    resultLIST = [(count / total, char) for char, count in charcount.items()]
-    resultLIST.sort(reverse = True)
-
+        s = inputSTR.count(char)  #算出字數
+        freq = s/len(inputSTR)  #求機率
+        middle.append((freq,char))
+    
+    mset = set(middle)  #刪掉重複的項目
+    for ans in mset:
+        resultLIST.append(ans)
+    resultLIST.sort(reverse = True)  #排序
+    
     return resultLIST
 
 
@@ -49,19 +50,34 @@ def condNOT(inputSTR_X):
 
 
 #condition00 and condition02
-def condAND(inputSTR_X, inputSTR_Y): 
-    l = [ bin(int(a,2) & int(b,2))[2:] for a,b in zip (inputSTR_X, inputSTR_Y) ]
-    return ''.join(l)
+def condAND(inputSTR_X, inputSTR_Y):
+    outputSTR = ""    
+    for x,y in zip(inputSTR_X,inputSTR_Y):
+        if x=="1" and y=="1":
+            outputSTR = outputSTR + "1"
+        else:
+            outputSTR = outputSTR + "0"
+    return outputSTR
 
 #condition00 or condition03
 def condOR(inputSTR_X, inputSTR_Y):
-    l = [ bin(int(a,2) | int(b,2))[2:] for a,b in zip (inputSTR_X, inputSTR_Y) ]
-    return ''.join(l)
+    outputSTR = ""    
+    for x,y in zip(inputSTR_X,inputSTR_Y):
+        if x == "1" or y == "1":
+            outputSTR = outputSTR + "1"
+        else:
+            outputSTR = outputSTR + "0"
+    return outputSTR
 
 #condition00 xor condition04
 def conXOR(inputSTR_X, inputSTR_Y):
-    l = [ bin(int(a,2) ^ int(b,2))[2:] for a,b in zip (inputSTR_X, inputSTR_Y) ]
-    return ''.join(l)
+    outputSTR = ""    
+    for x,y in zip(inputSTR_X,inputSTR_Y):
+        if x == "1" or y == "1":
+            outputSTR = outputSTR + "0"
+        else:
+            outputSTR = outputSTR + "1"
+    return outputSTR
 
 
 if __name__== "__main__":
@@ -70,8 +86,16 @@ if __name__== "__main__":
 
     condition01 = condNOT(condition00X)
     print(condition01)
-    #print(condAND(condition00X,condition00Y))
-
+    
+    condition02 = condAND(condition00X,condition00Y)
+    print(condition02)
+    
+    condition03 = condOR(condition00X,condition00Y)
+    print(condition03) 
+    
+    condition04 = conXOR(condition00X,condition00Y)
+    print(condition04)  
+    
     # 5 請完成以下課本習題並將答案以字串型 (str or unicode) 填入。
     print("Ans:")
     Ch3P3_20a = ""
