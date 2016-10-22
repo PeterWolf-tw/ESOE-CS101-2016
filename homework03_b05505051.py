@@ -2,17 +2,25 @@
 # -*- coding:utf-8 -*-
 
 
-# 繳交日期：2016.10.17
-
-# 作業內容：
-# 1. 請閱讀 Wikipedia 維基百科 IEEE754 條目 (https://zh.wikipedia.org/wiki/IEEE_754)
-
-# 2. 請試玩 http://armorgames.com/play/17826/logical-element
-
 # 3. 請利用以下空白範本設計一支程式。程式可輸入一段字串，並自動計算出字串中包括空白字元出現的機率。
 #    並由高排到低。
 #def charFreqLister(inputSTR):
 #resultLIST = [(freq, char), (freq, char), (freq, char),...]
+
+def charFreqLister(inputSTR):
+    resultLIST=[]
+    freq=[]
+    for char in inputSTR:
+        freq=inputSTR.count(char)/len(inputSTR)
+        resultlist.append((freq, char))
+        
+        resultLIST.sort(reverse=True)
+    print (resultLIST)    
+    
+    return resultLIST
+
+        
+        
 
 #return resultLIST
 
@@ -41,15 +49,35 @@ def condNOT(inputSTR_X):
 
 #condition00 and condition02
 def condAND(inputSTR_X, inputSTR_Y):
-    return
+    outputSTR = ""
+    for i in inputSTR_X and inputSTR_Y:
+        if inputSTR_X =="1" and inputSTR_Y =="1":
+            outputSTR = outputSTR + "1"
+        else:
+            outputSTR = outputSTR + "0"
+        
+    return outputSTR
 
 #condition00 or condition03
 def condOR(inputSTR_X, inputSTR_Y):
-    return
+    outputSTR = ""
+    for i in inputSTR_X and inputSTR_Y:
+        if inputSTR_X =="1" or inputSTR_Y =="1":
+            outputSTR = outputSTR + "1"
+        else:
+            outputSTR = outputSTR + "0"
+            
+    return outputSTR
 
 #condition00 xor condition04
 def conXOR(inputSTR_X, inputSTR_Y):
-    return
+    outputSTR = ""
+    for i in inputSTR_X and inputSTR_Y:
+        if inputSTR_X == inputSTR_Y:
+            outputSTR = outputSTR + "0"
+        else:
+            outputSTR = outputSTR + "1"
+    return outputSTR
 
 
 if __name__== "__main__":
