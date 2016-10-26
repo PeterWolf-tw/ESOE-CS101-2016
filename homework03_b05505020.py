@@ -3,6 +3,7 @@
 
 
 
+#這是功課3
 
 def countingstar(inputstr):
     inputstr=str(inputstr)
@@ -95,17 +96,68 @@ def countingstar(inputstr):
         elif na ==" ":
             space[0]=space[0]+1
 
-    那該死的list = [(a/total,"a"),(b/total,"b")]
+    那該死的list = [(a/total,"a"),(b/total,"b"),(c/total,"c")
+                   ,(d/total,"d"),(e/total,"e"),(f/total,"f")
+                   ,(g/total,"g"),(h/total,"h"),(i/total,"i")
+                   ,(j/total,"j"),(k/total,"k"),(l/total,"l")
+                   ,(m/total,"m"),(n/total,"n"),(o/total,"o")
+                   ,(p/total,"p"),(q/total,"q"),(r/total,"r")
+                   ,(s/total,"s"),(t/total,"t"),(u/total,"u")
+                   ,(v/total,"v"),(w/total,"w"),(x/total,"x")
+                   ,(y/total,"y"),(z/total,"z"),(space[0]/total,"空白鍵")]
+  
 
-    return 那該死的list
-    #print (a)
-    #print (b)
-    #print (c)
 
-
+    小到大list = sorted(那該死的list, key = lambda x : x[0])
+    大到小list = sorted(小到大list, reverse = True)
+    return 大到小list
+    
 
 ppap=input("打字先")
 
 answer=countingstar(ppap)
 print(answer)
+
+'''
+####################################
+
+#這是作業4
+
+def condAND(inputSTR_X,inputSTR_Y):
+    outputSTR = ""
+    n = 0
+    for i in str(inputSTR_X):
+
+        if i==str(inpustSTR_Y[n])=="1":
+            outputSTR = outputSTR + "1"
+            n=n+1
+        else:
+            outputSTR = outputSTR + "0"
+            n=n+1
+            
+    return outputSTR
+
+
+PINAPPLE=condAND(111000, 111100)
+print(PINAPPLE)
+#inputSTR_X=input("inputSTR_X")
+#inputSTR_Y=input("inputSTR_Y")
+
+
+def condOR(inputSTR_X, inputSTR_Y):
+    outputSTR = ""
+
+
+
+
+def condXOR(inputSTR_X, inputSTR_Y):
+    outputSTR = ""
+
+
+
+
+
+
+
+
 
