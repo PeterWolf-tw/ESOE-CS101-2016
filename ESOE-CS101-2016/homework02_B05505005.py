@@ -57,25 +57,15 @@ def bin2int(N):
     '''
     本函式將 bin 二進位制表示數轉為 int 整數
     '''
-    tN = str(N)
-    ans = 0
-    to = 0
-    A = N % 10
-    var = 0
-    while var < len(tN):
-        if A == 1:
-            ans += 2 ** to
-            to += 1
-            N = A % 10
-            var += 1
-        elif A == 0:
-            to += 1
-            N = A % 10
-            var += 1
-        else:
-            print("這不是二進位的表示法")
-            break
-    print(ans)        
+    Y=0
+    cal=N
+    ans=0
+    while cal>0:
+        newNum=(cal%10)*(2**Y)
+        Y=Y+1
+        cal=cal//10
+        ans=ans+newNum
+    print("{0} 的十進位表示為 {1}.".format(N, ans))    
     return None
 
 class HW02:
@@ -92,7 +82,7 @@ class HW02:
         '''
         #作業 2. 課本 Ch2. P2.19
         self.Ch2P2_19a = "10"
-        self.Ch2P2_19b = "17"
+        self.Ch2P2_19b = "20"
         self.Ch2P2_19c = "6"
         self.Ch2P2_19d = "8"
 
@@ -104,8 +94,8 @@ class HW02:
 
         #作業 4. 課本 Ch2. P2.22
         self.Ch2P2_22a = "00010001 11101010 00100010 00001110"
-        self.Ch2P2_22b = "01101110 00001110 00111000 01001110"
-        self.Ch2P2_22c = "00001110 00111000 11101010 00111000"
+        self.Ch2P2_22b = "00001110 00111000 11101010 00111000"
+        self.Ch2P2_22c = "01101110 00001110 00111000 01001110"
         self.Ch2P2_22d = "00011000 00111000 00001101 00001011"
 
 
@@ -127,7 +117,7 @@ class HW02:
         self.Ch3P3_28d = "888"
 
         #作業 6. 課本 Ch3. P3.30
-        self.Ch3P3_30a = "235"
+        self.Ch3P3_30a = "234"
         self.Ch3P3_30b = "overflow"
         self.Ch3P3_30c = "875"
         self.Ch3P3_30d = "889"

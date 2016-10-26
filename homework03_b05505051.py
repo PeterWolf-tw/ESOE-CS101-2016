@@ -2,32 +2,28 @@
 # -*- coding:utf-8 -*-
 
 
-# 繳交日期：2016.10.17
-
-# 作業內容：
-# 1. 請閱讀 Wikipedia 維基百科 IEEE754 條目 (https://zh.wikipedia.org/wiki/IEEE_754)
-
-# 2. 請試玩 http://armorgames.com/play/17826/logical-element
-
 # 3. 請利用以下空白範本設計一支程式。程式可輸入一段字串，並自動計算出字串中包括空白字元出現的機率。
 #    並由高排到低。
 #def charFreqLister(inputSTR):
 #resultLIST = [(freq, char), (freq, char), (freq, char),...]
-#return resultLIST
+
 def charFreqLister(inputSTR):
-	resultLIST = []
-	empty = []
-	for x in inputSTR:
-		num = inputSTR.count(x)
-		prob = num/len(inputSTR)
-		empty.append((prob, x))
-	
-	for i in empty:
-		if i not in resultLIST:
-			resultLIST.append(i)
-		
-	resultLIST.sort(reverse= True)
-	return resultLIST
+    resultLIST=[]
+    freq=[]
+    for char in inputSTR:
+        freq=inputSTR.count(char)/len(inputSTR)
+        resultlist.append((freq, char))
+        
+        resultLIST.sort(reverse=True)
+    print (resultLIST)    
+    
+    return resultLIST
+
+        
+        
+
+#return resultLIST
+
 
 # 3.1 加分題 (有做有加分，沒做不扣分)：請用課堂中提到的「霍夫曼編碼]
 #     (https://zh.wikipedia.org/wiki/霍夫曼編碼) 為你之前設計的
@@ -42,72 +38,55 @@ def charFreqLister(inputSTR):
 
 #condition00 not condition01
 def condNOT(inputSTR_X):
-	outputSTR = ""
-	for i in inputSTR_X:
-		if i == "0":
-			outputSTR = outputSTR + "1"
-		else:
-			outputSTR = outputSTR + "0"
-	return outputSTR
+    outputSTR = ""
+    for i in inputSTR_X:
+        if i == "0":
+            outputSTR = outputSTR + "1"
+        else:
+            outputSTR = outputSTR + "0"
+    return outputSTR
 
 
 #condition00 and condition02
 def condAND(inputSTR_X, inputSTR_Y):
-	outputSTR = ""
-	for i in range(len(inputSTR_X)):
-		if int(inputSTR_X[i]) & int(inputSTR_Y[i]):
-			outputSTR += "1"
-		else:
-			outputSTR += "0"
-	return outputSTR
+    outputSTR = ""
+    for i in inputSTR_X and inputSTR_Y:
+        if inputSTR_X =="1" and inputSTR_Y =="1":
+            outputSTR = outputSTR + "1"
+        else:
+            outputSTR = outputSTR + "0"
+        
+    return outputSTR
 
 #condition00 or condition03
 def condOR(inputSTR_X, inputSTR_Y):
-	outputSTR = ""
-	for i in range(len(inputSTR_X)):
-		if int(inputSTR_X[i]) | int(inputSTR_Y[i]):
-			outputSTR += "1"
-		else:
-			outputSTR += "0"
-	return outputSTR
+    outputSTR = ""
+    for i in inputSTR_X and inputSTR_Y:
+        if inputSTR_X =="1" or inputSTR_Y =="1":
+            outputSTR = outputSTR + "1"
+        else:
+            outputSTR = outputSTR + "0"
+            
+    return outputSTR
 
 #condition00 xor condition04
 def conXOR(inputSTR_X, inputSTR_Y):
-	outputSTR = ""
-	for i in range(len(inputSTR_X)):
-		if int(inputSTR_X[i]) ^ int(inputSTR_Y[i]):
-			outputSTR += "1"
-		else:
-			outputSTR += "0"
-	return outputSTR
+    outputSTR = ""
+    for i in inputSTR_X and inputSTR_Y:
+        if inputSTR_X == inputSTR_Y:
+            outputSTR = outputSTR + "0"
+        else:
+            outputSTR = outputSTR + "1"
+    return outputSTR
 
 
 if __name__== "__main__":
-	condition00X = "010111001010100001100011"
-	condition00Y = "010000110001011100101001"
+    condition00X = "010111001010100001100011"
+    condition00Y = "010000110001011100101001"
 
-
-	condition01 = condNOT(condition00X)
-	condition02 = condAND(condition00X, condition00Y)
-	condition03 = condOR(condition00X, condition00Y)
-	condition04 = conXOR(condition00X, condition00Y)
-
-	print(condition01)
-	print(condition02)
-	print(condition03)
-	print(condition04)
-=======
     condition01 = condNOT(condition00X)
-    condition02 = condAND(condition00X, condition00Y)
-    condition03 = condOR(condition00X, condition00Y)
-    condition04 = conXOR(condition00X, condition00Y)
-    
     print(condition01)
-    print(condition02)
-    print(condition03)
-    print(condition04)
 
-	
     # 5 請完成以下課本習題並將答案以字串型 (str or unicode) 填入。
     print("Ans:")
     Ch3P3_20a = "0100 0000 1110 0110 0000 0000 0000 0000"
@@ -115,13 +94,13 @@ if __name__== "__main__":
     Ch3P3_20c = "0100 0001 0011 0110 1000 0000 0000 0000"
     Ch3P3_20d = "1011 1110 1100 0000 0000 0000 0000 0000"
     print("========")
-    Ch3P3_28a = "234"
-    Ch3P3_28b = "overflow"
+    Ch3P3_28a = "765"
+    Ch3P3_28b = "439"
     Ch3P3_28c = "874"
     Ch3P3_28d = "888"
     print("========")
-    Ch3P3_30a = "234"
-    Ch3P3_30b = "overflow"
+    Ch3P3_30a = "766"
+    Ch3P3_30b = "440"
     Ch3P3_30c = "875"
     Ch3P3_30d = "889"
     print("========")

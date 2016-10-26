@@ -2,38 +2,22 @@
 # -*- coding:utf-8 -*-
 
 
-# 繳交日期：2016.10.17
-
-# 作業內容：
-# 1. 請閱讀 Wikipedia 維基百科 IEEE754 條目 (https://zh.wikipedia.org/wiki/IEEE_754)
-
-# 2. 請試玩 http://armorgames.com/play/17826/logical-element
-
-# 3. 請利用以下空白範本設計一支程式。程式可輸入一段字串，並自動計算出字串中包括空白字元出現的機率。
+# 3  請利用以下空白範本設計一支程式。程式可輸入一段字串，並自動計算出字串中包括空白字元出現的機率。
 #    並由高排到低。
-charcount={}
-
 def charFreqLister(inputSTR):
+    d = dict()
     for char in inputSTR:
-        if char not in charcount:
-            charcount[char] = 1
+        if char not in d:
+            d[char] = 1
         else:
-            charcount[char] += 1
-    total = float(sum(charcount.values()))
-    resultLIST = [(count / total, char) for char, count in charcount.items()]
-    resultLIST.sort(reverse = True)
+            d[char] += 1
+    return d
 
-    return resultLIST
-
-
-# 3.1 加分題 (有做有加分，沒做不扣分)：請用課堂中提到的「霍夫曼編碼]
-#     (https://zh.wikipedia.org/wiki/霍夫曼編碼) 為你之前設計的
-#     程式加上轉碼壓縮的功能。
-# e.g.,
-#def huffmanTranslater(inputSTR):
-#resultLIST = [(freq, char, code), (freq, char, code), (freq, char, code),...]
-
-#return resultLIST
+h = charFreqLister(input('Please input a string:'))
+char = h.keys()
+time = h.values()
+resultLIST0 = [(time, char)]
+print(resultLIST0)
 
 # 4 請參考以下 condNOT() 的例子，設計四個 func() 依以下條件，能算出 condition02 ~ 04 的值
 
@@ -49,20 +33,32 @@ def condNOT(inputSTR_X):
 
 
 #condition00 and condition02
-def condAND(inputSTR_X, inputSTR_Y): 
-    l = [ bin(int(a,2) & int(b,2))[2:] for a,b in zip (inputSTR_X, inputSTR_Y) ]
-    return ''.join(l)
+def condAND(inputSTR_X, inputSTR_Y):
+    outputSTR = ""
+    for i in inputSTR_X and inputSTR_Y:
+        if i == "0":
+            outputSTR = outputSTR + "1"
+        else:
+            outputSTR = outputSTR + "0"
+    return outputSTR
 
 #condition00 or condition03
 def condOR(inputSTR_X, inputSTR_Y):
-    l = [ bin(int(a,2) | int(b,2))[2:] for a,b in zip (inputSTR_X, inputSTR_Y) ]
-    return ''.join(l)
+    for i in inputSTR_X or inputSTR_Y:
+        if i == "0":
+            outputSTR = outputSTR + "1"
+        else:
+            outputSTR = outputSTR + "0"
+    return outputSTR
 
 #condition00 xor condition04
 def conXOR(inputSTR_X, inputSTR_Y):
-    l = [ bin(int(a,2) ^ int(b,2))[2:] for a,b in zip (inputSTR_X, inputSTR_Y) ]
-    return ''.join(l)
-
+    for i not in  inputSTR_X and inputSTR_Y:
+        if i == "0":
+            outputSTR = outputSTR + "1"
+        else:
+            outputSTR = outputSTR + "0"
+    return outputSTR
 
 if __name__== "__main__":
     condition00X = "010111001010100001100011"
@@ -70,9 +66,8 @@ if __name__== "__main__":
 
     condition01 = condNOT(condition00X)
     print(condition01)
-    #print(condAND(condition00X,condition00Y))
 
-    # 5 請完成以下課本習題並將答案以字串型 (str or unicode) 填入。
+# 5 請完成以下課本習題並將答案以字串型 (str or unicode) 填入。
     print("Ans:")
     Ch3P3_20a = ""
     Ch3P3_20b = ""

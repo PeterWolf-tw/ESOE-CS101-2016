@@ -14,19 +14,21 @@
 #def charFreqLister(inputSTR):
 #resultLIST = [(freq, char), (freq, char), (freq, char),...]
 
+#return resultLIST
+
 def charFreqLister(inputSTR):
-    list=[]
-    x=len(inputSTR)
-    letter_list=[]
-    for letter in inputSTR:
-        if letter in letter_list:
-            continue
-        r=(float)(inputSTR.count(letter))/(float)(x)
-        list.append((r,letter))
-        letter_list.append(letter)
-    resultlist=list
-    resultlist.sort(reverse=True,key = lambda x : x[0])
-    return resultlist
+    字串 = input("請輸入一字串:")
+    resultLIST=[]
+    for char in 字串:
+        次數 = 字串.count(char)
+        freq = 次數/len(字串)
+        resultLIST.append((freq,char))
+        resultLIST=set(resultLIST)
+        resultLIST=list(resultLIST)
+        resultLIST.sort(reverse=True)
+    print(resultLIST)
+    return resultLIST
+
 
 
 
@@ -36,27 +38,6 @@ def charFreqLister(inputSTR):
 # e.g.,
 #def huffmanTranslater(inputSTR):
 #resultLIST = [(freq, char, code), (freq, char, code), (freq, char, code),...]
-def huffman(inputSTR):
-   list=[]
-   x=len(inputSTR)
-   letter_list=[]
-   for letter in inputSTR:
-        if letter in letter_list:
-            continue
-        count=count+1
-        r=(float)(inputSTR.count(letter))/(float)(x)
-        list.append((r,letter))
-        letter_list.append(letter)
-   resultlist=list
-   resultlist.sort(reverse=true,key=lambda x : x[0])
-   r=resultlist[0]+resultlist[1]
-   list[a][1]
-   a=count
-   list[a].append
-   return list
-    
-    
-        
 
 #return resultLIST
 
@@ -73,41 +54,55 @@ def condNOT(inputSTR_X):
     return outputSTR
 
 
+#condition00 not condition01
+def condNOT(inputSTR_X):
+    outputSTR = ""
+    for i in inputSTR_X:
+        if i == "0":
+            outputSTR = outputSTR + "1"
+        else:
+            outputSTR = outputSTR + "0"
+    return outputSTR
+
 #condition00 and condition02
 def condAND(inputSTR_X, inputSTR_Y):
-   outputSTR =" "
-   for(x,y)in zip(inputSTR_X, inputSTR_Y):
-        if x=="1"and y=="1":
-            outputSTR+="1"
+    outputSTR = ""
+    i = 0
+    while i <= len(inputSTR_X)-1:
+        if inputSTR_X[i] == "1" and inputSTR_Y[i] == "1":
+            outputSTR = outputSTR + "1"
         else:
-            outputSTR+="0"
-   return outputSTR 
-            
-            
-            
-    
+            outputSTR = outputSTR + "0"
+        i = i+1
+    return outputSTR
 
 #condition00 or condition03
 def condOR(inputSTR_X, inputSTR_Y):
-    outputSTR =" "
-    for(x,y)in zip(inputSTR_X, inputSTR_Y):
-        if x=="0" or y=="0":
-            outputSTR+="0"
+    outputSTR = ""
+    i = 0
+    while i <= len(inputSTR_X)-1:
+        if inputSTR_X[i] == "0" and inputSTR_Y[i] == "0":
+            outputSTR = outputSTR + "0"
         else:
-            outputSTR+="1" 
-        
+            outputSTR = outputSTR + "1"
+        i = i+1
     return outputSTR
 
 #condition00 xor condition04
 def conXOR(inputSTR_X, inputSTR_Y):
-    outputSTR=" "
-    for(x,y)in zip(inputSTR_X, inputSTR_Y):
-        if x==y:
-            outputSTR+="0"
+    outputSTR = ""
+    i = 0
+    while i <= len(inputSTR_X)-1:
+        if inputSTR_X[i] == "0" and inputSTR_Y[i] == "0":
+            outputSTR = outputSTR + "0"
+        elif inputSTR_X[i] == "1" and inputSTR_Y[i] == "1":
+            outputSTR = outputSTR + "0"
         else:
-            outputSTR+="1"
-            
+            outputSTR = outputSTR + "1"
+        i = i+1
     return outputSTR
+
+
 
 
 if __name__== "__main__":
@@ -117,22 +112,32 @@ if __name__== "__main__":
     condition01 = condNOT(condition00X)
     print(condition01)
 
+    condition02 = condAND(condition00X,condition00Y)
+    print(condition02)
+
+    condition03 = condOR(condition00X,condition00Y)
+    print(condition03)
+
+    condition04 = conXOR(condition00X,condition00Y)
+    print(condition04)
+
+
     # 5 請完成以下課本習題並將答案以字串型 (str or unicode) 填入。
     print("Ans:")
-    Ch3P3_20a = "01000000111001100000000000000000"
-    Ch3P3_20b = "11000000110101001000000000000000"
-    Ch3P3_20c = "01000001001101101000000000000000"
-    Ch3P3_20d = "10111110110000000000000000000000"
+    Ch3P3_20a = ""
+    Ch3P3_20b = ""
+    Ch3P3_20c = ""
+    Ch3P3_20d = ""
     print("========")
-    Ch3P3_28a = "234"
-    Ch3P3_28b = "overfiow"
-    Ch3P3_28c = "874"
-    Ch3P3_28d = "888"
+    Ch3P3_28a = ""
+    Ch3P3_28b = ""
+    Ch3P3_28c = ""
+    Ch3P3_28d = ""
     print("========")
-    Ch3P3_30a = "234"
-    Ch3P3_30b = "overflow"
-    Ch3P3_30c = "875"
-    Ch3P3_30d = "889"
+    Ch3P3_30a = ""
+    Ch3P3_30b = ""
+    Ch3P3_30c = ""
+    Ch3P3_30d = ""
     print("========")
     Ch4P4_3a = ""
     Ch4P4_3b = ""

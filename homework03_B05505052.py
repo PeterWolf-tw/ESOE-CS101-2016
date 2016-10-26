@@ -11,10 +11,21 @@
 
 # 3. 請利用以下空白範本設計一支程式。程式可輸入一段字串，並自動計算出字串中包括空白字元出現的機率。
 #    並由高排到低。
-#def charFreqLister(inputSTR):
-#resultLIST = [(freq, char), (freq, char), (freq, char),...]
+def charFreqLister(inputSTR):
+    resultLIST = []
+    middle = []
+    for char in inputSTR:
+        s = inputSTR.count(char)  #算出字數
+        freq = s/len(inputSTR)  #求機率
+        middle.append((freq,char))
+    
+    mset = set(middle)  #刪掉重複的項目
+    for ans in mset:
+        resultLIST.append(ans)
+    resultLIST.sort(reverse = True)  #排序
+    
+    return resultLIST
 
-#return resultLIST
 
 # 3.1 加分題 (有做有加分，沒做不扣分)：請用課堂中提到的「霍夫曼編碼]
 #     (https://zh.wikipedia.org/wiki/霍夫曼編碼) 為你之前設計的
@@ -24,43 +35,6 @@
 #resultLIST = [(freq, char, code), (freq, char, code), (freq, char, code),...]
 
 #return resultLIST
-
-# 3
-import operator
-from operator import itemgetter
-def charFreqLister(inputstr):
-
-
-    searchmachine={}
-    denominator=0
-
-    for char in inputstr: 
-        if char in searchmachine:
-            searchmachine[char]=searchmachine[char]+1
-            denominator=denominator+1
-        else:
-            searchmachine[char]=1
-            denominator=denominator+1 
-    
-
-    unsorted_resultLIST={}
-    
-    for char in searchmachine:
-        x=searchmachine[char]/denominator
-        unsorted_resultLIST[x]=char
-
-    sorted_resultLIST = sorted(unsorted_resultLIST.items(), key = operator.itemgetter(0) , reverse=True)
-
-    resultLIST = sorted_resultLIST
-    return resultLIST
-
-#3.1
-
-
-
-
-
-
 
 # 4 請參考以下 condNOT() 的例子，設計四個 func() 依以下條件，能算出 condition02 ~ 04 的值
 
@@ -77,20 +51,32 @@ def condNOT(inputSTR_X):
 
 #condition00 and condition02
 def condAND(inputSTR_X, inputSTR_Y):
-    outputSTR=""
-    outputSTR=inputSTR_X&inputSTR_Y 
+    outputSTR = ""    
+    for x,y in zip(inputSTR_X,inputSTR_Y):
+        if x=="1" and y=="1":
+            outputSTR = outputSTR + "1"
+        else:
+            outputSTR = outputSTR + "0"
     return outputSTR
 
 #condition00 or condition03
 def condOR(inputSTR_X, inputSTR_Y):
-    outputSTR=""
-    outputSTR=inputSTR_X|inputSTR_Y 
+    outputSTR = ""    
+    for x,y in zip(inputSTR_X,inputSTR_Y):
+        if x == "1" or y == "1":
+            outputSTR = outputSTR + "1"
+        else:
+            outputSTR = outputSTR + "0"
     return outputSTR
 
 #condition00 xor condition04
 def conXOR(inputSTR_X, inputSTR_Y):
-    outputSTR=""
-    outputSTR=inputSTR_X^inputSTR_Y 
+    outputSTR = ""    
+    for x,y in zip(inputSTR_X,inputSTR_Y):
+        if x == y:
+            outputSTR = outputSTR + "0"
+        else:
+            outputSTR = outputSTR + "1"
     return outputSTR
 
 
@@ -100,45 +86,54 @@ if __name__== "__main__":
 
     condition01 = condNOT(condition00X)
     print(condition01)
-
+    
+    condition02 = condAND(condition00X,condition00Y)
+    print(condition02)
+    
+    condition03 = condOR(condition00X,condition00Y)
+    print(condition03) 
+    
+    condition04 = conXOR(condition00X,condition00Y)
+    print(condition04)  
+    
     # 5 請完成以下課本習題並將答案以字串型 (str or unicode) 填入。
     print("Ans:")
-    Ch3P3_20a = "01000000111001100000000000000000"
-    Ch3P3_20b = "11000001010010100100000000000000"
-    Ch3P3_20c = "01000001001101101000000000000000"
-    Ch3P3_20d = "10111110110000000000000000000000"
+    Ch3P3_20a = ""
+    Ch3P3_20b = ""
+    Ch3P3_20c = ""
+    Ch3P3_20d = ""
     print("========")
-    Ch3P3_28a = "234"
-    Ch3P3_28b = "560"
-    Ch3P3_28c = "874"
-    Ch3P3_28d = "888"
+    Ch3P3_28a = ""
+    Ch3P3_28b = ""
+    Ch3P3_28c = ""
+    Ch3P3_28d = ""
     print("========")
-    Ch3P3_30a = "234"
-    Ch3P3_30b = "560"
-    Ch3P3_30c = "875"
-    Ch3P3_30d = "889"
+    Ch3P3_30a = ""
+    Ch3P3_30b = ""
+    Ch3P3_30c = ""
+    Ch3P3_30d = ""
     print("========")
-    Ch4P4_3a = "10011001"
-    Ch4P4_3b = "10011001"
-    Ch4P4_3c = "11111111"
-    Ch4P4_3d = "11111111"
+    Ch4P4_3a = ""
+    Ch4P4_3b = ""
+    Ch4P4_3c = ""
+    Ch4P4_3d = ""
     print("========")
-    Ch4P4_4a = "01100110"
-    Ch4P4_4b = "11111111"
-    Ch4P4_4c = "00010001"
-    Ch4P4_4d = "10111011"
+    Ch4P4_4a = ""
+    Ch4P4_4b = ""
+    Ch4P4_4c = ""
+    Ch4P4_4d = ""
     print("========")
-    Ch4P4_13a = "1184"
-    Ch4P4_13b = "-862"
-    Ch4P4_13c = "862"
-    Ch4P4_13d = "-1184"
+    Ch4P4_13a = ""
+    Ch4P4_13b = ""
+    Ch4P4_13c = ""
+    Ch4P4_13d = ""
     print("========")
-    Ch4P4_15a = "overflow"
-    Ch4P4_15b = "not"
-    Ch4P4_15c = "not"
-    Ch4P4_15d = "overflow"
+    Ch4P4_15a = ""
+    Ch4P4_15b = ""
+    Ch4P4_15c = ""
+    Ch4P4_15d = ""
     print("========")
-    Ch4P4_16a = "0F51"
-    Ch4P4_16b = "0F2A"
-    Ch4P4_16c = "8012"
-    Ch4P4_16d = "overflow"
+    Ch4P4_16a = ""
+    Ch4P4_16b = ""
+    Ch4P4_16c = ""
+    Ch4P4_16d = ""

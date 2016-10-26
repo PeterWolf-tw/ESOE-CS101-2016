@@ -11,13 +11,18 @@
 
 # 3. 請利用以下空白範本設計一支程式。程式可輸入一段字串，並自動計算出字串中包括空白字元出現的機率。
 #    並由高排到低。
+#def charFreqLister(inputSTR):
+#resultLIST = [(freq, char), (freq, char), (freq, char),...]
+
+#return resultLIST
 
 def charFreqLister(inputSTR):
     resultLIST = []
     charDICT = {}
     
     for char in inputSTR:
-        charDICT[char] = inputSTR.count(char) / len(inputSTR)
+        if char not in charDICT:
+            charDICT[char] = inputSTR.count(char) / len(inputSTR)        
     
     for key in charDICT:
         resultLIST.append((charDICT[key], key))
@@ -34,6 +39,56 @@ def charFreqLister(inputSTR):
 #resultLIST = [(freq, char, code), (freq, char, code), (freq, char, code),...]
 
 #return resultLIST
+
+import queue
+
+# 令priority queue比較tuple大小時只比較第一項優先值
+class TupleSorting(tuple):
+    def __lt__(self, other):          #<
+        return self[0] < other[0]
+    def __gt__(self, other):          #>
+        return self[0] > other[0]
+    def __le__(self, other):          #<=
+        return self[0] <= other[0]
+    def __ge__(self, other):          #>=
+        return self[0] >= other[0]
+
+def huffmanTranslater(inputSTR):
+    resultLIST = []
+    freqlist = charFreqLister(inputSTR)
+    p = queue.PriorityQueue()
+    
+    class node:        
+        def __init__(self, lc = None, rc = None, char = '', freq = None):
+            self.LChild = lc
+            self.RChild = rc
+            self.char = char
+            self.freq = freq
+            
+        def addCode(self, code = ''):
+            if isinstance(self.LChild, node):       # 判斷LChild是否為node
+                self.LChild.addCode(code + '0')     # RChild一定同時存在
+                self.RChild.addCode(code + '1')     # LChild = None時寫出code
+            else:
+                resultLIST.append((self.freq, self.char, code))
+    
+    # 建立終端節點，放入queue（優先值=頻率）
+    for x in freqlist:
+        newnode = node(None, None, x[1], x[0])
+        p.put(TupleSorting((x[0], newnode)))
+    
+    # 造樹    
+    while p.qsize() > 1:
+        Left, Right = p.get(), p.get()                      # 取優先值最小的兩個點
+        newnode = node(Left[1], Right[1])                   # 創造新節點
+        p.put(TupleSorting((Left[0]+Right[0], newnode)))    # 放回queue
+    
+    (a, root) = p.get()
+    root.addCode()
+    
+    resultLIST.sort(key = lambda x:x[0], reverse=True)
+    return resultLIST
+
 
 # 4 請參考以下 condNOT() 的例子，設計四個 func() 依以下條件，能算出 condition02 ~ 04 的值
 
@@ -87,20 +142,20 @@ if __name__== "__main__":
 
     # 5 請完成以下課本習題並將答案以字串型 (str or unicode) 填入。
     print("Ans:")
-    Ch3P3_20a = ""
-    Ch3P3_20b = ""
-    Ch3P3_20c = ""
-    Ch3P3_20d = ""
+    Ch3P3_20a = "01000000111001100000000000000000"
+    Ch3P3_20b = "11000001010010100100000000000000"
+    Ch3P3_20c = "01000001001101101000000000000000"
+    Ch3P3_20d = "10111110110000000000000000000000"
     print("========")
-    Ch3P3_28a = ""
-    Ch3P3_28b = ""
-    Ch3P3_28c = ""
-    Ch3P3_28d = ""
+    Ch3P3_28a = "234"
+    Ch3P3_28b = "overflow"
+    Ch3P3_28c = "874"
+    Ch3P3_28d = "888"
     print("========")
-    Ch3P3_30a = ""
-    Ch3P3_30b = ""
-    Ch3P3_30c = ""
-    Ch3P3_30d = ""
+    Ch3P3_30a = "234"
+    Ch3P3_30b = "overflow"
+    Ch3P3_30c = "875"
+    Ch3P3_30d = "889"
     print("========")
     Ch4P4_3a = ""
     Ch4P4_3b = ""

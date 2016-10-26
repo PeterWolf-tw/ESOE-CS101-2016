@@ -1,6 +1,8 @@
 #!/usr/local/bin/python
 # -*- coding: utf-8 -*-
 import os, sys
+
+
 file=open("./sample.txt","r")
 story=file.read()
 print("The words in sample.txt is:","\n","\n",story,"\n","\n")
