@@ -3,7 +3,7 @@
 
 
 
-#這是功課3
+#這是功課3，只做了英文小寫和空白鍵
 
 def countingstar(inputstr):
     inputstr=str(inputstr)
@@ -118,41 +118,70 @@ ppap=input("打字先")
 answer=countingstar(ppap)
 print(answer)
 
-'''
+
 ####################################
 
 #這是作業4
 
 def condAND(inputSTR_X,inputSTR_Y):
     outputSTR = ""
-    n = 0
-    for i in str(inputSTR_X):
-
-        if i==str(inpustSTR_Y[n])=="1":
+    for i in range(0,len(inputSTR_X)):
+        if inputSTR_X[i] == inputSTR_Y[i] == "1":
             outputSTR = outputSTR + "1"
-            n=n+1
         else:
             outputSTR = outputSTR + "0"
-            n=n+1
-            
+
     return outputSTR
-
-
-PINAPPLE=condAND(111000, 111100)
-print(PINAPPLE)
-#inputSTR_X=input("inputSTR_X")
-#inputSTR_Y=input("inputSTR_Y")
 
 
 def condOR(inputSTR_X, inputSTR_Y):
     outputSTR = ""
 
+    for i in range(0,len(inputSTR_X)):
+
+        if inputSTR_X[i] == "1":
+            outputSTR = outputSTR + "1"
+
+        elif inputSTR_Y[i] == "1":
+            outputSTR = outputSTR + "1"
+    
+        else:
+            outputSTR = outputSTR + "0"
+
+    return outputSTR
 
 
 
 def condXOR(inputSTR_X, inputSTR_Y):
     outputSTR = ""
 
+    for i in range(0,len(inputSTR_X)):
+
+        if inputSTR_X[i] == "1" and inputSTR_Y[i] == "0":
+            outputSTR = outputSTR + "1"
+
+        elif inputSTR_Y[i] == "1" and inputSTR_X[i] == "0":
+            outputSTR = outputSTR + "1"
+    
+        else:
+            outputSTR = outputSTR + "0"
+
+    return outputSTR
+
+
+if __name__== "__main__":
+    condition00X = "010111001010100001100011"
+    condition00Y = "010000110001011100101001"
+
+
+    condition02 = condAND(condition00X,condition00Y)
+    print(condition02)
+
+    condition03 = condOR(condition00X,condition00Y)
+    print(condition03)
+
+    condition04 = condXOR(condition00X,condition00Y)
+    print(condition04)
 
 
 
