@@ -49,15 +49,49 @@ def condNOT(inputSTR_X):
 
 #condition00 and condition02
 def condAND(inputSTR_X, inputSTR_Y):
-    return
+    outputSTR = ""
+    for i in inputSTR_X:
+        if i == "1":
+            for j in inputSTR_Y:
+                if j == "1":
+                    outputSTR = outputSTR + "1"
+                else:
+                    outputSTR = outputSTR + "0"
+        else:
+            outputSTR = outputSTR + "0"
+    return outputSTR
 
 #condition00 or condition03
 def condOR(inputSTR_X, inputSTR_Y):
-    return
+    outputSTR = ""
+    for i in inputSTR_X:
+        if i == "0":
+            for j in inputSTR_Y:
+                if j == "1":
+                    outputSTR = outputSTR + "1"
+                else:
+                    outputSTR = outputSTR + "0"
+        else:
+            outputSTR = outputSTR + "1"
+    return outputSTR
 
 #condition00 xor condition04
-def conXOR(inputSTR_X, inputSTR_Y):
-    return
+def condXOR(inputSTR_X, inputSTR_Y):
+    outputSTR = ""
+    for i in inputSTR_X:
+        if i == "1":
+            for j in inputSTR_Y:
+                if j == "0":
+                    outputSTR = outputSTR + "1"
+                else:
+                    outputSTR = outputSTR + "0"
+        else:
+            for j in inputSTR_Y:
+                if j == "0":
+                    outputSTR = outputSTR + "0"
+                else:
+                    outputSTR = outputSTR + "1"
+    return outputSTR
 
 
 if __name__== "__main__":
