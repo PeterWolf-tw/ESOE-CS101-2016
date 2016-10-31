@@ -13,16 +13,18 @@
 #    並由高排到低。
 def charFreqLister(inputSTR):
     resultLIST = []
-    middle = []
-    for char in inputSTR:
-        s = inputSTR.count(char)  #算出字數
-        freq = s/len(inputSTR)  #求機率
-        middle.append((freq,char))
+    import collections
+    table = collections.defaultdict(int) # default items will be created using int(), which will return 0
     
-    mset = set(middle)  #刪掉重複的項目
-    for ans in mset:
-        resultLIST.append(ans)
-    resultLIST.sort(reverse = True)  #排序
+    for char in inputSTR:
+        table[char] += 1
+        
+    for key in table:
+        resultLIST.append( (table[key], key) ) # (freq, char) = (table[key], key)
+        
+    from operator import itemgetter
+    resultLIST = sorted(resultLIST, key=itemgetter(0), reverse=True) 
+    # sorted(...) will return a list which is sorted by first element(at position 0) of the tuple '(freq, char)' in descending order
     
     return resultLIST
 
@@ -51,32 +53,33 @@ def condNOT(inputSTR_X):
 
 #condition00 and condition02
 def condAND(inputSTR_X, inputSTR_Y):
-    outputSTR = ""    
-    for x,y in zip(inputSTR_X,inputSTR_Y):
-        if x=="1" and y=="1":
-            outputSTR = outputSTR + "1"
+    outputSTR = ""
+    for i in range(0, len(inputSTR_Y)):
+        if (inputSTR_X[i] == "1") and (inputSTR_Y[i] == "1"):
+            outputSTR += "1"
         else:
-            outputSTR = outputSTR + "0"
+            outputSTR += "0"
     return outputSTR
+
 
 #condition00 or condition03
 def condOR(inputSTR_X, inputSTR_Y):
-    outputSTR = ""    
-    for x,y in zip(inputSTR_X,inputSTR_Y):
-        if x == "1" or y == "1":
-            outputSTR = outputSTR + "1"
+    outputSTR = ""
+    for i in range(0, len(inputSTR_X)):
+        if (inputSTR_X[i] == "1") or (inputSTR_Y[i] == "1"):
+            outputSTR += "1"
         else:
-            outputSTR = outputSTR + "0"
+            outputSTR += "0"
     return outputSTR
 
 #condition00 xor condition04
 def conXOR(inputSTR_X, inputSTR_Y):
-    outputSTR = ""    
-    for x,y in zip(inputSTR_X,inputSTR_Y):
-        if x == y:
-            outputSTR = outputSTR + "0"
+    outputSTR = ""
+    for i in range(0, len(inputSTR_X)):
+        if inputSTR_X[i] == "1":
+            outputSTR += condNOT(inputSTR_Y[i])
         else:
-            outputSTR = outputSTR + "1"
+            outputSTR += inputSTR_Y[i]
     return outputSTR
 
 
@@ -86,16 +89,10 @@ if __name__== "__main__":
 
     condition01 = condNOT(condition00X)
     print(condition01)
-    
-    condition02 = condAND(condition00X,condition00Y)
-    print(condition02)
-    
-    condition03 = condOR(condition00X,condition00Y)
-    print(condition03) 
-    
-    condition04 = conXOR(condition00X,condition00Y)
-    print(condition04)  
-    
+    '''
+    str = input("input:")
+    print(charFreqLister(str))
+    '''
     # 5 請完成以下課本習題並將答案以字串型 (str or unicode) 填入。
     print("Ans:")
     Ch3P3_20a = ""
