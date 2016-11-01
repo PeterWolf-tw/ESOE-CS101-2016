@@ -59,7 +59,8 @@ def bin2int(N):
     '''
     tmplist2= [ ]
     while N>0:
-        remainder = 
+        remainder =
+        #這裡留空是為了？
     return None
 
 class HW02:
