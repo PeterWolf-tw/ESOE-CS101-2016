@@ -12,7 +12,7 @@
 #def sayHi():
     #'''
     #這裡定義了一個函式，名叫 sayHi
-    #''' 
+    #'''
     # #這支函式唯一的功能就是印出下面這一句話…
     #print("Hi！這是一支只會說 Hi 的函式。")
 
@@ -48,7 +48,7 @@ def int2bin(N):
     for j in tmpLIST[::-1]: #將 tmpLIST 中的數字從尾至頭傳入 j
         ans = ans + str(j)
     print("{0} 的二進位表示為 {1}.".format(N, ans))
-    
+
 
 
 #作業 1.
@@ -89,7 +89,7 @@ class HW02:
         self.Ch2P2_19c = "6"
         self.Ch2P2_19d = "8"
 
-        #作業 3. 課本 Ch2. P2.20 
+        #作業 3. 課本 Ch2. P2.20
         self.Ch2P2_20a = "14"
         self.Ch2P2_20b = "8"
         self.Ch2P2_20c = "13"
@@ -112,15 +112,15 @@ class HW02:
         "xxx" ： 你要填入你的答地方。
         '''
         #作業 5. 課本 Ch3. P3.28
-        self.Ch3P3_28a = "765"
-        self.Ch3P3_28b = "439"
-        self.Ch3P3_28c = "874" 
+        self.Ch3P3_28a = "765"  #"234"
+        self.Ch3P3_28b = "439"  #"560"
+        self.Ch3P3_28c = "874"
         self.Ch3P3_28d = "888"
 
         #作業 6. 課本 Ch3. P3.30
         self.Ch3P3_30a = "234"
-        self.Ch3P3_30b = "875"
-        self.Ch3P3_30c = "overflow"
+        self.Ch3P3_30b = "875" #"560"       #注意一下 a b c d 的順序啊！
+        self.Ch3P3_30c = "overflow" #"875"
         self.Ch3P3_30d = "889"
 
 
