@@ -37,7 +37,7 @@ def ch2(self):
     self.Ch2P2_20a = "14"
     self.Ch2P2_20b = "8"
     self.Ch2P2_20c = "13"
-    self.Ch2P2_20d = "4"
+    self.Ch2P2_20d = "4" #"6"
 
     #作業 4. 課本 Ch2. P2.22
     self.Ch2P2_22a = "00010001 11101010 00100010 00001110"
@@ -56,13 +56,13 @@ def ch2(self):
         "xxx" ： 你要填入你的答地方。
         '''
         #作業 5. 課本 Ch3. P3.28
-        self.Ch3P3_28a = "765"
-        self.Ch3P3_28b = "439"
-        self.Ch3P3_28c = "-874"
-        self.Ch3P3_28d = "-888"
+        self.Ch3P3_28a = "765"  #"234"
+        self.Ch3P3_28b = "439"  #"560"
+        self.Ch3P3_28c = "-874" #"874"
+        self.Ch3P3_28d = "-888" #"888"
 
         #作業 6. 課本 Ch3. P3.30
-        self.Ch3P3_30a = "766"
-        self.Ch3P3_30b = "440"
-        self.Ch3P3_30c = "-875"
-        self.Ch3P3_30d = "-889"
+        self.Ch3P3_30a = "766"   #"234"
+        self.Ch3P3_30b = "440"   #"560"
+        self.Ch3P3_30c = "-875"  #"875"
+        self.Ch3P3_30d = "-889"  #"889"
