@@ -55,11 +55,11 @@ def int2bin(N):
 #作業 1.
 # 請參考上例，自己寫一個將二進位表示數轉為十進位制的函式供稍後的作業使用：
 def bin2int(N):
-    
+
     '''
     本函式將 bin 二進位制表示數轉為 int 整數
     '''
-   
+
     ans = N
     result=0
     i=0
@@ -67,13 +67,13 @@ def bin2int(N):
         result = result + (N%10)*(2**i)
         N=N//10
         i=i+1
-   
-   
+
+
     return none
 
 
 number =  11 #設定 number 這個變數的值為 2
-print("number 的十進位表示法為：{0}".format(bin(number))) 
+print("number 的十進位表示法為：{0}".format(bin(number)))
 
 class HW02:
     def ch2(self):
@@ -97,7 +97,7 @@ class HW02:
         self.Ch2P2_20a = "14"
         self.Ch2P2_20b = "8"
         self.Ch2P2_20c = "13"
-        self.Ch2P2_20d = "4"
+        self.Ch2P2_20d = "4" #"6"
 
         #作業 4. 課本 Ch2. P2.22
         self.Ch2P2_22a = "00010001 11101010 00100010 00001110"
@@ -118,16 +118,16 @@ class HW02:
         "xxx" ： 你要填入你的答地方。
         '''
         #作業 5. 課本 Ch3. P3.28
-        self.Ch3P3_28a = "-166"
-        self.Ch3P3_28b = "-378"
-        self.Ch3P3_28c = "+84"
-        self.Ch3P3_28d = "+81"
+        self.Ch3P3_28a = "-166"  #"234"
+        self.Ch3P3_28b = "-378"  #"560"
+        self.Ch3P3_28c = "+84"   #"874"
+        self.Ch3P3_28d = "+81"   #"888"
 
         #作業 6. 課本 Ch3. P3.30
-        self.Ch3P3_30a = "-235"
-        self.Ch3P3_30b = "-561"
-        self.Ch3P3_30c = "+124"
-        self.Ch3P3_30d = "+110"
+        self.Ch3P3_30a = "-235"  #"234"
+        self.Ch3P3_30b = "-561"  #"560"
+        self.Ch3P3_30c = "+124"  #"875"
+        self.Ch3P3_30d = "+110"  #"889"
 
 
 if __name__ == '__main__': #程式進入點，程式由此行開始執行。以下示範助教的批改程式。
