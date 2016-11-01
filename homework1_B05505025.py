@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+
+# Python 程式的第一、二行一定是如上所示，請不要略過了。
+
 file=open("C:\\Users\\USER\\Desktop\\sample.txt","r")
 s=file.read()
 
@@ -19,7 +24,7 @@ for element in wordlist:
         sampleWordlist.append(element)
 
 print(sampleWordlist)
-        
+
 file.close()
 
 
@@ -38,5 +43,4 @@ while k < ending :
 
 
 
-    
-    
+
