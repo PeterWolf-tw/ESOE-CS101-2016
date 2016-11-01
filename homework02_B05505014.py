@@ -27,20 +27,20 @@ def int2bin(N):
 #作業 1.
 # 請參考上例，自己寫一個將二進位表示數轉為十進位制的函式供稍後的作業使用：
 def bin2int(N):
-    
+
     x=0
     Ans=0
-    
+
     while N > 0:
-        
+
         Ans+=(int(N % 10)*2**x)
         x=x+1
         N=N//10
-        
+
         print("{0} 的十進位表示法為：{1}".format(N,Ans))
-   
+
     return None
-    
+
 class HW02:
     def ch2(self):
         '''
@@ -61,7 +61,7 @@ class HW02:
         self.Ch2P2_20a = "14"
         self.Ch2P2_20b = "8"
         self.Ch2P2_20c = "13"
-        self.Ch2P2_20d = "4"
+        self.Ch2P2_20d = "4"  #"6"
 
         #作業 4. 課本 Ch2. P2.22
         self.Ch2P2_22a = "00010001 11101010 00100010 00001110"
@@ -81,13 +81,13 @@ class HW02:
         '''
         #作業 5. 課本 Ch3. P3.28
         self.Ch3P3_28a = "234"
-        self.Ch3P3_28b = "overflow"
+        self.Ch3P3_28b = "overflow" #"560"
         self.Ch3P3_28c = "874"
         self.Ch3P3_28d = "888"
 
         #作業 6. 課本 Ch3. P3.30
         self.Ch3P3_30a = "234"
-        self.Ch3P3_30b = "overflow"
+        self.Ch3P3_30b = "overflow" #"560"
         self.Ch3P3_30c = "875"
         self.Ch3P3_30d = "889"
 
@@ -99,7 +99,7 @@ if __name__ == '__main__': #程式進入點，程式由此行開始執行。以�
         print("Ch2P2_19a:{0}".format("Correct!"))
     else:
         print("Ch2P2_19a:{0}".format("Incorrect!"))
- 
 
-            
-       
+
+
+
