@@ -66,15 +66,42 @@ def condNOT(inputSTR_X):
 
 #condition00 and condition02
 def condAND(inputSTR_X, inputSTR_Y):
-    return
+    outputstr=""
+    i=0
+    while i< len(inputSTR_X):
+        if int(inputSTR_X[i])==1 and int(inputSTR_Y[i])==1:
+            outputstr +="1"
+        else:
+            outputstr += "0"
+        i=i+1
+        
+    return outputstr
 
 #condition00 or condition03
 def condOR(inputSTR_X, inputSTR_Y):
-    return
+    outputstr=""
+    i=0
+    while i<len(inputSTR_X):
+        if int(inputSTR_X[i])==1 or int(inputSTR_Y[i])==1:
+            outputstr +="1"
+        else:
+            outputstr +="0"
+        i=i+1
+    return outputstr
 
 #condition00 xor condition04
 def conXOR(inputSTR_X, inputSTR_Y):
-    return
+    outputstr=""
+    i=0
+    while i<len(inputSTR_X):
+        if int(inputSTR_X[i])==int(inputSTR_Y[i])==0:
+            outputstr +="0"
+        elif int(inputSTR_X[i])==int(inputSTR_Y[i])==1:
+            outputstr +="0"
+        else:
+            outputstr +="1"
+        i=i+1
+    return outputstr
 
 
 if __name__== "__main__":
@@ -125,3 +152,4 @@ if __name__== "__main__":
     Ch4P4_16b = ""
     Ch4P4_16c = ""
     Ch4P4_16d = ""
+#作業未完成哦！請把你的答案填入以上的變數字串中。
