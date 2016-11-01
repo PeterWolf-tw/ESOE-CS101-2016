@@ -31,7 +31,7 @@ def bin2int(N):
     for index in range(len(str(N))):
         answer += (N_cal % 10) * (2 ** index)
         N_cal = N_cal // 10
-    print("{0} 的十進位表示為 {1}.".format(N, answer))    
+    print("{0} 的十進位表示為 {1}.".format(N, answer))
     return None
 
 
@@ -57,7 +57,7 @@ class HW02:
         self.Ch2P2_20a = "14"
         self.Ch2P2_20b = "8"
         self.Ch2P2_20c = "13"
-        self.Ch2P2_20d = "4"
+        self.Ch2P2_20d = "4" #"6"
 
         #作業 4. 課本 Ch2. P2.22
         self.Ch2P2_22a = "00010001 11101010 00100010 00001110"
