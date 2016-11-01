@@ -65,18 +65,19 @@ def dec(n):
     lin=list(n)
     reverse=""
     listn2=[]
-    
-    for j in lin[::-1]: 
+
+    for j in lin[::-1]:
         listn2.append(j)
-    
+
     ans=0
     for i in range(0,len(lin)):
       ans+=(2**(i))*int(listn2[i])
+       #Python 每次縮排請固定縮四個空格。
     return ans
 
 n=input("Please enter a number in binary.")
 print("The number {0} in decimal is {1}".format(n,dec(n)))
-    
+
 
 
 class HW02:
@@ -99,7 +100,7 @@ class HW02:
         self.Ch2P2_20a = "14"
         self.Ch2P2_20b = "8"
         self.Ch2P2_20c = "13"
-        self.Ch2P2_20d = "4"
+        self.Ch2P2_20d = "4" #"6"
 
         #作業 4. 課本 Ch2. P2.22
         self.Ch2P2_22a = "00010001 11101010 00100010 00001110"
@@ -119,13 +120,13 @@ class HW02:
         '''
         #作業 5. 課本 Ch3. P3.28
         self.Ch3P3_28a = "234"
-        self.Ch3P3_28b = "overflow"
+        self.Ch3P3_28b = "overflow"  #"560"
         self.Ch3P3_28c = "874"
         self.Ch3P3_28d = "888"
 
         #作業 6. 課本 Ch3. P3.30
         self.Ch3P3_30a = "235"
-        self.Ch3P3_30b = "overflow"
+        self.Ch3P3_30b = "overflow" #"560"
         self.Ch3P3_30c = "875"
         self.Ch3P3_30d = "889"
 
@@ -139,6 +140,5 @@ if __name__ == '__main__': #程式進入點，程式由此行開始執行。以�
         print("Ch2P2_19a:{0}".format("Incorrect!"))
 
 
-    
-    
-    
+
+
