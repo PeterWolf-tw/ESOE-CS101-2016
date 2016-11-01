@@ -66,31 +66,31 @@ def bin2int(N):
         N = (N - remainder) / 10
         b = b+1
         ans=ans+a
-    
-    print("{0} 表示為 {1}.".format(myN, ans))    
+
+    print("{0} 表示為 {1}.".format(myN, ans))
     return None
 
 
 
-    
+
 
 
 class HW02:
     def ch2(self):
-        
-       
-        
+
+
+
         #作業 2. 課本 Ch2. P2.19
         self.Ch2P2_19a = "10"
         self.Ch2P2_19b = "17"
-        self.Ch2P2_19c = "7"
-        self.Ch2P2_19d = "9"
+        self.Ch2P2_19c = "7"  #"6"
+        self.Ch2P2_19d = "9"  #"8"
 
         #作業 3. 課本 Ch2. P2.20
-        self.Ch2P2_20a = "15"
-        self.Ch2P2_20b = "9"
-        self.Ch2P2_20c = "14"
-        self.Ch2P2_20d = "5"
+        self.Ch2P2_20a = "15" #"14"
+        self.Ch2P2_20b = "9"  #"8"
+        self.Ch2P2_20c = "14" #"13"
+        self.Ch2P2_20d = "5"  #"6"
 
         #作業 4. 課本 Ch2. P2.22
         self.Ch2P2_22a = "00010001 11101010 00100010 00001110"
@@ -100,18 +100,18 @@ class HW02:
 
 
     def ch3(self):
-        
+
         #作業 5. 課本 Ch3. P3.28
-        self.Ch3P3_28a = "+765"
-        self.Ch3P3_28b = "+439"
-        self.Ch3P3_28c = "-874"
-        self.Ch3P3_28d = "-888"
+        self.Ch3P3_28a = "+765"  #"234"
+        self.Ch3P3_28b = "+439"  #"560"
+        self.Ch3P3_28c = "-874"  #"874"
+        self.Ch3P3_28d = "-888"  #"888"
 
         #作業 6. 課本 Ch3. P3.30
-        self.Ch3P3_30a = "+766"
-        self.Ch3P3_30b = "+440"
-        self.Ch3P3_30c = "-875"
-        self.Ch3P3_30d = "-889"
+        self.Ch3P3_30a = "+766"  #"234"
+        self.Ch3P3_30b = "+440"  #"560"
+        self.Ch3P3_30c = "-875"  #"875"
+        self.Ch3P3_30d = "-889"  #"889"
 
 
 if __name__ == '__main__': #程式進入點，程式由此行開始執行。以下示範助教的批改程式。

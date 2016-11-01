@@ -40,7 +40,7 @@ def int2bin(N):
     tmpLIST = []
     while N > 0:
         while N > 0:
-        tmpLIST.append(remainder)
+        tmpLIST.append(remainder) #這行有錯誤，沒有縮排。
         N = (N - remainder) / 2
     tmpLIST.append(0)
 
@@ -68,7 +68,7 @@ def bin2int(N):
         i=i+1
         dog=dog+wilson
     print("{0}的十進位表示為{1}.".format(N,dog))
-        
+
 
     return None
 

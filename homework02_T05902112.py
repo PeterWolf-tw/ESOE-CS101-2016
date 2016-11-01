@@ -31,7 +31,7 @@ def bin2int(N):
     for index in range(len(str(N))):
         ans += (N_cal % 10) * (2 ** index)
         N_cal = N_cal // 10
-    print("{0} 的十進位表示為 {1}.".format(N, ans))    
+    print("{0} 的十進位表示為 {1}.".format(N, ans))
     return None
 
 
@@ -55,7 +55,7 @@ class HW02:
         self.Ch2P2_20a = "14"
         self.Ch2P2_20b = "8"
         self.Ch2P2_20c = "13"
-        self.Ch2P2_20d = "4"
+        self.Ch2P2_20d = "4" #"6"
 
         #作業 4. 課本 Ch2. P2.22
         self.Ch2P2_22a = "00010001 11101010 00100010 00001110"
@@ -89,7 +89,9 @@ class HW02:
 if __name__ == '__main__': #程式進入點，程式由此行開始執行。以下示範助教的批改程式。
     checkHW02 = HW02()
     checkHW02.ch2()
-    if checkHW02.Ch2P2_19a == 10: #10 是這題的正解。此行檢查這題的答案。
+    #if checkHW02.Ch2P2_19a == 10: #10 是這題的正解。此行檢查這題的答案。
+                                  #Type mismatch.
+    if checkHW02.Ch2P2_19a == "10":
         print("Ch2P2_19a:{0}".format("Correct!"))
     else:
         print("Ch2P2_19a:{0}".format("Incorrect!"))
