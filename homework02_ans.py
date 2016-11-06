@@ -21,12 +21,12 @@ Ch2P2_22d = "00011000 00111000 00001101 00001011".strip()
 
 # 課本 Ch3. P3.28
 Ch3P3_28a = "234"
-Ch3P3_28b = "560"
+Ch3P3_28b = "560 -> Overflow because 560 is not in the range −499 to 499"
 Ch3P3_28c = "874"
 Ch3P3_28d = "888"
 
 # 課本 Ch3. P3.30
 Ch3P3_30a = "234"
-Ch3P3_30b = "560"
+Ch3P3_30b = "560 -> Overflow because 560 is not in the range −499 to 499"
 Ch3P3_30c = "875"
 Ch3P3_30d = "889"
