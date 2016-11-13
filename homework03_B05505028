@@ -1,0 +1,142 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+
+
+# 繳交日期：2016.10.17
+
+# 作業內容：
+# 1. 請閱讀 Wikipedia 維基百科 IEEE754 條目 (https://zh.wikipedia.org/wiki/IEEE_754)
+
+# 2. 請試玩 http://armorgames.com/play/17826/logical-element
+
+# 3. 請利用以下空白範本設計一支程式。程式可輸入一段字串，並自動計算出字串中包括空白字元出現的機率。
+#    並由高排到低。
+#def charFreqLister(inputSTR):
+#resultLIST = [(freq, char), (freq, char), (freq, char),...]
+
+#return resultLIST
+
+from operator import itemgetter, attrgetter
+from collections import*
+from functools import reduce
+class treemake():
+    def __init__(self,objs,freq,lobj,robj):
+        self.objs=objs
+        self.freq=freq
+        self.lobj=lobj
+        self.robj=robj
+def counter(a):
+
+    return[treemake(i,float(Counter(a)[i])/len(a)*100,[],[])for i in Counter(a)]
+def charFreqLister(inputSTR):
+    a=Counter(inputSTR)
+    b=[[(round(float(a[i])/len(inputSTR)*100,2)),i]for i in a]
+    return sorted(b,key=lambda b: b[0],reverse=True)
+# 3.1 加分題 (有做有加分，沒做不扣分)：請用課堂中提到的「霍夫曼編碼]
+#     (https://zh.wikipedia.org/wiki/霍夫曼編碼) 為你之前設計的
+#     程式加上轉碼壓縮的功能。
+# e.g.,
+#def huffmanTranslater(inputSTR):
+#resultLIST = [(freq, char, code), (freq, char, code), (freq, char, code),...]
+
+#return resultLIST
+def huffmanTranslater(b):
+    n=sorted(counter(b), key=attrgetter('freq'),reverse=True)
+    m=sorted(n, key=attrgetter('freq'),reverse=True)
+    c=[]
+    a=['']*len(n)
+    while(len(m)!=1):
+        c.append(treemake(m[-1].objs+m[-2].objs,m[-1].freq+m[-2].freq,m[-2].objs,m[-1].objs))
+        del m[-1],m[-1]
+        m.append(c[-1])
+        m=sorted(m,key=attrgetter('freq'),reverse=True)
+    z=[i.objs for i in n]
+    for i in c[::-1]:
+        for j,k in enumerate(list(i.lobj)+list(i.robj)):
+            a[z.index(k)]+='1' if j<len(list(i.lobj))else '0'
+    return[[round(n[i].freq,2),n[i].objs,a[i]]for i in range(0,len(n),1)]
+b=input()
+print (charFreqLister(b))
+print (huffmanTranslater(b))
+# 4 請參考以下 condNOT() 的例子，設計四個 func() 依以下條件，能算出 condition02 ~ 04 的值
+
+#condition00 not condition01
+def condNOT(inputSTR_X):
+    outputSTR = ""
+    for i in inputSTR_X:
+        if i == "0":
+            outputSTR = outputSTR + "1"
+        else:
+            outputSTR = outputSTR + "0"
+    return outputSTR
+
+
+#condition00 and condition02
+def condAND(x,y):
+    
+    return ''.join(list(map(lambda a,b:str(int(a)and int(b)),x,y)))
+
+
+#condition00 or condition03
+def condOR(x,y):
+    
+    return ''.join(list(map(lambda a,b:str(int(a)or int(b)),x,y)))
+
+
+
+
+#condition00 xor condition04
+def conXOR(x,y):
+    
+    return ''.join(list(map(lambda a,b:str(int(int(a)==int(b))),str(x),str(y))))
+
+
+
+if __name__== "__main__":
+    condition00X = "010111001010100001100011"
+    condition00Y = "010000110001011100101001"
+
+    condition01 = condOR(condition00X,condition00Y)
+    print(condition01)
+
+    # 5 請完成以下課本習題並將答案以字串型 (str or unicode) 填入。
+    print("Ans:")
+    Ch3P3_20a = "0 10000001 11001100000000000000000"
+    Ch3P3_20b = "1 10000010 10010100100000000000000"
+    Ch3P3_20c = "0 10000010 01101101000000000000000"
+    Ch3P3_20d = "1 01111101 10000000000000000000000"
+    print("========")
+    Ch3P3_28a = "234"
+    Ch3P3_28b = "overflow"
+    Ch3P3_28c = "874"
+    Ch3P3_28d = "888"
+    print("========")
+    Ch3P3_30a = "234"
+    Ch3P3_30b = "overflow"
+    Ch3P3_30c = "875"
+    Ch3P3_30d = "889"
+    print("========")
+    Ch4P4_3a = "0x99"
+    Ch4P4_3b = "0x99"
+    Ch4P4_3c = "0xFF"
+    Ch4P4_3d = "0xFF"
+    print("========")
+    Ch4P4_4a = "0x66"
+    Ch4P4_4b = "0xFF"
+    Ch4P4_4c = "0x11"
+    Ch4P4_4d = "0xBB"
+    print("========")
+    Ch4P4_13a = "1184"
+    Ch4P4_13b = "-862"
+    Ch4P4_13c = "862"
+    Ch4P4_13d = "-1184"
+    print("========")
+    Ch4P4_15a = "overflow"
+    Ch4P4_15b = "no overflow"
+    Ch4P4_15c = "no overflow"
+    Ch4P4_15d = "overflow"
+    print("========")
+    Ch4P4_16a = "0x0F51"
+    Ch4P4_16b = "0x0F2A(overflow)"
+    Ch4P4_16c = "0x8012"
+    Ch4P4_16d = "0x7F51(overflow)"
