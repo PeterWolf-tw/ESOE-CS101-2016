@@ -10,10 +10,6 @@
 # 3. 請利用以下空白範本設計一支程式。程式可輸入一段字串，並自動計算出字串中包括空白字元出現的機率。
 #    並由高排到低。
 
-file=open('/Users/Raymond/Documents/sample.txt')
-context=file.read()
-file.close
-
 def charFreqLister(inputSTR):
     LIST=list(inputSTR)
     STRlen=len(inputSTR)
@@ -26,13 +22,15 @@ def charFreqLister(inputSTR):
         time=inputSTR.count(CHR)
         freq=time/STRlen
         resultLIST.append((freq,CHR))
-        resultLIST.sort(reverse = True)       
+        resultLIST.sort(reverse = True)    
     return print(resultLIST)
-
-charFreqLister(context)
 
 # 3.1 加分題：請用課堂中提到的「霍夫曼編碼]
 # (https://zh.wikipedia.org/wiki/霍夫曼編碼) 為你之前設計的程式加上轉碼壓縮的功能。
+
+def huffmanTranslater(inputSTR):
+    
+    return None
 
 # 4 請參考以下 condNOT() 的例子，設計四個 func() 依以下條件，能算出 condition02 ~ 04 的值
 
@@ -88,42 +86,42 @@ if __name__== "__main__":
     print(condition01)
 
 print("Ans:")
-Ch3P3_20a = "01000000 11100110 00000000 00000000"
-Ch3P3_20b = "11000001 01001010 01000000 00000000"
-Ch3P3_20c = "01000001 00110110 10000000 00000000"
-Ch3P3_20d = "10111110 11000000 00000000 00000000"
+Ch3P3_20a = "0100 0000 1110 0110 0000 0000 0000 0000"
+Ch3P3_20b = "1100 0001 0100 1010 0100 0000 0000 0000"
+Ch3P3_20c = "0100 0001 0011 0110 1000 0000 0000 0000"
+Ch3P3_20d = "1011 1110 1100 0000 0000 0000 0000 0000"
 print("========")
 Ch3P3_28a = "234"
-Ch3P3_28b = "560"
+Ch3P3_28b = "overflow"
 Ch3P3_28c = "874"
 Ch3P3_28d = "888"
 print("========")
 Ch3P3_30a = "234"
-Ch3P3_30b = "560"
+Ch3P3_30b = "overflow"
 Ch3P3_30c = "875"
 Ch3P3_30d = "889"
 print("========")
-Ch4P4_3a = ""
-Ch4P4_3b = ""
-Ch4P4_3c = ""
-Ch4P4_3d = ""
+Ch4P4_3a = "99H"
+Ch4P4_3b = "99H"
+Ch4P4_3c = "FFH"
+Ch4P4_3d = "FFH"
 print("========")
-Ch4P4_4a = ""
-Ch4P4_4b = ""
-Ch4P4_4c = ""
-Ch4P4_4d = ""
+Ch4P4_4a = "66H"
+Ch4P4_4b = "FFH"
+Ch4P4_4c = "11H"
+Ch4P4_4d = "BBH"
 print("========")
-Ch4P4_13a = ""
-Ch4P4_13b = ""
-Ch4P4_13c = ""
-Ch4P4_13d = ""
+Ch4P4_13a = "1184"
+Ch4P4_13b = "-862"
+Ch4P4_13c = "862"
+Ch4P4_13d = "-1184"
 print("========")
-Ch4P4_15a = ""
-Ch4P4_15b = ""
-Ch4P4_15c = ""
-Ch4P4_15d = ""
+Ch4P4_15a = "overflow"
+Ch4P4_15b = "no overflow"
+Ch4P4_15c = "no overlfow"
+Ch4P4_15d = "overflow"
 print("========")
-Ch4P4_16a = ""
-Ch4P4_16b = ""
-Ch4P4_16c = ""
-Ch4P4_16d = ""
+Ch4P4_16a = "0F51H"
+Ch4P4_16b = "overflow"
+Ch4P4_16c = "8012H"
+Ch4P4_16d = "overflow"

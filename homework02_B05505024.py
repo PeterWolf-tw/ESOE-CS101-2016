@@ -85,7 +85,7 @@ class HW02:
         P2_19a: 第二章結尾處的 PRACTICE SET 段落處的 Problems 第 P2-19 題的 a 小題
         "xxx" ： 你要填入你的答地方。
         '''
-        
+
         #作業 2. 課本 Ch2. P2.19
         self.Ch2P2_19a = 10
         self.Ch2P2_19b = 17
@@ -96,7 +96,7 @@ class HW02:
         self.Ch2P2_20a = 14
         self.Ch2P2_20b = 8
         self.Ch2P2_20c = 13
-        self.Ch2P2_20d = 4
+        self.Ch2P2_20d = 4 #"6"
 
         #作業 4. 課本 Ch2. P2.22
         self.Ch2P2_22a = '0001 0001 1110 1010 0010 0010 0000 1110'
@@ -136,3 +136,4 @@ if __name__ == '__main__': #程式進入點，程式由此行開始執行。以�
         print("Ch2P2_19a:{0}".format("Correct!"))
     else:
         print("Ch2P2_19a:{0}".format("Incorrect!"))
+#Good.

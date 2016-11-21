@@ -1,4 +1,9 @@
-﻿#file.py
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+
+# Python 程式的第一、二行一定是如上所示，請不要略過了。
+
+#file.py
 f=open("./sample.txt","r")
 b=f.read()
 f.close()
@@ -7,7 +12,7 @@ f.close()
 k=[]
 str(k)
 for i in range(0,len(b),1):
-    k.append(b[i])#將字串轉為陣列   
+    k.append(b[i])#將字串轉為陣列
     if(ord(k[i])<ord('A')or ord(k[i])>ord('z')):
         k[i]=' '#將非大小寫的符號換為空白
 m=''
@@ -26,6 +31,7 @@ while(True):
     if len(s)<5:
     	print ("your input is lesser than five letters")
     	continue
+    # Python 每次縮排固定是 4 個空格，縮排兩次則是 8 個空格，請不要把 TAB 和空格混用。
     if(s==''):
         break
     boo=False#確定是否有相同的字彚在文章中

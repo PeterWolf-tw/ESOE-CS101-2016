@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+
+# Python 程式的第一、二行一定是如上所示，請不要略過了。
+
 def bin2int(N):
         List=0
         i=0

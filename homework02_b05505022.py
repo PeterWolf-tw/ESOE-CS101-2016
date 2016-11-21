@@ -56,16 +56,16 @@ def int2bin(N):
 def bin2int(N):
     x = str(N)
     y = 0
-    ans = 0   
-    
-    for z in x[:: -1]:    
+    ans = 0
+
+    for z in x[:: -1]:
         a = 2**d*int(c)
         ans = ans + a
         y = y +1
-        
+
     print("{0} 的十進位表示為 {1}".format(N, ans))
-    
-    return None    
+
+    return None
 
 class HW02:
     def ch2(self):
@@ -120,7 +120,7 @@ class HW02:
         self.Ch3P3_30b = "xxx"
         self.Ch3P3_30c = "xxx"
         self.Ch3P3_30d = "xxx"
-
+#Please finish the assignment ASAP and commit/push again.
 
 if __name__ == '__main__': #程式進入點，程式由此行開始執行。以下示範助教的批改程式。
     checkHW02 = HW02()

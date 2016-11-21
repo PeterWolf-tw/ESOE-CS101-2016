@@ -11,16 +11,17 @@ def bin2int(N):
         N=(N-remainder)/10
         for t in range(0,b):
            remainder=remainder*2
+            #Python 每次縮排是四個空格。上一行只縮了三格！
         b=b+1
         a = a + remainder
         ans=a
         print(ans)
-        
 
-    
-        
-        
-        
+
+
+
+
+
 
     return None
 
@@ -44,7 +45,7 @@ class HW02:
         self.Ch2P2_20a = "14"
         self.Ch2P2_20b = "8"
         self.Ch2P2_20c = "13"
-        self.Ch2P2_20d = "4"
+        self.Ch2P2_20d = "4" #"6"
 
         #作業 4. 課本 Ch2. P2.22
         self.Ch2P2_22a = "00010001 11101010 00100010 00001110"
@@ -74,6 +75,7 @@ class HW02:
         self.Ch3P3_30c = "xxx"
         self.Ch3P3_30d = "xxx"
 
+        #Please finish the assignment ASAP and commit/push again.
 
 if __name__ == '__main__': #程式進入點，程式由此行開始執行。以下示範助教的批改程式。
     checkHW02 = HW02()

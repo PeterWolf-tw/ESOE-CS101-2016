@@ -40,39 +40,52 @@ def charFreqLister(inputSTR):
 
 #return resultLIST
 
+import queue
+
+# 令priority queue比較tuple大小時只比較第一項優先值
+class TupleSorting(tuple):
+    def __lt__(self, other):          #<
+        return self[0] < other[0]
+    def __gt__(self, other):          #>
+        return self[0] > other[0]
+    def __le__(self, other):          #<=
+        return self[0] <= other[0]
+    def __ge__(self, other):          #>=
+        return self[0] >= other[0]
+
 def huffmanTranslater(inputSTR):
     resultLIST = []
-    lst = charFreqLister(inputSTR)
-    nodeList = []
-    class node:
-        
-        def __init__(self, freq, char = ''):
-            self.freq = freq
+    freqlist = charFreqLister(inputSTR)
+    p = queue.PriorityQueue()
+    
+    class node:        
+        def __init__(self, lc = None, rc = None, char = '', freq = None):
+            self.LChild = lc
+            self.RChild = rc
             self.char = char
-
-        def setChild(self, lc, rc):
-            self.lChild = lc
-            self.rChild = rc
-        
+            self.freq = freq
+            
         def addCode(self, code = ''):
-            if len(self.char) == 0:
-                self.lChild.addCode(code + '0')
-                self.rChild.addCode(code + '1')
+            if isinstance(self.LChild, node):       # 判斷LChild是否為node
+                self.LChild.addCode(code + '0')     # RChild一定同時存在
+                self.RChild.addCode(code + '1')     # LChild = None時寫出code
             else:
                 resultLIST.append((self.freq, self.char, code))
     
-    for x in lst:
-        nodeList.append(node(x[0], x[1]))
-
-    while len(nodeList) > 1:
-        nodeList.sort(key = lambda x:x.freq)
-        newNode = node(nodeList[0].freq + nodeList[1].freq)
-        newNode.setChild(nodeList[0], nodeList[1])
-        nodeList.pop(0)
-        nodeList.pop(0)
-        nodeList.append(newNode)
-
-    nodeList[0].addCode()
+    # 建立終端節點，放入queue（優先值=頻率）
+    for x in freqlist:
+        newnode = node(None, None, x[1], x[0])
+        p.put(TupleSorting((x[0], newnode)))
+    
+    # 造樹    
+    while p.qsize() > 1:
+        Left, Right = p.get(), p.get()                      # 取優先值最小的兩個點
+        newnode = node(Left[1], Right[1])                   # 創造新節點
+        p.put(TupleSorting((Left[0]+Right[0], newnode)))    # 放回queue
+    
+    (a, root) = p.get()
+    root.addCode()
+    
     resultLIST.sort(key = lambda x:x[0], reverse=True)
     return resultLIST
 
@@ -144,27 +157,28 @@ if __name__== "__main__":
     Ch3P3_30c = "875"
     Ch3P3_30d = "889"
     print("========")
-    Ch4P4_3a = ""
-    Ch4P4_3b = ""
-    Ch4P4_3c = ""
-    Ch4P4_3d = ""
+    Ch4P4_3a = "0x99"
+    Ch4P4_3b = "0x99"
+    Ch4P4_3c = "0xFF"
+    Ch4P4_3d = "0xFF"
     print("========")
-    Ch4P4_4a = ""
-    Ch4P4_4b = ""
-    Ch4P4_4c = ""
-    Ch4P4_4d = ""
+    Ch4P4_4a = "0x66"
+    Ch4P4_4b = "0xFF"
+    Ch4P4_4c = "0x11"
+    Ch4P4_4d = "0xBB"
     print("========")
-    Ch4P4_13a = ""
-    Ch4P4_13b = ""
-    Ch4P4_13c = ""
-    Ch4P4_13d = ""
+    Ch4P4_13a = "1184"
+    Ch4P4_13b = "-862"
+    Ch4P4_13c = "862"
+    Ch4P4_13d = "-1184"
     print("========")
-    Ch4P4_15a = ""
-    Ch4P4_15b = ""
-    Ch4P4_15c = ""
-    Ch4P4_15d = ""
+    Ch4P4_15a = "overflow"
+    Ch4P4_15b = "not overflow"
+    Ch4P4_15c = "not overflow"
+    Ch4P4_15d = "overflow"
     print("========")
-    Ch4P4_16a = ""
-    Ch4P4_16b = ""
-    Ch4P4_16c = ""
-    Ch4P4_16d = ""
+    Ch4P4_16a = "0x0F51"
+    Ch4P4_16b = "overflow"
+    Ch4P4_16c = "0x8012"
+    Ch4P4_16d = "overflow"
+#Good.
