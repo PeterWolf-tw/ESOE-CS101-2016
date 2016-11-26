@@ -13,22 +13,22 @@ crewDICT = {1: {"姓名": "楊喬松",
 
 # 第一題：請利用 wave 和 struct 套件讀出 44100.wav 的內容。該檔案的取樣率為 44100hz，請將其重新取樣為 11025hz並另存新檔。
 import wave
-import struct
 
-sound = wave.open("./44100.wav")
-nchannels, sampwidth, framerate, nframes, comptype, compname = sound.getparams()
+origSound = wave.open("./44100.wav", "rb")
+nchannels, sampwidth, framerate, nframes, comptype, compname = origSound.getparams()
 
-showAll = True # Show all data in raw string at once.
-if showAll == True:
-    tapeAll = sound.readframes(nframes)
-else:
-    for i in range(0, nframes):
-        waveData = sound.readframes(1)
-        tapeClip = struct.unpack("<h", waveData)
-        print(tapeClip)
+newSound = wave.open("./11025.wav", "wb")
+newSound.setparams((1,2,11025, 110250,'NONE','not compressed'))
 
-    #sound.setparams() = (nchannels, sampwidth*4, framerate/4, nframes/4, comptype, compname)
-    #sound.close()
+for i in range(0, nframes):
+    if i % 4 == 0:
+        origData = origSound.readframes(1)
+        newSound.writeframes(origData)
+    else:
+        origData = origSound.readframes(1)
+
+newSound.close()
+
 
 # 第二題：請查詢 Python3 的 decode() 文件，利用 Python3 的 decode() 將以下三個字串轉成中文字串並印出。
 b1 = b"\xa5x\xa4j\xa4u\xac\xec"
