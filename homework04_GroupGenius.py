@@ -35,7 +35,6 @@ else:
         tapeClip_set.append(tapeClip[0])
     
         
-        
 fixsound = wave.open("GroupGenius.wav","w")
 fixsound.setparams((1,2,11025, 110250,'NONE','not compressed'))
 
