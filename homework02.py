@@ -53,11 +53,13 @@ def int2bin(N):
 
 #作業 1.
 # 請參考上例，自己寫一個將二進位表示數轉為十進位制的函式供稍後的作業使用：
-def bin2int(N):
-    '''
-    本函式將 bin 二進位制表示數轉為 int 整數
-    '''
 
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+
+def bin(N):
+    
+    
     return None
 
 class HW02:
