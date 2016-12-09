@@ -20,6 +20,7 @@ nchannels, sampwidth, framerate, nframes, comptype, compname = origSound.getpara
 newSound = wave.open("./11025.wav", "wb")
 newSound.setparams((1,2,11025, 110250,'NONE','not compressed'))
 
+#the following loop will only write on the new sound wave each 4th sample from the original sound wave
 for i in range(0, nframes):
     if i % 4 == 0:
         origData = origSound.readframes(1)
