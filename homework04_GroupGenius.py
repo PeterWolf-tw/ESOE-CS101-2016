@@ -28,10 +28,11 @@ showAll = False # Show all data in raw string at once.
 if showAll == True:
     tapeAll = sound.readframes(nframes)
 else:
-    for i in range(0, nframes):
+    for i in range(0, nframes):                       
         waveData = sound.readframes(1)
         #print(waveData)
-        tapeClip = struct.unpack("<h", waveData)
+        tapeClip = struct.unpack("<h", waveData)    #可否不用struct
+        #print(tapeClip)
         tapeClip_set.append(tapeClip[0])
     
         
@@ -72,9 +73,18 @@ print(s0.encode("UTF-8"))
 print(s0.encode("UTF-16"))
 
 # 第四題：請說明 Wifi 和 Bluetooth 之間...
-# (a). 哪一種傳輸方式較為耗電？
-# (b). 哪一種傳輸方式較快速？
+# (a). 哪一種傳輸方式較為耗電？wifi
+#      This is due to the broadcast range of the two technologies.Bluetooth devices emit a signal that travels for about 30 feet,
+#      while Wi-Fi signals travel about ten times as far. Wi-Fi devices need more power to generate a stronger signal.
+
+# (b). 哪一種傳輸方式較快速？wifi
+
 # (c). 請實際測試：請查出你的手機型號採用的 Bluetooth 規格，再用你的手機拍攝一張照片，
 #      並透過 Bluetooth 傳送該照片到朋友的手機裡。 考量到雙方手機的藍芽設備規格以及照
 #      片的解析度、檔案大小，理論上應該耗時多少時間完成傳送？而實際上又耗了多少時間進行
 #      傳送？ 最後並請列出所有可能影響傳送時間的因素。
+
+#      理論上的傳輸速度大約是24~25Mbps,但我們的實驗數據：
+#      實驗(1)0.69Mbps
+#      實驗(2)0.67Mbps
+#      實驗(3)0.75Mbps
