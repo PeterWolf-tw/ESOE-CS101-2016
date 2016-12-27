@@ -28,5 +28,3 @@ while True:
             print("Nice job! This word is on the list.")
         else:
             print("Sorry, the word you use is not on the list. Please, try again.")
-    else:
-        print("Sorry. Your word is less or equal to five digits. Please, try again with a different word.")

@@ -22,3 +22,9 @@ while count<len(sampleWordList):
     else:
         print("It's NOT in the sampleWordList.")
         break
+file=open("sample.txt","r")
+text=file.read()
+file.close()
+print(text)
+
+      

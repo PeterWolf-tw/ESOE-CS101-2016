@@ -59,17 +59,14 @@ def bin2int(N):
     '''
     x=int(N)
     c = 0
-    List=[]
+    r=0
     while x>0:
-        for s in range(0,len(N)):
-           c += (x%10)*2**s
-           x=x//10
-           
-            
-        print("{0} 的十進位表示法為：{1}".format(N,c))     
-       
-    return None
-
+        r+=(x%10)*2**c
+        x=x//10
+        c=c+1
+    return r
+x=input()
+print("{0} 的十進位表示法為：{1}".format(x,bin2int(x)))
 
 
 class HW02:
@@ -94,7 +91,7 @@ class HW02:
         self.Ch2P2_20a = "14"
         self.Ch2P2_20b = "8"
         self.Ch2P2_20c = "13"
-        self.Ch2P2_20d = "4"
+        self.Ch2P2_20d = "4" #"6"
 
         #作業 4. 課本 Ch2. P2.22
         self.Ch2P2_22a = "00010001 11101010 00100010 00001110"
@@ -115,16 +112,16 @@ class HW02:
         "xxx" ： 你要填入你的答地方。
         '''
         #作業 5. 課本 Ch3. P3.28
-        self.Ch3P3_28a = "765"
-        self.Ch3P3_28b = "439"
-        self.Ch3P3_28c = " "
-        self.Ch3P3_28d = "xxx"
+        self.Ch3P3_28a = "765"  #234
+        self.Ch3P3_28b = "439"  #560
+        self.Ch3P3_28c = "874"
+        self.Ch3P3_28d = "888"
 
         #作業 6. 課本 Ch3. P3.30
-        self.Ch3P3_30a = "xxx"
-        self.Ch3P3_30b = "xxx"
-        self.Ch3P3_30c = "xxx"
-        self.Ch3P3_30d = "xxx"
+        self.Ch3P3_30a = "766"  #234
+        self.Ch3P3_30b = "440"  #560
+        self.Ch3P3_30c = "875"
+        self.Ch3P3_30d = "889"
 
 
 if __name__ == '__main__': #程式進入點，程式由此行開始執行。以下示範助教的批改程式。
