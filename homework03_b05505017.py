@@ -41,15 +41,33 @@ def condNOT(inputSTR_X):
 
 #condition00 and condition02
 def condAND(inputSTR_X, inputSTR_Y):
-    return
+    outputSTR = ""
+    for n in range(0,len(inputSTR_X)):
+        if inputSTR_X[n]=="1" and inputSTR_Y[n]=="1":
+            outputSTR=outputSTR+"1"
+        else:
+            outputSTR=outputSTR+"0"        
+    return outputSTR
 
 #condition00 or condition03
 def condOR(inputSTR_X, inputSTR_Y):
-    return
+    outputSTR = ""
+    for n in range(0,len(inputSTR_X)):
+        if inputSTR_X[n]=="0" and inputSTR_Y[n]=="0":
+            outputSTR=outputSTR+"0"
+        else:
+            outputSTR=outputSTR+"1"        
+    return outputSTR    
 
 #condition00 xor condition04
 def conXOR(inputSTR_X, inputSTR_Y):
-    return
+    outputSTR = ""
+    for n in range(0,len(inputSTR_X)):
+        if inputSTR_X[n]==inputSTR_Y[n]:
+            outputSTR=outputSTR+"0"
+        else:
+            outputSTR=outputSTR+"1"     
+    return outputSTR
 
 
 if __name__== "__main__":
