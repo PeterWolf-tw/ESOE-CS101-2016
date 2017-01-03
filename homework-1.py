@@ -6,6 +6,7 @@ sampleWordList = []
 
 d=d.replace("?"," ")
 d=d.replace("-"," ")
+
 d=d.replace("."," ")
 d=d.replace(","," ")
 d=d.replace("\n," ")  
