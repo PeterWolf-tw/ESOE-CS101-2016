@@ -17,13 +17,13 @@ crewDICT = {1: {"姓名": "潘韋亘",
 import wave
 import struct
 
-sound = wave.open("D:/hw/cp/ESOE-CS101-2016/44100.wav")
+sound = wave.open("D:/hw/cp/test/44100.wav")
 nchannels, sampwidth, framerate, nframes, comptype, compname = sound.getparams()
 #print(sound.getparams())
 
 
 raven=[]
-showAll = False # Show all data in raw string at once.
+showAll = False # 為什麼要有這個迴圈?
 if showAll == True:
     tapeAll = sound.readframes(nframes)
     
@@ -32,16 +32,18 @@ else:
         waveData = sound.readframes(1)
         tapeClip = struct.unpack("<h", waveData)
         #print(tapeClip)
-        raven.append(tapeClip[0])
+        raven.append(tapeClip[0]) # 把tuple變成可變更的list
 #print(raven)
 
-nsound = wave.open("D:/hw/cp/GroupGryffindor.wav","wb")
+nsound = wave.open("D:/hw/cp/test/GroupGryffindor.wav","wb") # 開一個新的空白檔案
 nsound.setparams((1,2,11025,110250,'NONE','not compressed'))
 
 for i in range(0,441000,4):
-    ntapeClip = struct.pack("<h",raven[i])
-    nsound.writeframes(ntapeClip)
+    ntapeClip = struct.pack("<h",raven[i]) # 每四個點取樣一次
+    nsound.writeframes(ntapeClip) # 把資料寫進新音檔
 
+sound.close()
+nsound.close()
 
 # 第二題：請查詢 Python3 的 decode() 文件，利用 Python3 的 decode() 將以下三個字串轉成中文字串並印出。
 b1 = b"\xa5x\xa4j\xa4u\xac\xec"
