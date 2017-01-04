@@ -16,18 +16,20 @@
 #return resultLIST
 def charFreqLister(inputSTR):
     resultLIST = []
-    emp = []
+    list=[]
     for x in inputSTR:
         num = inputSTR.count(x)
         prob = num/len(inputSTR)
-        emp.append((prob, x))
-
-    for i in emp:
-        if i not in resultLIST:
-            resultLIST.append(i)
-
-    resultLIST.sort(reverse= True)
+        list.append((prob,x))
+    def getKey(item):
+        return item[0]
+    a=sorted(list,key=getKey,reverse=True)
+    for item in a:
+        if item not in resultLIST:
+            resultLIST.append(item)
     return resultLIST
+    print(resultLIST)
+
 
 # 3.1 加分題 (有做有加分，沒做不扣分)：請用課堂中提到的「霍夫曼編碼]
 #     (https://zh.wikipedia.org/wiki/霍夫曼編碼) 為你之前設計的
