@@ -17,7 +17,7 @@ crewDICT = {1: {"姓名": "潘韋亘",
 import wave
 import struct
 
-sound = wave.open("D:/hw/cp/test/44100.wav")
+sound = wave.open("./44100.wav")
 nchannels, sampwidth, framerate, nframes, comptype, compname = sound.getparams()
 #print(sound.getparams())
 
@@ -35,7 +35,7 @@ else:
         raven.append(tapeClip[0]) # 把tuple變成可變更的list
 #print(raven)
 
-nsound = wave.open("D:/hw/cp/test/GroupGryffindor.wav","wb") # 開一個新的空白檔案
+nsound = wave.open("./GroupGryffindor.wav","wb") # 開一個新的空白檔案
 nsound.setparams((1,2,11025,110250,'NONE','not compressed'))
 
 for i in range(0,441000,4):
