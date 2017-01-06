@@ -47,7 +47,7 @@ class Node:
         return self.father.left == self
 
 def NodeCreator(list):  
-    return [Node(list[i][0],list[i][1]) for i in range(list)]
+    return [Node(list[i][0],list[i][1]) for i in range(len(list))]
 
 def huffmanTreeCreator(nodes):
     queue = nodes[:]
@@ -143,43 +143,43 @@ if __name__== "__main__":
     print(condition04)
 
     # 5 請完成以下課本習題並將答案以字串型 (str or unicode) 填入。
-    print("Ans:")
-    Ch3P3_20a = ""
-    Ch3P3_20b = ""
-    Ch3P3_20c = ""
-    Ch3P3_20d = ""
+        print("Ans:")
+    Ch3P3_20a = "01000000111001100000000000000000"
+    Ch3P3_20b = "11000001010010100100000000000000"
+    Ch3P3_20c = "01000001001101101000000000000000"
+    Ch3P3_20d = "10111110110000000000000000000000"
     print("========")
-    Ch3P3_28a = ""
-    Ch3P3_28b = ""
-    Ch3P3_28c = ""
-    Ch3P3_28d = ""
+    Ch3P3_28a = "-767"
+    Ch3P3_28b = "-441"
+    Ch3P3_28c = "874"
+    Ch3P3_28d = "888"
     print("========")
-    Ch3P3_30a = ""
-    Ch3P3_30b = ""
-    Ch3P3_30c = ""
-    Ch3P3_30d = ""
+    Ch3P3_30a = "-766"
+    Ch3P3_30b = "-440"
+    Ch3P3_30c = "875"
+    Ch3P3_30d = "889"
     print("========")
-    Ch4P4_3a = ""
-    Ch4P4_3b = ""
-    Ch4P4_3c = ""
-    Ch4P4_3d = ""
+    Ch4P4_3a = "0x99"  
+    Ch4P4_3b = "0x99"  
+    Ch4P4_3c = "0xFF" 
+    Ch4P4_3d = "0xFF"  
     print("========")
-    Ch4P4_4a = ""
-    Ch4P4_4b = ""
-    Ch4P4_4c = ""
-    Ch4P4_4d = ""
+    Ch4P4_4a = "0x66"   
+    Ch4P4_4b = "0xFF"  
+    Ch4P4_4c = "0x11"  
+    Ch4P4_4d = "0xBB"   
     print("========")
-    Ch4P4_13a = ""
-    Ch4P4_13b = ""
-    Ch4P4_13c = ""
-    Ch4P4_13d = ""
+    Ch4P4_13a = "1184"
+    Ch4P4_13b = "-862"
+    Ch4P4_13c = "862"
+    Ch4P4_13d = "-1184"
     print("========")
-    Ch4P4_15a = ""
-    Ch4P4_15b = ""
-    Ch4P4_15c = ""
-    Ch4P4_15d = ""
+    Ch4P4_15a = "overflow"
+    Ch4P4_15b = "not overflow"
+    Ch4P4_15c = "not overflow"
+    Ch4P4_15d = "overflow"
     print("========")
-    Ch4P4_16a = ""
-    Ch4P4_16b = ""
-    Ch4P4_16c = ""
-    Ch4P4_16d = ""
+    Ch4P4_16a = "0x1051"
+    Ch4P4_16b = "overflowed"
+    Ch4P4_16c = "0x8012"
+    Ch4P4_16d = "overflowed"

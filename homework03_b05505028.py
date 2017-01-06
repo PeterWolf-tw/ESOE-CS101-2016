@@ -18,7 +18,7 @@
 
 from operator import itemgetter, attrgetter
 from collections import*
-from functools import reduce
+
 class treemake():
     def __init__(self,objs,freq,lobj,robj):
         self.objs=objs
@@ -86,11 +86,11 @@ def condOR(x,y):
 
 
 #condition00 xor condition04
-def conXOR(x,y):
+def condXOR(x,y):
     
-    return ''.join(list(map(lambda a,b:str(int(int(a)==int(b))),str(x),str(y))))
+    return ''.join(list(map(lambda a,b:str(int(int(a)!=int(b))),str(x),str(y))))
 
-
+print(condXOR('1000','0111'))
 
 if __name__== "__main__":
     condition00X = "010111001010100001100011"
