@@ -41,15 +41,39 @@ def condNOT(inputSTR_X):
 
 #condition00 and condition02
 def condAND(inputSTR_X, inputSTR_Y):
-    return
+    outputSTR=""
+    for i , X in enumerate(inputSTR_X):
+        for j , Y in enumrate(inputSTR_X):
+            if i==j :
+                if X=="1" and Y=="1":
+                    outputSTR+="1"
+                else:
+                    outputSTR+="0"        
+    return outputSTR
 
 #condition00 or condition03
-def condOR(inputSTR_X, inputSTR_Y):
-    return
+def condOR(inputSTR_X, inputSTR_Y):  
+    outputSTR=""
+    for i , X in enumerate(inputSTR_X):
+        for j , Y in enumrate(inputSTR_X):
+            if i==j :
+                if X=="0" and Y=="0":
+                    outputSTR+="0"
+                else:
+                    outputSTR+="1"        
+    return outputSTR
 
 #condition00 xor condition04
 def conXOR(inputSTR_X, inputSTR_Y):
-    return
+    outputSTR=""
+    for i , X in enumerate(inputSTR_X):
+        for j , Y in enumrate(inputSTR_X):
+            if i==j :
+                if X==Y:
+                    outputSTR+="0"
+                else:
+                    outputSTR+="1"        
+    return outputSTR    
 
 
 if __name__== "__main__":
@@ -58,45 +82,54 @@ if __name__== "__main__":
 
     condition01 = condNOT(condition00X)
     print(condition01)
+    
+    condition02 = condAND(condition00X,condition00Y)
+    print(condition02)
+    
+    condition03 = condOR(condition00X,condition00Y)
+    print(condition03)
+    
+    condition04 = condXOR(condition00X,condition00Y)
+    print(condition04)
 
     # 5 請完成以下課本習題並將答案以字串型 (str or unicode) 填入。
     print("Ans:")
-    Ch3P3_20a = ""
-    Ch3P3_20b = ""
-    Ch3P3_20c = ""
-    Ch3P3_20d = ""
+    Ch3P3_20a = "0100 0000 1110 0110 0000 0000 0000 0000"
+    Ch3P3_20b = "1100 0001 0100 1010 0100 0000 0000 0000"
+    Ch3P3_20c = "0100 0001 0011 0110 1000 0000 0000 0000"
+    Ch3P3_20d = "1011 1110 1100 0000 0000 0000 0000 0000"
     print("========")
-    Ch3P3_28a = ""
-    Ch3P3_28b = ""
-    Ch3P3_28c = ""
-    Ch3P3_28d = ""
+    Ch3P3_28a = "234"
+    Ch3P3_28b = "560"
+    Ch3P3_28c = "874"
+    Ch3P3_28d = "888"
     print("========")
-    Ch3P3_30a = ""
-    Ch3P3_30b = ""
-    Ch3P3_30c = ""
-    Ch3P3_30d = ""
+    Ch3P3_30a = "234"
+    Ch3P3_30b = "560"
+    Ch3P3_30c = "875"
+    Ch3P3_30d = "889"
     print("========")
-    Ch4P4_3a = ""
-    Ch4P4_3b = ""
-    Ch4P4_3c = ""
-    Ch4P4_3d = ""
+    Ch4P4_3a = "0x99"
+    Ch4P4_3b = "0x99"
+    Ch4P4_3c = "0xFF"
+    Ch4P4_3d = "0xFF"
     print("========")
-    Ch4P4_4a = ""
-    Ch4P4_4b = ""
-    Ch4P4_4c = ""
-    Ch4P4_4d = ""
+    Ch4P4_4a = "0x66"
+    Ch4P4_4b = "0xFF"
+    Ch4P4_4c = "0x11"
+    Ch4P4_4d = "0xBB"
     print("========")
-    Ch4P4_13a = ""
-    Ch4P4_13b = ""
-    Ch4P4_13c = ""
-    Ch4P4_13d = ""
+    Ch4P4_13a = "1184"
+    Ch4P4_13b = "-862"
+    Ch4P4_13c = "962"
+    Ch4P4_13d = "-1184"
     print("========")
-    Ch4P4_15a = ""
-    Ch4P4_15b = ""
-    Ch4P4_15c = ""
-    Ch4P4_15d = ""
+    Ch4P4_15a = "overflow"
+    Ch4P4_15b = "not overflow"
+    Ch4P4_15c = "not overflow"
+    Ch4P4_15d = "overflow"
     print("========")
-    Ch4P4_16a = ""
-    Ch4P4_16b = ""
-    Ch4P4_16c = ""
-    Ch4P4_16d = ""
+    Ch4P4_16a = "0x0F51"
+    Ch4P4_16b = "overflow"
+    Ch4P4_16c = "0x8012"
+    Ch4P4_16d = "overflow"
