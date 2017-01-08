@@ -14,20 +14,50 @@ crewDICT = {1: {"姓名": "邊鈞天",
 
 
 # 第一題：請利用 wave 和 struct 套件讀出 44100.wav 的內容。該檔案的取樣率為 44100hz，請將其重新取樣為 11025hz並另存新檔。
+
 import wave
 import struct
 
+'''
 sound = wave.open("./44100.wav")
 nchannels, sampwidth, framerate, nframes, comptype, compname = sound.getparams()
 
-showAll = True # Show all data in raw string at once.
-if showAll == True:
+
+showAll = False # Show all data in raw string at once.
+
+if showAll == False:
     tapeAll = sound.readframes(nframes)
+    print(tapeAll)
 else:
     for i in range(0, nframes):
         waveData = sound.readframes(1)
         tapeClip = struct.unpack("<h", waveData)
         print(tapeClip)
+'''
+    
+
+sourceSound = wave.open("./44100.wav", "rb")    
+nchannels, sampwidth, framerate, nframes, comptype, compname = sourceSound.getparams()
+
+targetSound = wave.open("./11025_group2.wav", "wb")
+targetSound.setparams( (nchannels, sampwidth, framerate//4, nframes//4, comptype, compname) )
+
+sampleValues = []
+
+for i in range(0, nframes):
+    waveData = sourceSound.readframes(1)
+    tapeClip = struct.unpack("<h", waveData)
+    sampleValues.append(tapeClip[0])
+    
+
+for i in range(0, nframes):
+    if(i%4 == 0):
+        waveData = struct.pack("h", sampleValues[i])
+        targetSound.writeframes(waveData)
+        
+sourceSound.close()
+targetSound.close()
+
 
 
 # 第二題：請查詢 Python3 的 decode() 文件，利用 Python3 的 decode() 將以下三個字串轉成中文字串並印出。
@@ -55,9 +85,24 @@ print('s_utf16 = ',s_utf16)
 
 
 # 第四題：請說明 Wifi 和 Bluetooth 之間...
-# (a). 哪一種傳輸方式較為耗電？
-# (b). 哪一種傳輸方式較快速？
+# (a). 哪一種傳輸方式較為耗電？ 
+#      Wi-Fi
+# (b). 哪一種傳輸方式較快速？ 
+#      Wi-Fi
 # (c). 請實際測試：請查出你的手機型號採用的 Bluetooth 規格，再用你的手機拍攝一張照片，
 #      並透過 Bluetooth 傳送該照片到朋友的手機裡。 考量到雙方手機的藍芽設備規格以及照
 #      片的解析度、檔案大小，理論上應該耗時多少時間完成傳送？而實際上又耗了多少時間進行
 #      傳送？ 最後並請列出所有可能影響傳送時間的因素。
+#
+#手機型號： InFocus M370 
+#藍芽規格： 4.1
+#解析度： 1836x3264
+#檔案大小： 1.31MB
+#理論傳輸速度： 24Mbps (最高速度)
+#理論傳輸時間： 0.437s ( 1.31MB * 8 / 24Mbps )
+#實際傳輸時間： 6.30s (取3次平均)
+#影響傳輸因素：
+#  1. Wi-Fi
+#  2. 微波爐
+#  3. 2.4GHz的其他無線裝置
+#  4. 障礙物(金屬、水泥)
