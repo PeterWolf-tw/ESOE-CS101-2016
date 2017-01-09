@@ -6,29 +6,15 @@
 
 # 作業內容：
 # 1. 請閱讀 Wikipedia 維基百科 IEEE754 條目 (https://zh.wikipedia.org/wiki/IEEE_754)
-#
+
 # 2. 請試玩 http://armorgames.com/play/17826/logical-element
 
 # 3. 請利用以下空白範本設計一支程式。程式可輸入一段字串，並自動計算出字串中包括空白字元出現的機率。
 #    並由高排到低。
 #def charFreqLister(inputSTR):
 #resultLIST = [(freq, char), (freq, char), (freq, char),...]
+
 #return resultLIST
-def charFreqLister(inputSTR):
-    resultLIST = []
-    list=[]
-    for x in inputSTR:
-        num = inputSTR.count(x)
-        prob = num/len(inputSTR)
-        list.append((prob,x))
-    def getKey(item):
-        return item[0]
-    a=sorted(list,key=getKey,reverse=True)
-    for item in a:
-        if item not in resultLIST:
-            resultLIST.append(item)
-    return resultLIST
-    print(resultLIST)
 
 
 # 3.1 加分題 (有做有加分，沒做不扣分)：請用課堂中提到的「霍夫曼編碼]
@@ -55,60 +41,56 @@ def condNOT(inputSTR_X):
 
 #condition00 and condition02
 def condAND(inputSTR_X, inputSTR_Y):
-    outputSTR = ""
-    for i in range(len(inputSTR_X)):
-        if int(inputSTR_X[i]) & int(inputSTR_Y[i]):
-            outputSTR += "1"
-        else:
-            outputSTR += "0"
+    outputSTR=""
+    for i , X in enumerate(inputSTR_X):
+        for j , Y in enumrate(inputSTR_X):
+            if i==j :
+                if X=="1" and Y=="1":
+                    outputSTR+="1"
+                else:
+                    outputSTR+="0"        
     return outputSTR
 
 #condition00 or condition03
-def condOR(inputSTR_X, inputSTR_Y):
-    outputSTR = ""
-    for i in range(len(inputSTR_X)):
-        if int(inputSTR_X[i]) | int(inputSTR_Y[i]):
-            outputSTR += "1"
-        else:
-            outputSTR += "0"
+def condOR(inputSTR_X, inputSTR_Y):  
+    outputSTR=""
+    for i , X in enumerate(inputSTR_X):
+        for j , Y in enumrate(inputSTR_X):
+            if i==j :
+                if X=="0" and Y=="0":
+                    outputSTR+="0"
+                else:
+                    outputSTR+="1"        
     return outputSTR
 
 #condition00 xor condition04
 def conXOR(inputSTR_X, inputSTR_Y):
-    outputSTR = ""
-    for i in range(len(inputSTR_X)):
-        if int(inputSTR_X[i]) ^ int(inputSTR_Y[i]):
-            outputSTR += "1"
-        else:
-            outputSTR += "0"
-    return outputSTR
+    outputSTR=""
+    for i , X in enumerate(inputSTR_X):
+        for j , Y in enumrate(inputSTR_X):
+            if i==j :
+                if X==Y:
+                    outputSTR+="0"
+                else:
+                    outputSTR+="1"        
+    return outputSTR    
 
 
 if __name__== "__main__":
     condition00X = "010111001010100001100011"
     condition00Y = "010000110001011100101001"
 
-
     condition01 = condNOT(condition00X)
-    condition02 = condAND(condition00X, condition00Y)
-    condition03 = condOR(condition00X, condition00Y)
-    condition04 = conXOR(condition00X, condition00Y)
-
     print(condition01)
+    
+    condition02 = condAND(condition00X,condition00Y)
     print(condition02)
+    
+    condition03 = condOR(condition00X,condition00Y)
     print(condition03)
+    
+    condition04 = condXOR(condition00X,condition00Y)
     print(condition04)
-=======
-    condition01 = condNOT(condition00X)
-    condition02 = condAND(condition00X, condition00Y)
-    condition03 = condOR(condition00X, condition00Y)
-    condition04 = conXOR(condition00X, condition00Y)
-
-    print(condition01)
-    print(condition02)
-    print(condition03)
-    print(condition04)
-
 
     # 5 請完成以下課本習題並將答案以字串型 (str or unicode) 填入。
     print("Ans:")
@@ -118,12 +100,12 @@ if __name__== "__main__":
     Ch3P3_20d = "1011 1110 1100 0000 0000 0000 0000 0000"
     print("========")
     Ch3P3_28a = "234"
-    Ch3P3_28b = "overflow"
+    Ch3P3_28b = "560"
     Ch3P3_28c = "874"
     Ch3P3_28d = "888"
     print("========")
     Ch3P3_30a = "234"
-    Ch3P3_30b = "overflow"
+    Ch3P3_30b = "560"
     Ch3P3_30c = "875"
     Ch3P3_30d = "889"
     print("========")
@@ -139,7 +121,7 @@ if __name__== "__main__":
     print("========")
     Ch4P4_13a = "1184"
     Ch4P4_13b = "-862"
-    Ch4P4_13c = "862"
+    Ch4P4_13c = "962"
     Ch4P4_13d = "-1184"
     print("========")
     Ch4P4_15a = "overflow"
