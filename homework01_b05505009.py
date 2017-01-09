@@ -1,4 +1,8 @@
-f=open("C:\\Users\\user\\Desktop\\sample.txt","r")
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+
+#第一小題
+f=open("C:\\Users\\USER\\Desktop\\aaa.txt","r")
 x=f.read()
 
 f.close()
@@ -14,9 +18,32 @@ j=i.replace('"','')
 
 h=j.split(" ")
 
-sampleWordList=[]
-for k in h:
-    if len(k)>5:
-        sampleWordList.append(k)
+samplewordlist=[]
 
-print(sampleWordList)
+for n in h:
+    if len(n)>5:
+        samplewordlist.append(n)
+        
+
+        
+print(samplewordlist)
+    
+#加分題
+
+while True:
+    n=0
+    k=0    
+    f=input("請輸入一個單字")
+    while n < len(samplewordlist):
+    
+        if samplewordlist[n] == f:
+            k = 1
+            n = n + 1
+        
+        else:
+            n = n + 1
+            
+    if k == 1:
+        print("the word is in the list") 
+    else:
+        print("the word is not in the list")
