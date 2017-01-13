@@ -24,6 +24,9 @@
 
 #return resultLIST
 
+import heapq
+from collections import defaultdict
+
 # 3
 def charFreqLister(inputSTR):
     inputSTR = input("請輸入一個字串")
@@ -64,6 +67,41 @@ def charFreqLister(inputSTR):
 
 charFreqLister("www")
 
+#加分題
+def encode(frequency):
+    heap = [[weight, [symbol, '']] for symbol, weight in frequency.items()]
+    heapq.heapify(heap)
+    while len(heap) > 1:
+        lo = heapq.heappop(heap)
+        hi = heapq.heappop(heap)
+        for pair in lo[1:]:
+            pair[1] = '0' + pair[1]
+        for pair in hi[1:]:
+            pair[1] = '1' + pair[1]
+        heapq.heappush(heap, [lo[0] + hi[0]] + lo[1:] + hi[1:])
+    return sorted(heapq.heappop(heap)[1:], key=lambda p: (len(p[-1]), p))
+
+
+def huffman(inputSTR):
+    data = input('請輸入字串')
+    frequency = defaultdict(int)
+    for symbol in data:
+        frequency[symbol] += 1
+
+    huff = encode(frequency)
+    returnLIST = []
+    for p in huff:
+        returnLIST.append((frequency[p[0]], p[0], p[1]))
+
+    print(returnLIST)
+
+huffman("www")
+
+
+
+
+    
+
 def condNOT(inputSTR_X):
     outputSTR = ""
     for i in inputSTR_X:
@@ -72,6 +110,8 @@ def condNOT(inputSTR_X):
         else:
             outputSTR = outputSTR + "0"
     return outputSTR
+
+
 
 #condition00 and condition02
 def condAND(inputSTR_X, inputSTR_Y):
