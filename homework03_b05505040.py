@@ -64,7 +64,7 @@ def compAND(x, y):
 
 inputSTR_X = input()
 inputSTR_Y = input()
-outputSTR = compAND(x, y)
+outputSTR = compAND(inputSTR_X, inputSTR_Y)
 print(z)
 
 #condition00 or condition03
@@ -86,13 +86,13 @@ def compOR(x, y):
         print('length are not equals')
         break
     for n in range(0, len(x)):
-        newVal = AND(x[n], y[n])
+        newVal = OR(x[n], y[n])
         z += newVal
     return z
 
 x = input()
 y = input()
-z = compAND(x, y)
+z = compOR(x, y)
 print(z)
 
 
