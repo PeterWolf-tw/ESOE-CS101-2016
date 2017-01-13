@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+
 # encoding: utf-8
 # B05505008 曾冠維 Python作業三
 

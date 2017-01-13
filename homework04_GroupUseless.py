@@ -19,6 +19,7 @@ import wave
 import struct
 
 sound = wave.open("/44100.wav","r")
+sound = wave.open("./44100.wav","r") # 少了一個 . 。這個 "." 的意思是「這個目錄下的…」。
 nchannels, sampwidth, framerate, nframes, comptype, compname = sound.getparams()
 tapeClip_set=[]
 showAll = False # Show all data in raw string at once.

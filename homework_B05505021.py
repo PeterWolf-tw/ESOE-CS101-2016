@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+
+#原始碼請務必加上檔頭
+
 
 #計概作業1-1
 
@@ -21,7 +26,7 @@ print(sampleWordList)
 
 while True:
     englishword = input("請輸入一個五個字母以上的英文字")
-   
+
     if englishword in sampleWordList:
         print("這個字有在列表裡喔喔喔喔")
     else:
