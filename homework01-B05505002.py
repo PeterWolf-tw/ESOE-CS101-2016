@@ -27,3 +27,4 @@ while c<len(word): #讓計數器在有限的範圍內跑
         c=c+1
     else:
         c=c+1
+#123
